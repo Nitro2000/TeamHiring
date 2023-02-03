@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -12,6 +13,95 @@
         tools:context=".ui.mainFragments.OnboardingFragment">
 
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/onboardViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="60dp"
+                app:layout_constraintBottom_toTopOf="@+id/onboardNextBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+
+            </androidx.viewpager.widget.ViewPager>
+
+            <Button
+                android:id="@+id/onboardNextBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="6dp"
+                android:text="next"
+                android:paddingTop="2dp"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_button_login"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/onboardTabLayout"
+                android:layout_width="128dp"
+                android:layout_height="45dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/onboardNextBtn"
+                app:layout_constraintHorizontal_bias="0.094"
+                app:layout_constraintStart_toStartOf="parent"
+                app:tabBackground="@drawable/indicator_selector"
+                app:tabIndicator="@drawable/indicator_selector">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+               </com.google.android.material.tabs.TabLayout>
+
+
+            <Button
+                android:id="@+id/onboardGetStartedBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/space_40"
+                android:layout_marginBottom="64dp"
+                android:text="Get started"
+                android:paddingTop="2dp"
+                android:paddingRight="@dimen/space_8"
+                android:paddingLeft="@dimen/space_8"
+                android:textColor="@color/white"
+                android:visibility="invisible"
+                android:background="@drawable/bg_button_login"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/onboardSkip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Skip>>"
+                android:layout_marginRight="@dimen/space_16"
+                android:layout_marginTop="@dimen/space_8"
+                android:gravity="center"
+                android:drawablePadding="1dp"
+                android:textSize="@dimen/space_18"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </FrameLayout>
 </layout>
