@@ -42,11 +42,9 @@ class SplashFragment : Fragment() {
         binding.dashLottie.addAnimatorListener(object: Animator.AnimatorListener {
             override fun onAnimationStart(p0: Animator) {
             }
-
             override fun onAnimationEnd(p0: Animator) {
-//                findNavController().navigateUp()
-//                findNavController().navigate(R.id.a)
-                view.findNavController().navigate(R.id.action_splashFragment_to_onboardingFragment)
+                val direction = SplashFragmentDirections.actionSplashFragmentToOnboardingFragment()
+                findNavController().navigate(direction)
             }
 
             override fun onAnimationCancel(p0: Animator) {
