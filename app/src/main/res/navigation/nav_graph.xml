@@ -9,5 +9,17 @@
         android:id="@+id/splashFragment"
         android:name="com.example.teamhiring.ui.mainFragments.SplashFragment"
         android:label="SplashFragment"
-        tools:layout="@layout/fragment_splash"/>
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_onboardingFragment"
+            app:destination="@id/onBoardingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.OnboardingFragment"
+        android:label="OnBoardingFragment"
+        tools:layout="@layout/fragment_onboarding">
+
+    </fragment>
 </navigation>
