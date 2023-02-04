@@ -55,6 +55,7 @@
         android:name="com.example.teamhiring.ui.mainFragments.OnBoardingFragment"
         android:label="OnBoardingFragment"
         tools:layout="@layout/fragment_onboarding">
+
         <action
             android:id="@+id/action_onBoardingFragment_to_userSelectFragment"
             app:destination="@id/userSelectFragment" />

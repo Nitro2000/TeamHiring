@@ -65,15 +65,15 @@ class OnBoardingFragment : Fragment() {
 
         //signUp button click---------------------
         binding.onboardGetStartedBtn.setOnClickListener {
-//            val direction = OnBoardingFragmentDirections.actionOnBoardingFragmentToUserSelectFragment()
-//            findNavController().navigate(direction)
+            val direction = OnBoardingFragmentDirections.actionOnBoardingFragmentToUserSelectFragment()
+            findNavController().navigate(direction)
         }
 
 
         // skip textView click
         binding.onboardSkip.setOnClickListener{
-//            val direction = OnBoardingFragmentDirections.actionOnBoardingFragmentToUserSelectFragment()
-//            findNavController().navigate(direction)
+            val direction = OnBoardingFragmentDirections.actionOnBoardingFragmentToUserSelectFragment()
+            findNavController().navigate(direction)
         }
 
 
