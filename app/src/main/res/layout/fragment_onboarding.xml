@@ -10,14 +10,14 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.mainFragments.OnboardingFragment">
+        tools:context=".ui.mainFragments.OnBoardingFragment">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <androidx.viewpager.widget.ViewPager
+            <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/onboardViewPager"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -27,14 +27,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-
-
-            </androidx.viewpager.widget.ViewPager>
+            </androidx.viewpager2.widget.ViewPager2>
 
             <Button
                 android:id="@+id/onboardNextBtn"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="6dp"
                 android:text="next"
@@ -45,37 +43,22 @@
                 app:layout_constraintEnd_toEndOf="parent" />
 
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/onboardTabLayout"
-                android:layout_width="128dp"
-                android:layout_height="45dp"
-                android:layout_marginBottom="4dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/onboardNextBtn"
-                app:layout_constraintHorizontal_bias="0.094"
+            <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+                android:id="@+id/indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
                 app:layout_constraintStart_toStartOf="parent"
-                app:tabBackground="@drawable/indicator_selector"
-                app:tabIndicator="@drawable/indicator_selector">
-
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-               </com.google.android.material.tabs.TabLayout>
-
+                app:spi_dotColor="#E5E3E3"
+                android:layout_marginStart="@dimen/space_16"
+                app:layout_constraintBottom_toBottomOf="@id/onboardNextBtn"
+                app:layout_constraintTop_toTopOf="@id/onboardNextBtn"
+                app:spi_dotSelectedColor="@color/blue_500" />
 
             <Button
                 android:id="@+id/onboardGetStartedBtn"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/space_40"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="64dp"
                 android:text="Get started"
                 android:paddingTop="2dp"
