@@ -3,7 +3,6 @@ package com.example.teamhiring.ui.mainFragments
 import android.app.Activity
 import android.content.Context
 import android.os.Bundle
-import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +15,7 @@ import com.example.teamhiring.data.constants.Constant
 import com.example.teamhiring.data.dataList.Drawables
 import com.example.teamhiring.data.models.OnBoardData
 import com.example.teamhiring.databinding.FragmentOnboardingBinding
-import com.example.teamhiring.databinding.FragmentOnboardingBinding.*
+import com.example.teamhiring.databinding.FragmentOnboardingBinding.inflate
 import com.example.teamhiring.presentation.adapters.OnBoardAdapter
 import java.util.*
 
@@ -32,8 +31,7 @@ class OnBoardingFragment : Fragment() {
     lateinit var imageList: List<OnBoardData>
 
 
-
-    var timer: Timer? = null
+    private val timer = Timer()
     var position = 0
 
 
@@ -95,8 +93,7 @@ class OnBoardingFragment : Fragment() {
 
     //start onBoarding screen automatic
     private fun startBannerSlideShow() {
-        timer = Timer()
-        timer?.schedule(object : TimerTask() {
+        timer.schedule(object : TimerTask() {
             override fun run() {
                 if (position >= imageList.size) {
                     position = 0
@@ -111,7 +108,7 @@ class OnBoardingFragment : Fragment() {
 
     //stop onBoarding screen
     private fun stopBannerSlidShow() {
-        timer?.cancel()
+        timer.cancel()
     }
 
     private fun loadLastScreen() {
