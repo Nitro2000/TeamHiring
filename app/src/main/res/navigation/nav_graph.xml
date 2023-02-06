@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/userSelectFragment">
 
     <fragment
         android:id="@+id/splashFragment"
@@ -51,9 +51,8 @@
 
 
         <action
-            android:id="@+id/action_userSelectFragment_to_LoginFragment"
-            app:destination="@id/loginFragment" />
-
+            android:id="@+id/action_userSelectFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
     </fragment>
     <fragment
         android:id="@+id/onBoardingFragment"
@@ -70,6 +69,30 @@
         android:name="com.example.teamhiring.ui.mainFragments.HomeFragmentSeeker"
         android:label="HomeFragmentSeeker"
         tools:layout="@layout/fragment_home"/>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.SignInFragment"
+        android:label="SignInFragment"
+        tools:layout="@layout/fragment_sign_in">
+        <action
+            android:id="@+id/action_signInFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_homeFragmentSeeker"
+            app:destination="@id/homeFragmentSeeker" />
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_otpFragment"
+            app:destination="@id/otpFragment" />
+    </fragment>
 
 
 </navigation>

@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    // Theme colors
     <color name="blue_200">#90CAF9</color>
     <color name="blue_500">#2093EE</color>
     <color name="blue_700">#1976D2</color>
     <color name="light_blue_200">#448AFF</color>
     <color name="light_blue_700">#2962FF</color>
+
+    // Extra colors
     <color name="blue_000">#7A5E9EFF</color>
     <color name="blue_050">#BEE0FF</color>
     <color name="blue_100">#3fa4ff</color>
@@ -22,4 +26,11 @@
     <color name="gray_500">#474747</color>
     <color name="gray_600">#272727</color>
     <color name="gray_700">#1C1C1C</color>
+
+    <color name="transparent">#00FFFFFF</color>
+
+    <color name="bottom_line">#EDEFF1</color>
+
+    // Text
+    <color name="text_heading">#1A1A1A</color>
 </resources>

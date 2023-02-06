@@ -12,13 +12,11 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.viewpager.widget.ViewPager
 import com.example.teamhiring.R
 import com.example.teamhiring.data.constants.Constant
 import com.example.teamhiring.data.dataList.Drawables
 import com.example.teamhiring.data.models.OnBoardData
 import com.example.teamhiring.databinding.FragmentOnboardingBinding
-import com.example.teamhiring.databinding.FragmentOnboardingBinding.*
 import com.example.teamhiring.presentation.adapters.OnBoardAdapter
 import java.util.*
 
@@ -34,8 +32,7 @@ class OnBoardingFragment : Fragment() {
     lateinit var imageList: List<OnBoardData>
 
 
-
-    var timer: Timer? = null
+    private val timer = Timer()
     var position = 0
 
 
@@ -47,7 +44,7 @@ class OnBoardingFragment : Fragment() {
         // Inflate the layout for this fragment
         mContext = requireContext()
         mActivity = requireActivity()
-        binding = inflate(inflater, container, false)
+        binding = FragmentOnboardingBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -64,7 +61,7 @@ class OnBoardingFragment : Fragment() {
         btnAnimation = AnimationUtils.loadAnimation(mContext,R.anim.button_animation)
 
         binding.indicator.attachToPager(binding.onboardViewPager)
-        
+
 
         //signUp button click---------------------
         binding.onboardGetStartedBtn.setOnClickListener {
@@ -107,19 +104,18 @@ class OnBoardingFragment : Fragment() {
             }
             binding.onboardViewPager.setCurrentItem(position++, true)
         }
-        timer = Timer()
-        timer?.schedule(object : TimerTask() {
-            override fun run() {
-                handler.post(update)
-            }
-        }, Constant.ONBOARD_DELAY_TIME, Constant.ONBOARD_PERIOD_TIME)
+        timer.schedule(object : TimerTask() {
+                override fun run() {
+                    handler.post(update)
+                }
+            }, Constant.ONBOARD_DELAY_TIME, Constant.ONBOARD_PERIOD_TIME)
 
     }
 
 
     //stop onBoarding screen
     private fun stopBannerSlidShow() {
-        timer?.cancel()
+        timer.cancel()
     }
 
     private fun loadLastScreen() {

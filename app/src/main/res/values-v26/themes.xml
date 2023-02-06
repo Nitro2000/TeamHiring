@@ -1,5 +1,6 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
     <style name="Theme.TeamHiring" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/blue_500</item>
@@ -11,18 +12,7 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:autofilledHighlight">@color/transparent</item>
         <!-- Customize your theme here. -->
     </style>
-
-
-
-    <!--toolbar home fragment-->
-    <style name="Theme.TeamHiring.Toolbar">
-        <item name="android:textColorSecondary">@android:color/primary_text_dark</item>
-        <item name="android:textColor">@android:color/black</item>
-    </style>
-
-    <style name="Theme.TeamHiring.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="Theme.TeamHiring.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 </resources>
