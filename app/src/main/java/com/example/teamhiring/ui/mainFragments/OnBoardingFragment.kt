@@ -3,6 +3,7 @@ package com.example.teamhiring.ui.mainFragments
 import android.app.Activity
 import android.content.Context
 import android.os.Bundle
+import android.os.Handler
 import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.viewpager.widget.ViewPager
 import com.example.teamhiring.R
 import com.example.teamhiring.data.constants.Constant
 import com.example.teamhiring.data.dataList.Drawables
@@ -62,6 +64,7 @@ class OnBoardingFragment : Fragment() {
         btnAnimation = AnimationUtils.loadAnimation(mContext,R.anim.button_animation)
 
         binding.indicator.attachToPager(binding.onboardViewPager)
+        
 
         //signUp button click---------------------
         binding.onboardGetStartedBtn.setOnClickListener {
@@ -95,14 +98,19 @@ class OnBoardingFragment : Fragment() {
 
     //start onBoarding screen automatic
     private fun startBannerSlideShow() {
+
+        val handler = Handler(Looper.getMainLooper())
+        val update = Runnable {
+            if (position == imageList.size - 1) {
+                stopBannerSlidShow()
+                loadLastScreen()
+            }
+            binding.onboardViewPager.setCurrentItem(position++, true)
+        }
         timer = Timer()
         timer?.schedule(object : TimerTask() {
             override fun run() {
-                if (position >= imageList.size) {
-                    position = 0
-//                    stopBannerSlidShow()
-                }
-                binding.onboardViewPager.setCurrentItem(position++, true)
+                handler.post(update)
             }
         }, Constant.ONBOARD_DELAY_TIME, Constant.ONBOARD_PERIOD_TIME)
 

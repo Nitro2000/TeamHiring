@@ -35,5 +35,5 @@
 
     <style name="Theme.TeamHiring.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="Theme.TeamHiring.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.TeamHiring.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 </resources>
