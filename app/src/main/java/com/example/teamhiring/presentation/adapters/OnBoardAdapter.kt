@@ -34,37 +34,4 @@ class OnBoardAdapter (val imageList: List<OnBoardData>) : RecyclerView.Adapter<O
 }
 
 
-//    override fun getCount(): Int {
-//        return imageList.size
-//    }
-//
-//    override fun isViewFromObject(view: View, `object`: Any): Boolean {
-//        return view === `object` as ConstraintLayout
-//    }
-//
-//    override fun instantiateItem(container: ViewGroup, position: Int): Any {
-//
-//        val mLayoutInflater =
-//            context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-//
-//
-//        val itemView: View = mLayoutInflater.inflate(R.layout.item_onboarding_screen, container, false)
-//
-//
-//        val imageView: ImageView = itemView.findViewById<View>(R.id.imageView) as ImageView
-//
-//
-//        imageView.setImageResource(imageList.get(position))
-//
-//        Objects.requireNonNull(container).addView(itemView)
-//
-//
-//        return itemView
-//    }
-//
-//    override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
-//        container.removeView(`object` as ConstraintLayout)
-//
-
-//}
 

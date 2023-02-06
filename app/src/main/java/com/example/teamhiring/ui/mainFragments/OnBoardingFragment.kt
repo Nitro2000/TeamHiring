@@ -3,6 +3,8 @@ package com.example.teamhiring.ui.mainFragments
 import android.app.Activity
 import android.content.Context
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +17,6 @@ import com.example.teamhiring.data.constants.Constant
 import com.example.teamhiring.data.dataList.Drawables
 import com.example.teamhiring.data.models.OnBoardData
 import com.example.teamhiring.databinding.FragmentOnboardingBinding
-import com.example.teamhiring.databinding.FragmentOnboardingBinding.inflate
 import com.example.teamhiring.presentation.adapters.OnBoardAdapter
 import java.util.*
 
@@ -43,7 +44,7 @@ class OnBoardingFragment : Fragment() {
         // Inflate the layout for this fragment
         mContext = requireContext()
         mActivity = requireActivity()
-        binding = inflate(inflater, container, false)
+        binding = FragmentOnboardingBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -60,6 +61,7 @@ class OnBoardingFragment : Fragment() {
         btnAnimation = AnimationUtils.loadAnimation(mContext,R.anim.button_animation)
 
         binding.indicator.attachToPager(binding.onboardViewPager)
+
 
         //signUp button click---------------------
         binding.onboardGetStartedBtn.setOnClickListener {
@@ -93,15 +95,20 @@ class OnBoardingFragment : Fragment() {
 
     //start onBoarding screen automatic
     private fun startBannerSlideShow() {
-        timer.schedule(object : TimerTask() {
-            override fun run() {
-                if (position >= imageList.size) {
-                    position = 0
-//                    stopBannerSlidShow()
-                }
-                binding.onboardViewPager.setCurrentItem(position++, true)
+
+        val handler = Handler(Looper.getMainLooper())
+        val update = Runnable {
+            if (position == imageList.size - 1) {
+                stopBannerSlidShow()
+                loadLastScreen()
             }
-        }, Constant.ONBOARD_DELAY_TIME, Constant.ONBOARD_PERIOD_TIME)
+            binding.onboardViewPager.setCurrentItem(position++, true)
+        }
+        timer.schedule(object : TimerTask() {
+                override fun run() {
+                    handler.post(update)
+                }
+            }, Constant.ONBOARD_DELAY_TIME, Constant.ONBOARD_PERIOD_TIME)
 
     }
 

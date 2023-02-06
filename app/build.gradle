@@ -62,14 +62,20 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
 
+    //viewpager2
     implementation "androidx.viewpager2:viewpager2:1.0.0"
 
-    
+    //image scroll indicator
     implementation "ru.tinkoff.scrollingpagerindicator:scrollingpagerindicator:1.2.4"
 
+    //otp view
     implementation 'com.chaos.view:pinview:1.4.3'
 
+    //loading shimmer
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    //circular imageview
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
 
 }
