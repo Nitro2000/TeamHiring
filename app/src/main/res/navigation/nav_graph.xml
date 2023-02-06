@@ -36,6 +36,11 @@
         android:label="OtpFragment"
         tools:layout="@layout/fragment_otp">
 
+
+        <action
+            android:id="@+id/action_otpFragment_to_homeFragmentSeeker"
+            app:destination="@id/homeFragmentSeeker" />
+
     </fragment>
 
     <fragment
@@ -60,6 +65,11 @@
             android:id="@+id/action_onBoardingFragment_to_userSelectFragment"
             app:destination="@id/userSelectFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/homeFragmentSeeker"
+        android:name="com.example.teamhiring.ui.mainFragments.HomeFragmentSeeker"
+        android:label="HomeFragmentSeeker"
+        tools:layout="@layout/fragment_home"/>
 
 
 </navigation>
