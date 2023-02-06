@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".ui.mainFragments.OtpFragment">
+
+            <ImageView
+                android:id="@+id/backBtn"
+                android:layout_width="@dimen/space_32"
+                android:layout_height="@dimen/space_32"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginTop="@dimen/space_16"
+                android:src="@drawable/icon_back"
+                android:contentDescription="@string/app_name"
+                app:tint="@color/blue_500" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/space_24"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="@dimen/space_24"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/enter_your_verification_code"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textSize="@dimen/text_32" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/we_have_sent_6_digits_otp_to_below_mobile_number"
+                  />
+
+                <TextView
+                    android:id="@+id/sendingOTPOn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_45"
+                    android:text="@string/_91_9079298775"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textSize="@dimen/text_18"
+                   />
+
+                <com.chaos.view.PinView
+                    android:id="@+id/otpView"
+                    style="@style/PinWidget.PinView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/space_50"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="@dimen/space_4"
+                    android:cursorVisible="true"
+                    android:hint=""
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_18"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    app:cursorWidth="@dimen/space_0"
+                    app:hideLineWhenFilled="true"
+                    app:itemCount="6"
+                    app:itemHeight="@dimen/space_45"
+                    app:itemRadius="@dimen/space_8"
+                    app:itemSpacing="@dimen/space_8"
+                    app:itemWidth="@dimen/space_45"
+                    app:lineColor="@color/white"
+                    app:lineWidth="@dimen/space_2"
+                    android:itemBackground="@drawable/bg_otp_view"
+                    app:viewType="rectangle" />
+
+
+
+                <Button
+                    android:id="@+id/btnOTPVerification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/space_32"
+                    android:background="@drawable/bg_button_login"
+                    android:paddingLeft="@dimen/space_32"
+                    android:paddingTop="@dimen/space_8"
+                    android:paddingRight="@dimen/space_32"
+                    android:paddingBottom="@dimen/space_8"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_14"
+                    android:text="@string/verify"
+                    android:textAllCaps="false"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    />
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_20"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:id="@+id/divider"
+                        android:layout_width="@dimen/space_150"
+                        android:layout_height="@dimen/space_2dp"
+                        android:layout_marginEnd="@dimen/space_8"
+                        android:background="?android:attr/listDivider" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/or"
+                        android:paddingTop="@dimen/space_2dp"
+                        />
+
+                    <View
+                        android:id="@+id/divider1"
+                        android:layout_width="@dimen/space_150"
+                        android:layout_height="@dimen/space_2"
+                        android:layout_marginStart="@dimen/space_8"
+                        android:background="?android:attr/listDivider" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_40"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/did_not_receive" />
+
+                    <TextView
+                        android:id="@+id/resendVerificationCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/blue_500"
+                        android:text="@string/resend"/>
+                         </LinearLayout>
+
+
+
+            </LinearLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

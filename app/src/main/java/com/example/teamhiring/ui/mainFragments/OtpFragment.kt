@@ -9,34 +9,34 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.teamhiring.R
-import com.example.teamhiring.databinding.FragmentLoginBinding
+import com.example.teamhiring.databinding.FragmentOtpBinding
 
-class LoginFragment : Fragment() {
 
-    private lateinit var binding: FragmentLoginBinding
+class OtpFragment : Fragment() {
+
+
+    private lateinit var binding: FragmentOtpBinding
     private lateinit var mContext: Context
     private lateinit var mActivity: Activity
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        mContext = requireActivity()
-        mActivity = requireActivity()
         // Inflate the layout for this fragment
-        binding = FragmentLoginBinding.inflate(inflater, container, false)
+        mContext = requireContext()
+        mActivity = requireActivity()
+        binding = FragmentOtpBinding.inflate(inflater,container,false)
         return binding.root
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //signUp button click---------------------
-        binding.buttonReqOtp.setOnClickListener(View.OnClickListener {
-            val direction = LoginFragmentDirections.actionLoginFragmentToOtpFragment()
-            findNavController().navigate(direction)
-        })
+        binding.btnOTPVerification.setOnClickListener {
+            val directions = OtpFragmentDirections.actionOtpFragmentToHomeFragmentSeeker()
+            findNavController().navigate(directions)
+        }
     }
 }

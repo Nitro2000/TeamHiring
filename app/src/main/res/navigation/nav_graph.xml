@@ -15,11 +15,61 @@
             app:destination="@id/onBoardingFragment" />
     </fragment>
 
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+
+
+        <action
+            android:id="@+id/action_loginFragment_to_otpFragment"
+            app:destination="@id/otpFragment" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/otpFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.OtpFragment"
+        android:label="OtpFragment"
+        tools:layout="@layout/fragment_otp">
+
+
+        <action
+            android:id="@+id/action_otpFragment_to_homeFragmentSeeker"
+            app:destination="@id/homeFragmentSeeker" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/userSelectFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.UserSelectFragment"
+        android:label="UserSelectFragment"
+        tools:layout="@layout/fragment_user_select">
+
+
+        <action
+            android:id="@+id/action_userSelectFragment_to_LoginFragment"
+            app:destination="@id/loginFragment" />
+
+    </fragment>
     <fragment
         android:id="@+id/onBoardingFragment"
-        android:name="com.example.teamhiring.ui.mainFragments.OnboardingFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.OnBoardingFragment"
         android:label="OnBoardingFragment"
         tools:layout="@layout/fragment_onboarding">
 
+        <action
+            android:id="@+id/action_onBoardingFragment_to_userSelectFragment"
+            app:destination="@id/userSelectFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/homeFragmentSeeker"
+        android:name="com.example.teamhiring.ui.mainFragments.HomeFragmentSeeker"
+        android:label="HomeFragmentSeeker"
+        tools:layout="@layout/fragment_home"/>
+
+
 </navigation>
