@@ -34,6 +34,13 @@ class SignInFragment : Fragment() {
         }
 
         binding.signInLogBtn.setOnClickListener { navigateToHomePage() }
+
+        binding.signInMobileTxt.setOnClickListener { navigateToMobileLogin() }
+    }
+
+    private fun navigateToMobileLogin() {
+        val direction = SignInFragmentDirections.actionSignInFragmentToLoginFragment()
+        findNavController().navigate(direction)
     }
 
     private fun navigateToHomePage() {

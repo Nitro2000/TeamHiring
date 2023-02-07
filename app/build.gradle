@@ -77,5 +77,8 @@ dependencies {
     //circular imageview
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
+    // Country code picker
+    implementation 'com.hbb20:ccp:2.6.0'
+
 
 }

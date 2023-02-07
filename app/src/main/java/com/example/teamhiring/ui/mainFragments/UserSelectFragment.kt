@@ -29,9 +29,9 @@ class UserSelectFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.userSelectSeekerBtn.setOnClickListener(View.OnClickListener {
+        binding.userSelectSeekerBtn.setOnClickListener {
             val direction = UserSelectFragmentDirections.actionUserSelectFragmentToSignInFragment()
             findNavController().navigate(direction)
-        })
+        }
     }
 }

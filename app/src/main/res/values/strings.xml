@@ -38,4 +38,6 @@
     <string name="resend">RESEND</string>
     <string name="skip"><![CDATA[Skip>>]]></string>
     <string name="next">Next</string>
+    <string name="cd_back_arrow">cd back arrow</string>
+    <string name="already_have_an_account_dash">--------Already have an account?--------</string>
 </resources>

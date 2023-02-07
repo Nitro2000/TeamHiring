@@ -103,7 +103,7 @@
             app:layout_constraintTop_toBottomOf="@id/signInForPassTxt" />
 
         <TextView
-            android:id="@+id/signInOtpTxt"
+            android:id="@+id/signInMobileTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_8"
@@ -127,7 +127,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/signInLogBtn"
             app:layout_constraintStart_toStartOf="@id/signInLogBtn"
-            app:layout_constraintTop_toBottomOf="@id/signInOtpTxt" />
+            app:layout_constraintTop_toBottomOf="@id/signInMobileTxt" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
