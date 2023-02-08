@@ -32,7 +32,7 @@
     <string name="_91">+91</string>
     <string name="enter_your_verification_code">Enter Your Verification Code</string>
     <string name="we_have_sent_6_digits_otp_to_below_mobile_number">We have sent 6 digits OTP to below Mobile Number.</string>
-    <string name="_91_9079298775">+91-9079298775</string>
+    <string name="_91_9079298775">+91–9079298775</string>
     <string name="verify">Verify</string>
     <string name="did_not_receive">Did not received? </string>
     <string name="resend">RESEND</string>
@@ -40,4 +40,13 @@
     <string name="next">Next</string>
     <string name="cd_back_arrow">cd back arrow</string>
     <string name="already_have_an_account_dash">--------Already have an account?--------</string>
+    <string name="b_tech">B.tech</string>
+    <string name="rishabh_garg">Rishabh Garg</string>
+    <string name="exp_years">%.2f years</string>
+    <string name="ann_income">Rs %d - %d LPA</string>
+    <string name="full_time">Full time</string>
+    <string name="work_from_office">Work from office</string>
+    <string name="job_emp_descr">I am an android developer and coding enthusiast and good problem solver and have experience to develop and deploy applications on playstore</string>
+    <string name="backend_developer">Backend Developer</string>
+    <string name="bits_panindia">Bits Panindia</string>
 </resources>

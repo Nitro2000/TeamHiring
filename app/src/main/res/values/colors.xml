@@ -33,6 +33,8 @@
     <color name="gradient_blackish">#F4F4F4</color>
 
     <color name="dark_black">#131516</color>
+    <color name="gap_color">#717070</color>
+
 
     // Text
     <color name="text_heading">#1A1A1A</color>

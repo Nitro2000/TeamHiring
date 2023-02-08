@@ -68,7 +68,11 @@
         android:id="@+id/homeFragmentSeeker"
         android:name="com.example.teamhiring.ui.mainFragments.HomeFragmentSeeker"
         android:label="HomeFragmentSeeker"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragmentSeeker_to_recruiterHomeFragment"
+            app:destination="@id/recruiterHomeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/signInFragment"
         android:name="com.example.teamhiring.ui.mainFragments.SignInFragment"
@@ -93,6 +97,11 @@
             android:id="@+id/action_signUpFragment_to_otpFragment"
             app:destination="@id/otpFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/recruiterHomeFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.RecruiterHomeFragment"
+        android:label="RecruiterHomeFragment"
+        tools:layout="@layout/fragment_home_recruiter"/>
 
 
 </navigation>
