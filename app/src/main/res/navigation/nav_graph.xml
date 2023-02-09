@@ -122,9 +122,9 @@
 
     <fragment
         android:id="@+id/appliedJobFragment"
-        android:name="com.example.teamhiring.ui.mainFragments.AppliedJobFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.InteractedJobFragment"
         android:label="AppliedJobFragment"
-        tools:layout="@layout/fragment_applied_job"/>
+        tools:layout="@layout/fragment_interacted_job"/>
 
 
     <fragment

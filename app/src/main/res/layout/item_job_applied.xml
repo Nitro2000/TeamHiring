@@ -9,6 +9,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:padding="@dimen/space_16"
+        android:background="@drawable/bg_item_stroke_white_corner"
+        android:elevation="6dp"
+        android:layout_marginTop="@dimen/space_16"
         android:layout_height="wrap_content">
 
         <TextView
@@ -26,7 +29,6 @@
             android:id="@+id/jobAppAnnSalTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/space_24"
             android:text="Rs 2 - 6 LPA"
             android:textSize="@dimen/text_16"
             android:textColor="@color/blue_500"
@@ -194,15 +196,15 @@
             app:layout_constraintTop_toBottomOf="@id/jobExpDesignTxt"
             app:layout_constraintStart_toStartOf="@id/jobExpCompTxt"/>
 
-        <View
-            android:id="@+id/jobLineViewFifth"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:background="@color/sub_views"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="@dimen/space_8"
-            app:layout_constraintTop_toBottomOf="@id/jobEmpDescTxt"/>
+<!--        <View-->
+<!--            android:id="@+id/jobLineViewFifth"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="1dp"-->
+<!--            android:background="@color/sub_views"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            android:layout_marginTop="@dimen/space_8"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/jobEmpDescTxt"/>-->
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.teamhiring.R
 import com.example.teamhiring.databinding.ItemHomeJobSeekersBinding
 
-class InteractedAdapter(val context: Context): RecyclerView.Adapter<InteractedAdapter.ViewHolder>() {
+class EmpListAdapter(val context: Context): RecyclerView.Adapter<EmpListAdapter.ViewHolder>() {
 
     inner class ViewHolder(val binding: ItemHomeJobSeekersBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind() {
