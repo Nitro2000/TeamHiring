@@ -38,7 +38,7 @@
             android:text="@string/b_tech"
             android:layout_marginTop="4dp"
             android:textSize="@dimen/text_12"
-            android:textColor="@color/gap_color"
+            android:textColor="@color/sub_views"
             android:fontFamily="@font/roboto_regular_400"
             app:layout_constraintStart_toStartOf="@id/jobNameTxt"
             app:layout_constraintTop_toBottomOf="@id/jobNameTxt" />
@@ -47,7 +47,7 @@
             android:id="@+id/jobLineViewFirst"
             android:layout_width="1dp"
             android:layout_height="15dp"
-            android:background="@color/gap_color"
+            android:background="@color/sub_views"
             android:layout_marginStart="8dp"
             app:layout_constraintStart_toEndOf="@+id/jobHighQualTxt"
             app:layout_constraintTop_toTopOf="@+id/jobHighQualTxt"
@@ -60,7 +60,7 @@
             android:text="@string/exp_years"
             android:layout_marginStart="8dp"
             android:textSize="@dimen/text_12"
-            android:textColor="@color/gap_color"
+            android:textColor="@color/sub_views"
             android:fontFamily="@font/roboto_regular_400"
             app:layout_constraintTop_toTopOf="@+id/jobHighQualTxt"
             app:layout_constraintStart_toEndOf="@+id/jobLineViewFirst" />
@@ -69,7 +69,7 @@
             android:id="@+id/jobLineViewSec"
             android:layout_width="1dp"
             android:layout_height="15dp"
-            android:background="@color/gap_color"
+            android:background="@color/sub_views"
             android:layout_marginStart="8dp"
             app:layout_constraintStart_toEndOf="@+id/jobExpSubTxt"
             app:layout_constraintTop_toTopOf="@+id/jobHighQualTxt"
@@ -85,7 +85,7 @@
             android:maxLines="1"
             android:ellipsize="end"
             android:textSize="@dimen/text_12"
-            android:textColor="@color/gap_color"
+            android:textColor="@color/sub_views"
             android:fontFamily="@font/roboto_regular_400"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/jobHighQualTxt"
@@ -129,7 +129,7 @@
             android:layout_height="4dp"
             android:layout_marginStart="8dp"
             android:background="@drawable/bg_view_full_circle"
-            android:backgroundTint="@color/gap_color"
+            android:backgroundTint="@color/sub_views"
             app:layout_constraintStart_toEndOf="@+id/jobTypeTxt"
             app:layout_constraintTop_toTopOf="@+id/jobTypeTxt"
             app:layout_constraintBottom_toBottomOf="@+id/jobTypeTxt" />
@@ -162,7 +162,7 @@
             android:fontFamily="@font/roboto_regular_400"
             app:layout_constraintTop_toBottomOf="@id/jobTypeTxt"
             app:layout_constraintStart_toStartOf="@id/jobTypeTxt"
-            app:drawableStartCompat="@drawable/icon_exp_icon" />
+            app:drawableStartCompat="@drawable/icon_company" />
 
         <View
             android:id="@+id/jobLineViewFourth"
@@ -170,7 +170,7 @@
             android:layout_height="4dp"
             android:layout_marginStart="8dp"
             android:background="@drawable/bg_view_full_circle"
-            android:backgroundTint="@color/gap_color"
+            android:backgroundTint="@color/sub_views"
             app:layout_constraintStart_toEndOf="@+id/jobExpCompTxt"
             app:layout_constraintTop_toTopOf="@+id/jobExpCompTxt"
             app:layout_constraintBottom_toBottomOf="@+id/jobExpCompTxt" />
@@ -208,7 +208,7 @@
             android:id="@+id/jobLineViewFifth"
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:background="@color/gap_color"
+            android:background="@color/sub_views"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="@dimen/space_8"

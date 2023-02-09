@@ -33,7 +33,9 @@
     <color name="gradient_blackish">#F4F4F4</color>
 
     <color name="dark_black">#131516</color>
-    <color name="gap_color">#717070</color>
+    <color name="sub_views">#717070</color>
+    <color name="layout_backgrounds">#F6F6F6</color>
+
 
 
     // Text
