@@ -25,31 +25,24 @@ class MainActivity : AppCompatActivity() {
 
         navController=navHostFragment.navController
         binding.mainBottomNav.setupWithNavController(navController)
-
-        binding.mainBottomNav.setOnNavigationItemSelectedListener { item ->
+        binding.mainBottomNav.setOnItemSelectedListener { item ->
+            popBackStack(item.itemId == R.id.homeFragmentSeeker)
             when (item.itemId) {
-                R.id.menu_home -> {
-
+                R.id.homeFragmentSeeker -> {
                     navController.navigate(R.id.homeFragmentSeeker)
-                    true
                 }
-                R.id.menu_applied -> {
+                R.id.appliedJobFragment -> {
                     navController.navigate(R.id.appliedJobFragment)
-                    true
                 }
-                R.id.menu_chat -> {
+                R.id.chatFragment -> {
                     navController.navigate(R.id.chatFragment)
-                    true
                 }
-                R.id.menu_profile -> {
+                R.id.profileFragment -> {
                     navController.navigate(R.id.profileFragment)
-                    true
                 }
-                else-> true
             }
             true
         }
-
         setupNav()
     }
 
@@ -76,6 +69,9 @@ class MainActivity : AppCompatActivity() {
     }
     private fun hideBottomNav() {
         binding.mainBottomNav.visibility = View.GONE
+    }
 
+    fun popBackStack(include: Boolean) {
+        navController.popBackStack(R.id.homeFragmentSeeker, include)
     }
 }

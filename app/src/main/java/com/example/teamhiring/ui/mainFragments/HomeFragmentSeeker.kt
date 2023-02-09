@@ -25,7 +25,7 @@ class HomeFragmentSeeker : Fragment() {
 
         mContext = requireContext()
         mActivity = requireActivity()
-        HelperFunction.bottomNavBarVisibility(mActivity, View.VISIBLE)
+//        HelperFunction.bottomNavBarVisibility(mActivity, View.VISIBLE)
 
         // Inflate the layout for this fragment
         binding =  FragmentHomeSeekerBinding.inflate(inflater, container, false)

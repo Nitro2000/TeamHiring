@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.teamhiring.R
 import com.example.teamhiring.data.constants.Constant
-import com.example.teamhiring.data.dataList.Drawables
+import com.example.teamhiring.data.dataList.PreDefinedList
 import com.example.teamhiring.data.models.OnBoardData
 import com.example.teamhiring.databinding.FragmentOnboardingBinding
 import com.example.teamhiring.presentation.adapters.OnBoardAdapter
@@ -53,7 +53,7 @@ class OnBoardingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //Adding image in list-----------------
-        imageList = Drawables.imageList
+        imageList = PreDefinedList.imageList
 
         viewPagerAdapter = OnBoardAdapter(imageList)
         binding.onboardViewPager.adapter = viewPagerAdapter
