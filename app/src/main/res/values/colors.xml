@@ -27,9 +27,16 @@
     <color name="gray_600">#272727</color>
     <color name="gray_700">#1C1C1C</color>
 
-    <color name="transparent">#00FFFFFF</color>
+    <color name="transparent">#00000000</color>
 
     <color name="bottom_line">#EDEFF1</color>
+    <color name="gradient_blackish">#F4F4F4</color>
+
+    <color name="dark_black">#131516</color>
+    <color name="sub_views">#717070</color>
+    <color name="layout_backgrounds">#F6F6F6</color>
+
+
 
     // Text
     <color name="text_heading">#1A1A1A</color>

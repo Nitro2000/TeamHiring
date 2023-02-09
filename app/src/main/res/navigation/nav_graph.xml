@@ -72,7 +72,14 @@
         android:id="@+id/homeFragmentSeeker"
         android:name="com.example.teamhiring.ui.mainFragments.HomeFragmentSeeker"
         android:label="HomeFragmentSeeker"
-        tools:layout="@layout/fragment_home_seeker"/>
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragmentSeeker_to_recruiterHomeFragment"
+            app:destination="@id/recruiterHomeFragment" />
+        <action
+            android:id="@+id/action_homeFragmentSeeker_to_recruiterProfileFragment"
+            app:destination="@id/recruiterProfileFragment" />
+    </fragment>
 
 
     <fragment
@@ -101,6 +108,16 @@
             android:id="@+id/action_signUpFragment_to_otpFragment"
             app:destination="@id/otpFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/recruiterHomeFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.RecruiterHomeFragment"
+        android:label="RecruiterHomeFragment"
+        tools:layout="@layout/fragment_home_recruiter"/>
+    <fragment
+        android:id="@+id/recruiterProfileFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.RecruiterProfileFragment"
+        android:label="fragment_recruiter_profile"
+        tools:layout="@layout/fragment_recruiter_profile" />
 
 
     <fragment

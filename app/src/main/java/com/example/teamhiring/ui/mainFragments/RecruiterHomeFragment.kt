@@ -7,14 +7,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
-import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.teamhiring.R
-import com.example.teamhiring.databinding.FragmentSignInBinding
-import com.example.teamhiring.databinding.FragmentSignUpBinding
+import com.example.teamhiring.databinding.FragmentHomeRecruiterBinding
+import com.example.teamhiring.presentation.adapters.InteractedAdapter
 
-class SignUpFragment : Fragment() {
 
-    private lateinit var binding: FragmentSignUpBinding
+class RecruiterHomeFragment : Fragment() {
+
+    private lateinit var binding: FragmentHomeRecruiterBinding
     private lateinit var mContext: Context
     private lateinit var mActivity: FragmentActivity
 
@@ -23,23 +25,20 @@ class SignUpFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentSignUpBinding.inflate(inflater, container, false)
+        mContext = requireContext()
+        mActivity = requireActivity()
+        binding = FragmentHomeRecruiterBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.signUpLogBtn.setOnClickListener {
-            navigateToOtp()
+        binding.homeRecRecyView.apply {
+            adapter = InteractedAdapter(mContext)
+            layoutManager = LinearLayoutManager(mContext, RecyclerView.VERTICAL, false)
         }
-
     }
 
-
-    private fun navigateToOtp() {
-        val direction = SignUpFragmentDirections.actionSignUpFragmentToOtpFragment()
-        findNavController().navigate(direction)
-    }
 
 }

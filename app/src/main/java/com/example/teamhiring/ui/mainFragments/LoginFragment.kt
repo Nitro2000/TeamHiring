@@ -34,9 +34,13 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //signUp button click---------------------
-        binding.buttonReqOtp.setOnClickListener(View.OnClickListener {
-            val direction = LoginFragmentDirections.actionLoginFragmentToOtpFragment()
-            findNavController().navigate(direction)
-        })
+        binding.loginLogBtn.setOnClickListener {
+            navigateToOtp()
+        }
+    }
+
+    private fun navigateToOtp() {
+        val direction = LoginFragmentDirections.actionLoginFragmentToOtpFragment()
+        findNavController().navigate(direction)
     }
 }

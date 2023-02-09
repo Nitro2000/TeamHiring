@@ -7,14 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
-import androidx.navigation.fragment.findNavController
 import com.example.teamhiring.R
-import com.example.teamhiring.databinding.FragmentSignInBinding
-import com.example.teamhiring.databinding.FragmentSignUpBinding
+import com.example.teamhiring.databinding.FragmentHomeRecruiterBinding
+import com.example.teamhiring.databinding.FragmentRecruiterProfileBinding
 
-class SignUpFragment : Fragment() {
 
-    private lateinit var binding: FragmentSignUpBinding
+class RecruiterProfileFragment : Fragment() {
+
+
+    private lateinit var binding: FragmentRecruiterProfileBinding
     private lateinit var mContext: Context
     private lateinit var mActivity: FragmentActivity
 
@@ -23,23 +24,18 @@ class SignUpFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentSignUpBinding.inflate(inflater, container, false)
+
+        mContext = requireContext()
+        mActivity = requireActivity()
+        binding = FragmentRecruiterProfileBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.signUpLogBtn.setOnClickListener {
-            navigateToOtp()
-        }
 
     }
 
-
-    private fun navigateToOtp() {
-        val direction = SignUpFragmentDirections.actionSignUpFragmentToOtpFragment()
-        findNavController().navigate(direction)
-    }
 
 }
