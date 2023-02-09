@@ -56,9 +56,9 @@ class AppliedJobFragment : Fragment() {
 ////        binding.tablayout.getTabAt(tabIndex)?.select()
 //        binding.interViewPager.
 //        binding.tablayout.setBackgroundResource(R.drawable.bg_user_text_border);
-        Handler(Looper.getMainLooper()).postDelayed({
-            binding.jobViewPager.setCurrentItem(tabIndex, true)
-        }, 80)
+//        Handler(Looper.getMainLooper()).postDelayed({
+//            binding.jobViewPager.setCurrentItem(tabIndex, true)
+//        }, 80)
     }
 
 
