@@ -2,11 +2,11 @@
 <resources>
 
     // Theme colors
-    <color name="blue_200">#90CAF9</color>
-    <color name="blue_500">#2093EE</color>
-    <color name="blue_700">#1976D2</color>
-    <color name="light_blue_200">#448AFF</color>
-    <color name="light_blue_700">#2962FF</color>
+    <color name="blue_200">#FFB74D</color>
+    <color name="blue_500">#FF9800</color>
+    <color name="blue_700">#F57C00</color>
+    <color name="light_blue_200">#FFE0B2</color>
+    <color name="light_blue_700">#FFCC80</color>
 
     // Extra colors
     <color name="blue_000">#7A5E9EFF</color>

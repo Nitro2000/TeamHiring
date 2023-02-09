@@ -23,7 +23,7 @@
     <string name="or">OR</string>
     <string name="i_am_a">I am a</string>
     <string name="select_user_type">Select User Type</string>
-    <string name="recommended_job">Recommended Job</string>
+    <string name="recommended_job">Recommended Jobs</string>
     <string name="no_data_found">No Data Found</string>
     <string name="enter_your_mobile_number">Enter Your Mobile Number</string>
     <string name="hello_welcome_back_to_our_account">Hello welcome back to our account.</string>
@@ -38,4 +38,16 @@
     <string name="resend">RESEND</string>
     <string name="skip"><![CDATA[Skip>>]]></string>
     <string name="next">Next</string>
+    <string name="profile">Profile</string>
+    <string name="dummy_email">employee@gmail.com</string>
+    <string name="my_account">My Account</string>
+    <string name="software_developer">Software Developer</string>
+    <string name="email">Email:</string>
+    <string name="qualification">Qualification:</string>
+    <string name="basic_details">Basic Details</string>
+    <string name="dob">DOB:</string>
+    <string name="other_information">Other Information</string>
+    <string name="career_preferences">Career Preferences</string>
+    <string name="customer_support">Customer Support</string>
+    <string name="gender">Gender:</string>
 </resources>
