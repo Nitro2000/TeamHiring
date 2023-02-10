@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:padding="@dimen/space_16"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/recTitleTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/backend_developer"
+                android:textSize="@dimen/text_24"
+                android:fontFamily="@font/roboto_medium_500"
+                android:textColor="@color/dark_black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/recAppAnnSalTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rs_2_6_lpa"
+                android:textSize="@dimen/text_16"
+                android:textColor="@color/blue_500"
+                app:layout_constraintTop_toTopOf="@id/recTitleTxt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/recTitleTxt"/>
+
+            <ImageView
+                android:id="@+id/recStarImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_star"
+                app:layout_constraintBottom_toTopOf="@id/recEngTxt"
+                app:layout_constraintTop_toBottomOf="@id/recAppAnnSalTxt"
+                app:layout_constraintEnd_toEndOf="@id/recAppAnnSalTxt"/>
+
+            <TextView
+                android:id="@+id/recHighQualTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/b_tech"
+                android:layout_marginTop="@dimen/space_12"
+                android:textSize="@dimen/text_14"
+                android:textColor="@color/text_heading"
+                android:fontFamily="@font/roboto"
+                app:layout_constraintStart_toStartOf="@id/recTitleTxt"
+                app:layout_constraintTop_toBottomOf="@id/recTitleTxt" />
+
+            <View
+                android:id="@+id/recLineViewFirst"
+                android:layout_width="4dp"
+                android:layout_height="4dp"
+                android:backgroundTint="@color/sub_views"
+                android:background="@drawable/bg_view_full_circle"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@+id/recHighQualTxt"
+                app:layout_constraintTop_toTopOf="@+id/recHighQualTxt"
+                app:layout_constraintBottom_toBottomOf="@+id/recHighQualTxt" />
+
+            <TextView
+                android:id="@+id/jobExpSubTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/exp_years"
+                android:layout_marginStart="8dp"
+                android:textSize="@dimen/text_14"
+                android:textColor="@color/text_heading"
+                android:fontFamily="@font/roboto"
+                app:layout_constraintTop_toTopOf="@+id/recHighQualTxt"
+                app:layout_constraintStart_toEndOf="@+id/recLineViewFirst" />
+
+
+
+            <TextView
+                android:id="@+id/recJobTypeTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/work_from_office"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:drawablePadding="@dimen/space_8"
+                android:layout_marginTop="@dimen/space_8"
+                android:textSize="@dimen/text_14"
+                android:textColor="@color/dark_black"
+                android:fontFamily="@font/roboto_regular_400"
+                app:layout_constraintTop_toBottomOf="@id/jobExpSubTxt"
+                app:layout_constraintStart_toStartOf="@id/recHighQualTxt"
+                app:drawableStartCompat="@drawable/icon_job_type" />
+
+            <View
+                android:id="@+id/recCircViewThird"
+                android:layout_width="4dp"
+                android:layout_height="4dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_view_full_circle"
+                android:backgroundTint="@color/sub_views"
+                app:layout_constraintStart_toEndOf="@+id/recJobTypeTxt"
+                app:layout_constraintTop_toTopOf="@+id/recJobTypeTxt"
+                app:layout_constraintBottom_toBottomOf="@+id/recJobTypeTxt" />
+
+            <TextView
+                android:id="@+id/recTimeTypeTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/full_time"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_marginStart="@dimen/space_8"
+                android:layout_marginTop="@dimen/space_8"
+                android:textSize="@dimen/text_14"
+                android:textColor="@color/dark_black"
+                android:fontFamily="@font/roboto_regular_400"
+                app:layout_constraintTop_toBottomOf="@id/jobExpSubTxt"
+                app:layout_constraintStart_toEndOf="@id/recCircViewThird"/>
+
+            <TextView
+                android:id="@+id/recEngTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/little_english"
+                android:layout_marginTop="@dimen/space_8"
+                android:textSize="@dimen/text_14"
+                android:textColor="@color/dark_black"
+                android:fontFamily="@font/roboto_regular_400"
+                app:layout_constraintTop_toBottomOf="@id/recJobTypeTxt"
+                app:layout_constraintStart_toStartOf="@id/recJobTypeTxt"/>
+
+            <TextView
+                android:id="@+id/recNumPosTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4 Position"
+                android:layout_marginTop="@dimen/space_8"
+                android:textSize="@dimen/text_14"
+                android:textColor="@color/dark_black"
+                android:fontFamily="@font/roboto_regular_400"
+                app:layout_constraintTop_toBottomOf="@id/recEngTxt"
+                app:layout_constraintStart_toStartOf="@id/recEngTxt"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/recProfImg"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/space_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recNumPosTxt"
+                android:src="@drawable/img"
+                />
+
+            <TextView
+                android:id="@+id/recExpDesignTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rishabh_garg"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_marginStart="@dimen/space_8"
+                android:textSize="@dimen/text_16"
+                android:textColor="@color/dark_black"
+                android:fontFamily="@font/roboto"
+                app:layout_constraintBottom_toTopOf="@id/recExpCompTxt"
+                app:layout_constraintStart_toEndOf="@id/recProfImg"
+                app:layout_constraintTop_toTopOf="@id/recProfImg"/>
+
+            <View
+                android:id="@+id/recCircViewFourth"
+                android:layout_width="4dp"
+                android:layout_height="4dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_view_full_circle"
+                android:backgroundTint="@color/sub_views"
+                app:layout_constraintStart_toEndOf="@+id/recExpDesignTxt"
+                app:layout_constraintTop_toTopOf="@+id/recExpDesignTxt"
+                app:layout_constraintBottom_toBottomOf="@+id/recExpDesignTxt" />
+
+            <TextView
+                android:id="@+id/recAppNameTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/human_resorce"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="@dimen/text_16"
+                android:layout_marginStart="@dimen/space_8"
+                android:textColor="@color/dark_black"
+                android:fontFamily="@font/roboto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/recExpDesignTxt"
+                app:layout_constraintStart_toEndOf="@id/recCircViewFourth"/>
+
+            <TextView
+                android:id="@+id/recExpCompTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bits_panindia"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="@dimen/text_16"
+                android:textColor="@color/dark_black"
+                android:fontFamily="@font/roboto"
+                app:layout_constraintTop_toBottomOf="@id/recExpDesignTxt"
+                app:layout_constraintBottom_toBottomOf="@id/recProfImg"
+                app:layout_constraintStart_toStartOf="@id/recExpDesignTxt" />
+
+
+            <TextView
+                android:id="@+id/jobEmpDescTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/job_emp_descr"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:layout_marginTop="@dimen/space_8"
+                android:textSize="@dimen/text_14"
+                android:textColor="#5E5F5F"
+                android:fontFamily="@font/roboto_regular_400"
+                app:layout_constraintTop_toBottomOf="@id/recExpCompTxt"
+                app:layout_constraintStart_toStartOf="@id/recExpCompTxt"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

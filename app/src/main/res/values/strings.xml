@@ -88,4 +88,8 @@
     <string name="customer_support">Customer Support</string>
     <string name="gender">Gender:</string>
     <string name="jobs_interacted">Jobs Interacted</string>
+    <string name="cd_viewed_icon">cd viewed icon</string>
+    <string name="rs_2_6_lpa">Rs 2 - 6 LPA</string>
+    <string name="little_english">Little English</string>
+    <string name="human_resorce">Human resorce</string>
 </resources>

@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import com.example.teamhiring.data.dataList.PreDefinedList
 import com.example.teamhiring.databinding.FragmentInteractedJobBinding
-import com.example.teamhiring.presentation.adapters.JobInfoAdapter
+import com.example.teamhiring.presentation.adapters.JobFragInfoAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 
 
@@ -19,12 +19,11 @@ class InteractedJobFragment : Fragment() {
     private lateinit var binding: FragmentInteractedJobBinding
     private lateinit var mContext: Context
     private lateinit var mActivity: FragmentActivity
-    private lateinit var adapter: JobInfoAdapter
+    private lateinit var adapter: JobFragInfoAdapter
 //    private var tabIndex: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        adapter = JobInfoAdapter(PreDefinedList.jobFragmentList, this.childFragmentManager, this.lifecycle)
 
     }
 
@@ -36,6 +35,8 @@ class InteractedJobFragment : Fragment() {
         mContext = requireContext()
         mActivity = requireActivity()
         binding = FragmentInteractedJobBinding.inflate(inflater, container, false)
+        adapter = JobFragInfoAdapter(PreDefinedList.jobFragmentList, this.childFragmentManager, this.lifecycle)
+
         binding.jobViewPager.adapter = adapter
         TabLayoutMediator(binding.tablayout, binding.jobViewPager) {tab, pos ->
             tab.text = PreDefinedList.jobFragmentNamesList[pos]

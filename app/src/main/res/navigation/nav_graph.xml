@@ -124,7 +124,11 @@
         android:id="@+id/appliedJobFragment"
         android:name="com.example.teamhiring.ui.mainFragments.InteractedJobFragment"
         android:label="AppliedJobFragment"
-        tools:layout="@layout/fragment_interacted_job"/>
+        tools:layout="@layout/fragment_interacted_job">
+        <action
+            android:id="@+id/action_appliedJobFragment_to_recruiterPageFragment"
+            app:destination="@id/recruiterPageFragment" />
+    </fragment>
 
 
     <fragment
@@ -137,6 +141,11 @@
         android:name="com.example.teamhiring.ui.mainFragments.ChatFragment"
         android:label="fragment_chat"
         tools:layout="@layout/fragment_chat" />
+    <fragment
+        android:id="@+id/recruiterPageFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.RecruiterPageFragment"
+        android:label="RecruiterPageFragment"
+        tools:layout="@layout/fragment_recruiter_page"/>
 
 
 </navigation>
