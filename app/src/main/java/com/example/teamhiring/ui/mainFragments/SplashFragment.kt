@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.example.teamhiring.HelperFunction
 import com.example.teamhiring.databinding.FragmentSplashBinding
 
 
@@ -31,6 +32,8 @@ class SplashFragment : Fragment() {
         // Inflate the layout for this fragment
         mContext = requireContext()
         mActivity = requireActivity()
+
+        HelperFunction.bottomNavBarVisibility(mActivity, View.GONE)
         binding = FragmentSplashBinding.inflate(inflater, container, false)
         return binding.root
     }

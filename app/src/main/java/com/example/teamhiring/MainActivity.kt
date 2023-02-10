@@ -50,32 +50,32 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
-        setupNav()
+//        setupNav()
     }
 
-    private fun setupNav() {
-
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            when (destination.id) {
-                R.id.homeFragmentSeeker -> showBottomNav()
-                R.id.appliedJobFragment -> showBottomNav()
-                R.id.profileFragment -> showBottomNav()
-                R.id.chatFragment -> showBottomNav()
-                else -> hideBottomNav()
-            }
-        }
-    }
+//    private fun setupNav() {
+//
+//        navController.addOnDestinationChangedListener { _, destination, _ ->
+//            when (destination.id) {
+//                R.id.homeFragmentSeeker -> showBottomNav()
+//                R.id.appliedJobFragment -> showBottomNav()
+//                R.id.profileFragment -> showBottomNav()
+//                R.id.chatFragment -> showBottomNav()
+//                else -> hideBottomNav()
+//            }
+//        }
+//    }
 
 
     fun bottomNavBarVisibility(visibility: Int) {
         binding.mainBottomNav.visibility = visibility
     }
-    private fun showBottomNav() {
-        binding.mainBottomNav.visibility = View.VISIBLE
-
-    }
-    private fun hideBottomNav() {
-        binding.mainBottomNav.visibility = View.GONE
-
-    }
+//    private fun showBottomNav() {
+//        binding.mainBottomNav.visibility = View.VISIBLE
+//
+//    }
+//    private fun hideBottomNav() {
+//        binding.mainBottomNav.visibility = View.GONE
+//
+//    }
 }

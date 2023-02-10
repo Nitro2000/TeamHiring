@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blue_500"
+        tools:context=".ui.mainFragments.CareerPreferencesFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+
+            <ImageView
+                android:id="@+id/profileBackBtn"
+                android:layout_width="@dimen/space_30"
+                android:layout_height="@dimen/space_30"
+                android:layout_gravity="end"
+                android:layout_margin="@dimen/space_16"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/icon_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rounded_top"
+                android:padding="@dimen/text_16"
+                android:layout_marginTop="@dimen/space_32"
+                app:layout_constraintTop_toBottomOf="@+id/carPrefTitle">
+
+                <TextView
+                    android:id="@+id/carPrefJobTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_16"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Preferred Job Role"
+                    android:textColor="@color/blue_200"
+                    android:textSize="@dimen/text_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/carPrefJob"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edit_text"
+                    android:padding="@dimen/space_12"
+                    android:text="Software Developer"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/carPrefJobTitle" />
+
+                <TextView
+                    android:id="@+id/carPrefExpLabTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Experience Label"
+                    android:textColor="@color/blue_200"
+                    android:textSize="@dimen/text_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/carPrefJob" />
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edit_text"
+                    android:padding="@dimen/space_12"
+                    android:text="Experienced"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/carPrefExpLabTitle" />
+
+                <TextView
+                    android:id="@+id/carPrefTotalExpTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Total Experience"
+                    android:textColor="@color/blue_200"
+                    android:textSize="@dimen/text_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edit_text"
+                    android:padding="@dimen/space_12"
+                    android:text="2 years, 3 months"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/carPrefTotalExpTitle" />
+
+                <TextView
+                    android:id="@+id/carPrefEngTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="English Label"
+                    android:textColor="@color/blue_200"
+                    android:textSize="@dimen/text_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+                <TextView
+                    android:id="@+id/carPrefEngLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edit_text"
+                    android:padding="@dimen/space_12"
+                    android:text="Little English"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/carPrefEngTitle" />
+
+                <TextView
+                    android:id="@+id/carPrefStateTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Preferred State"
+                    android:textColor="@color/blue_200"
+                    android:textSize="@dimen/text_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/carPrefEngLabel" />
+
+                <TextView
+                    android:id="@+id/carPrefState"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edit_text"
+                    android:padding="@dimen/space_12"
+                    android:text="Haryana"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/carPrefStateTitle" />
+
+                <TextView
+                    android:id="@+id/carPrefCityTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Preferred State"
+                    android:textColor="@color/blue_200"
+                    android:textSize="@dimen/text_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/carPrefState" />
+
+                <TextView
+                    android:id="@+id/carPrefCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edit_text"
+                    android:padding="@dimen/space_12"
+                    android:text="Gurgaon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/carPrefCityTitle" />
+
+                <TextView
+                    android:id="@+id/carPrefExpSalTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Expected Annual Salary (In LPA)"
+                    android:textColor="@color/blue_200"
+                    android:textSize="@dimen/text_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/carPrefCity" />
+
+                <TextView
+                    android:id="@+id/carPrefExpSalary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edit_text"
+                    android:padding="@dimen/space_12"
+                    android:text="4.0 LPA"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/carPrefExpSalTitle" />
+
+                <TextView
+                    android:id="@+id/carPrefShiftTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Preferred Shift"
+                    android:textColor="@color/blue_200"
+                    android:textSize="@dimen/text_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/carPrefExpSalary" />
+
+                <TextView
+                    android:id="@+id/carPrefShift"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edit_text"
+                    android:padding="@dimen/space_12"
+                    android:text="Day Shift"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/carPrefShiftTitle" />
+
+                <TextView
+                    android:id="@+id/carPrefJobTypeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Job Type"
+                    android:textColor="@color/blue_200"
+                    android:textSize="@dimen/text_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/carPrefShift" />
+
+                <TextView
+                    android:id="@+id/carPrefJobType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edit_text"
+                    android:padding="@dimen/space_12"
+                    android:text="Full Time"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/carPrefJobTypeTitle" />
+
+                <TextView
+                    android:id="@+id/carPrefEmpTypeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Employement Type "
+                    android:textColor="@color/blue_200"
+                    android:textSize="@dimen/text_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/carPrefJobType" />
+
+                <TextView
+                    android:id="@+id/carPrefEmpType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edit_text"
+                    android:padding="@dimen/space_12"
+                    android:text="Work From Home"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/carPrefEmpTypeTitle" />
+
+                <TextView
+                    android:id="@+id/carPrefSkillTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Skills"
+                    android:textColor="@color/blue_200"
+                    android:textSize="@dimen/text_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/carPrefEmpType" />
+
+                <TextView
+                    android:id="@+id/carPrefSkills"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edit_text"
+                    android:maxLines="2"
+                    android:padding="@dimen/space_12"
+                    android:text="Java, Android, Kotlin, Firebase, Flutter"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/carPrefSkillTitle" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/carPrefTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="52dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Career Preferences"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_24"
+                app:layout_constraintBottom_toBottomOf="@+id/profileBackBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/profileBackBtn"
+                app:layout_constraintTop_toTopOf="@+id/profileBackBtn"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

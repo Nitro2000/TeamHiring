@@ -11,7 +11,9 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.navigation.fragment.findNavController
+import com.example.teamhiring.HelperFunction
 import com.example.teamhiring.R
 import com.example.teamhiring.data.constants.Constant
 import com.example.teamhiring.data.dataList.Drawables
@@ -25,7 +27,7 @@ class OnBoardingFragment : Fragment() {
 
     private lateinit var binding: FragmentOnboardingBinding
     private lateinit var mContext: Context
-    private lateinit var mActivity: Activity
+    private lateinit var mActivity: FragmentActivity
     private lateinit var btnAnimation: Animation
 
     lateinit var viewPagerAdapter: OnBoardAdapter
@@ -44,6 +46,7 @@ class OnBoardingFragment : Fragment() {
         // Inflate the layout for this fragment
         mContext = requireContext()
         mActivity = requireActivity()
+        HelperFunction.bottomNavBarVisibility(mActivity, View.GONE)
         binding = FragmentOnboardingBinding.inflate(inflater, container, false)
         return binding.root
     }

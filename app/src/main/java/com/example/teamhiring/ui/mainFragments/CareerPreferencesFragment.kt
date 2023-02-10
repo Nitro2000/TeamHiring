@@ -10,28 +10,27 @@ import androidx.fragment.app.FragmentActivity
 import com.example.teamhiring.HelperFunction
 import com.example.teamhiring.R
 import com.example.teamhiring.databinding.FragmentAppliedJobBinding
-import com.example.teamhiring.databinding.FragmentChatBinding
+import com.example.teamhiring.databinding.FragmentCareerPreferencesBinding
 
 
-class AppliedJobFragment : Fragment() {
+class CareerPreferencesFragment : Fragment() {
+
     private lateinit var mActivity: FragmentActivity
     private lateinit var mContext: Context
 
-    private lateinit var binding: FragmentAppliedJobBinding
+    private lateinit var binding: FragmentCareerPreferencesBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
+        mContext = requireContext()
         mActivity = requireActivity()
-        mContext  = requireContext()
-
-        HelperFunction.bottomNavBarVisibility(mActivity, View.VISIBLE)
+        HelperFunction.bottomNavBarVisibility(mActivity, View.GONE)
         // Inflate the layout for this fragment
-        binding = FragmentAppliedJobBinding.inflate(inflater, container, false)
+        binding =  FragmentCareerPreferencesBinding.inflate(inflater, container, false)
         return binding.root
     }
-
 
 }

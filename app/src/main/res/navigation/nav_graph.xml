@@ -114,12 +114,21 @@
         android:id="@+id/profileFragment"
         android:name="com.example.teamhiring.ui.mainFragments.ProfileFragment"
         android:label="ProfileFragment"
-        tools:layout="@layout/fragment_profile"/>
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_careerPreferencesFragment"
+            app:destination="@id/careerPreferencesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/chatFragment"
         android:name="com.example.teamhiring.ui.mainFragments.ChatFragment"
         android:label="fragment_chat"
         tools:layout="@layout/fragment_chat" />
+    <fragment
+        android:id="@+id/careerPreferencesFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.CareerPreferencesFragment"
+        android:label="CareerPreferencesFragment"
+        tools:layout="@layout/fragment_career_preferences"/>
 
 
 </navigation>
