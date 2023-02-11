@@ -163,7 +163,7 @@
                     android:fontFamily="@font/roboto_medium"
                     android:text="@string/recommended_job"
                     android:textColor="@color/gray_600"
-                    android:textSize="@dimen/space_16"
+                    android:textSize="@dimen/text_16"
                     android:visibility="visible" />
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -173,7 +173,9 @@
                     android:layout_below="@id/recommendedTitle"
                     android:layout_marginStart="@dimen/space_4"
                     android:layout_marginEnd="@dimen/space_4"
+                    android:layout_marginTop="@dimen/space_16"
                     android:layout_marginBottom="@dimen/space_10"
+                    tools:listitem="@layout/item_job_applied"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
@@ -214,7 +216,6 @@
                     </LinearLayout>
                 </com.facebook.shimmer.ShimmerFrameLayout>
 
-
                 <LinearLayout
                     android:id="@+id/emptyView"
                     android:layout_width="match_parent"
@@ -222,7 +223,7 @@
                     android:clickable="false"
                     android:focusable="false"
                     android:orientation="vertical"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     app:layout_behavior="@string/appbar_scrolling_view_behavior"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

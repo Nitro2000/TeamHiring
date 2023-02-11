@@ -9,6 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import com.example.teamhiring.databinding.FragmentHomeSeekerBinding
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.teamhiring.data.constants.enums.JobFragInfoEnum
+import com.example.teamhiring.presentation.adapters.RecJobListAdapter
 
 
 class HomeFragmentSeeker : Fragment() {
@@ -31,6 +35,11 @@ class HomeFragmentSeeker : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.recyclerViewJobs.apply {
+            adapter = RecJobListAdapter(JobFragInfoEnum.JobApplied)
+            layoutManager = LinearLayoutManager(mContext, RecyclerView.VERTICAL, false)
+        }
 
         // TODO Delete after merge
         binding.secondaryText.setOnClickListener {

@@ -89,7 +89,17 @@
     <string name="gender">Gender:</string>
     <string name="jobs_interacted">Jobs Interacted</string>
     <string name="cd_viewed_icon">cd viewed icon</string>
-    <string name="rs_2_6_lpa">Rs 2 - 6 LPA</string>
+    <string name="rs_2_6_lpa">Rs 2 – 6 LPA</string>
     <string name="little_english">Little English</string>
     <string name="human_resorce">Human resorce</string>
+    <string name="job_description">Job Description</string>
+    <string name="job_desc_para">We are looking for an Android engineer responsible for the development and maintenance of applications aimed at a vast
+    number of diverse Android devices. Your primary focus will be the development of android applications and their integration with back-end services.
+    You will be working along-side other engineers and developers working on differnet layers of the infrastructure. Therefore, commitment to collaborative problem solvine.
+    sophisticated design, and creating quality products is essential.\n
+    1. Android retrofite knowledge\n
+    2. Dagger hilt and many more</string>
+    <string name="chat_space">Chat</string>
+    <string name="apply_space">Apply</string>
+    <string name="location">Location</string>
 </resources>

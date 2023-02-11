@@ -38,4 +38,6 @@ object PreDefinedList {
         "Viewed You"
     )
 
+    val recChipGroupList = listOf("Java", "Kotlin", "Android sdk", "Android studio", "Retrofit", "UI/UX")
+
 }

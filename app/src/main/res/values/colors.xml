@@ -36,7 +36,7 @@
     <color name="sub_views">#717070</color>
     <color name="layout_backgrounds">#F6F6F6</color>
 
-
+    <color name="view_lines_bottom">#CCCDCD</color>
 
     // Text
     <color name="text_heading">#1A1A1A</color>

@@ -47,6 +47,7 @@ class InteractedJobFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         // Setting tab and viewpager move to fun if view created code lengthens
 
 //
