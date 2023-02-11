@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.menu_chat -> {
-                    navController.navigate(R.id.chatFragment)
+                    navController.navigate(R.id.chatCompanyFragment)
                     true
                 }
                 R.id.menu_profile -> {

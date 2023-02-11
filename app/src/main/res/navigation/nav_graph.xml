@@ -129,6 +129,15 @@
         android:name="com.example.teamhiring.ui.mainFragments.CareerPreferencesFragment"
         android:label="CareerPreferencesFragment"
         tools:layout="@layout/fragment_career_preferences"/>
+    <fragment
+        android:id="@+id/chatCompanyFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.ChatCompanyFragment"
+        android:label="ChatCompanyFragment"
+        tools:layout="@layout/fragment_chat_company">
+        <action
+            android:id="@+id/action_chatCompanyFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
 
 
 </navigation>

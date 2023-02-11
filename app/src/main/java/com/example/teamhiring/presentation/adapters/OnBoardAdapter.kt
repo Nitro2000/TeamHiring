@@ -24,11 +24,11 @@ class OnBoardAdapter (val imageList: List<OnBoardData>) : RecyclerView.Adapter<O
         return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        val item  = imageList[position]
-        holder.bind(item)
-    }
+            val item  = imageList[position]
+            holder.bind(item)
+        }
 
     override fun getItemCount(): Int = imageList.size
 }
