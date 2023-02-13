@@ -14,15 +14,13 @@ import javax.inject.Singleton
 @Module
 class NetworkModule {
 
-    @Provides
-    fun provideBaseUrl() = Constant.BASE_URL
 
     @Provides
     @Singleton
-    fun provideRetrofit(BASE_URL: String): Retrofit {
+    fun provideRetrofit(): Retrofit {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(BASE_URL)
+            .baseUrl(Constant.BASE_URL)
             .build()
     }
 

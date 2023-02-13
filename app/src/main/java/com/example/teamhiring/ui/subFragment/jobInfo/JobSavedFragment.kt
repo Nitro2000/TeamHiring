@@ -54,12 +54,13 @@ class JobSavedFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             Log.d("rishabh", "hello")
             val response = referenceViewModel.getStates()
+            if (response.isSuccessful) {
+                Log.d("rishabh", "${response.body()}")
+            } else {
+                Log.d("rishabh", "Not found")
+            }
         }
-//            if (response.isSuccessful) {
-//                Log.d("rishabh", "${response.body()}")
-//            } else {
-//                Log.d("rishabh", "Not found")
-//            }
+//
 //        }
 
     }

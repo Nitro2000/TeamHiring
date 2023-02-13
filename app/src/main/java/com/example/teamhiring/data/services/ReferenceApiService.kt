@@ -7,5 +7,5 @@ import retrofit2.http.GET
 interface ReferenceApiService {
 
     @GET("all_db_states")
-    fun getStateList(): Response<List<StateData>>
+    suspend fun getStateList(): Response<List<StateData>>
 }
