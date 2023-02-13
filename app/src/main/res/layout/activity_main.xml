@@ -31,9 +31,11 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
             android:layout_gravity="bottom"
-            android:layout_margin="@dimen/space_16"
             android:background="@drawable/bg_strip_round"
             app:elevation="@dimen/space_4"
+            android:layout_marginStart="@dimen/space_16"
+            android:layout_marginEnd="@dimen/space_16"
+            android:layout_marginBottom="@dimen/space_8"
             app:itemRippleColor="@android:color/darker_gray"
             app:labelVisibilityMode="selected"
             app:menu="@menu/bottom_nav_menu" />

@@ -7,259 +7,267 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/blue_500"
-        tools:context=".ui.mainFragments.ProfileFragment">
+        tools:context=".ui.mainFragments.ProfileFragment"
 
-
-        <ImageView
-            android:id="@+id/profileNotification"
-            android:layout_width="@dimen/space_30"
-            android:layout_height="@dimen/space_30"
-            android:layout_gravity="end"
-            android:layout_margin="@dimen/space_16"
-            android:src="@drawable/icon_notification"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/white"
-            android:contentDescription="@string/app_name" />
-
-        <ImageView
-            android:id="@+id/profileBackBtn"
-            android:layout_width="@dimen/space_30"
-            android:layout_height="@dimen/space_30"
-            android:layout_gravity="end"
-            android:layout_margin="@dimen/space_16"
-            android:src="@drawable/icon_back"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/white"
-            android:contentDescription="@string/app_name" />
-
-        <TextView
-            android:id="@+id/myProfileTxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/profileImage"
-            android:layout_margin="@dimen/space_16"
-            android:layout_marginStart="32dp"
-            android:fontFamily="@font/roboto_medium"
-            android:gravity="center"
-            android:text="@string/my_account"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_24"
-            app:layout_constraintEnd_toStartOf="@id/profileNotification"
-            app:layout_constraintStart_toEndOf="@id/profileBackBtn"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteY="89dp" />
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profileImage"
-            android:layout_width="75dp"
-            android:layout_height="72dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="@dimen/space_32"
-            android:layout_marginTop="@dimen/space_80"
-            android:clickable="true"
-            android:contentDescription="@string/app_name"
-            android:focusable="true"
-            android:src="@drawable/image_boy_avatar"
-            app:civ_border_color="@color/white"
-            app:civ_border_overlay="true"
-            app:civ_border_width="@dimen/space_2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/profile_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/profileImage"
-            android:layout_marginStart="@dimen/space_24"
-            android:layout_marginTop="12dp"
-            android:fontFamily="@font/roboto_medium"
-            android:gravity="center"
-            android:text="@string/app_name"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_18"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/profileImage"
-            app:layout_constraintTop_toTopOf="@+id/profileImage" />
-
-        <TextView
-            android:id="@+id/profileDesignation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/profileImage"
-            android:fontFamily="@font/roboto_regular"
-            android:gravity="center"
-            android:text="@string/software_developer"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_16"
-            app:layout_constraintBottom_toBottomOf="@+id/profileImage"
-            app:layout_constraintEnd_toEndOf="@+id/profile_name"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/profile_name"
-            app:layout_constraintTop_toBottomOf="@+id/profile_name"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <ImageView
-            android:id="@+id/profileEditBtn"
-            android:layout_width="@dimen/space_24"
-            android:layout_height="@dimen/space_24"
-            android:layout_gravity="end"
-            android:layout_marginTop="@dimen/space_8"
-            android:layout_marginEnd="@dimen/space_24"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/icon_edit"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.882"
-            app:layout_constraintStart_toEndOf="@+id/profile_name"
-            app:layout_constraintTop_toTopOf="@+id/profile_name"
-            app:tint="@color/white" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cont2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/space_16"
-            android:backgroundTint="@color/blue_200"
-            android:padding="@dimen/space_8"
-            app:layout_constraintTop_toBottomOf="@+id/profileImage"
-            >
-            <TextView
-                android:id="@+id/profileAppliedTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_regular"
-                android:gravity="center"
-                android:layout_marginStart="@dimen/space_8"
-                android:text="Applied"
-                android:textColor="@color/light_grey"
-                android:textSize="@dimen/text_14"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-               />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/space_8"
-                android:fontFamily="@font/roboto_bold"
-                android:gravity="center"
-                android:text="07"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_18"
-                app:layout_constraintEnd_toEndOf="@+id/profileAppliedTitle"
-                app:layout_constraintHorizontal_bias="0.3"
-                app:layout_constraintStart_toStartOf="@+id/profileAppliedTitle"
-                app:layout_constraintTop_toBottomOf="@id/profileAppliedTitle" />
-
-
-            <TextView
-                android:id="@+id/profileChatTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="44dp"
-                android:layout_marginTop="@dimen/space_0"
-                android:fontFamily="@font/roboto_regular"
-                android:gravity="center"
-                android:text="Chats"
-                android:textColor="@color/light_grey"
-                android:textSize="@dimen/text_14"
-                app:layout_constraintStart_toEndOf="@+id/profileAppliedTitle"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/space_8"
-                android:fontFamily="@font/roboto_bold"
-                android:gravity="center"
-                android:text="05"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_18"
-                app:layout_constraintEnd_toEndOf="@+id/profileChatTitle"
-                app:layout_constraintHorizontal_bias="0.3"
-                app:layout_constraintStart_toStartOf="@+id/profileChatTitle"
-                app:layout_constraintTop_toBottomOf="@id/profileChatTitle" />
-
-
-
-            <TextView
-                android:id="@+id/profileSavedTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="44dp"
-                android:layout_marginTop="@dimen/space_0"
-                android:fontFamily="@font/roboto_regular"
-                android:gravity="center"
-                android:text="Saved"
-                android:textColor="@color/light_grey"
-                android:textSize="@dimen/text_14"
-                app:layout_constraintStart_toEndOf="@+id/profileChatTitle"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/space_8"
-                android:fontFamily="@font/roboto_bold"
-                android:gravity="center"
-                android:text="15"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_18"
-                app:layout_constraintEnd_toEndOf="@+id/profileSavedTitle"
-                app:layout_constraintHorizontal_bias="0.3"
-                app:layout_constraintStart_toStartOf="@+id/profileSavedTitle"
-                app:layout_constraintTop_toBottomOf="@id/profileSavedTitle" />
-
-
-
-            <TextView
-                android:id="@+id/profileSentTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="44dp"
-                android:layout_marginTop="@dimen/space_0"
-                android:fontFamily="@font/roboto_regular"
-                android:gravity="center"
-                android:text="Sent Resume"
-                android:textColor="@color/light_grey"
-                android:textSize="@dimen/text_14"
-                app:layout_constraintStart_toEndOf="@+id/profileSavedTitle"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/space_8"
-                android:fontFamily="@font/roboto_bold"
-                android:gravity="center"
-                android:text="03"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_18"
-                app:layout_constraintEnd_toEndOf="@+id/profileSentTitle"
-                app:layout_constraintHorizontal_bias="0.3"
-                app:layout_constraintStart_toStartOf="@+id/profileSentTitle"
-                app:layout_constraintTop_toBottomOf="@id/profileSentTitle" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
+        >
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="250dp"
-            android:background="@drawable/bg_rounded_top"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:padding="@dimen/space_16"
-            app:layout_constraintTop_toBottomOf="@id/cont2"
-            tools:layout_editor_absoluteX="0dp">
+            >
+
+
+            <ImageView
+                android:id="@+id/profileNotification"
+                android:layout_width="@dimen/space_30"
+                android:layout_height="@dimen/space_30"
+                android:layout_gravity="end"
+                android:layout_margin="@dimen/space_16"
+                android:src="@drawable/icon_notification"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white"
+                android:contentDescription="@string/app_name" />
+
+            <ImageView
+                android:id="@+id/profileBackBtn"
+                android:layout_width="@dimen/space_30"
+                android:layout_height="@dimen/space_30"
+                android:layout_gravity="end"
+                android:layout_margin="@dimen/space_16"
+                android:src="@drawable/icon_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white"
+                android:contentDescription="@string/app_name" />
+
+            <TextView
+                android:id="@+id/myProfileTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profileImage"
+                android:layout_margin="@dimen/space_16"
+                android:layout_marginStart="32dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:text="@string/my_account"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_24"
+                app:layout_constraintEnd_toStartOf="@id/profileNotification"
+                app:layout_constraintStart_toEndOf="@id/profileBackBtn"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteY="89dp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileImage"
+                android:layout_width="75dp"
+                android:layout_height="72dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/space_32"
+                android:layout_marginTop="@dimen/space_80"
+                android:clickable="true"
+                android:contentDescription="@string/app_name"
+                android:focusable="true"
+                android:src="@drawable/image_boy_avatar"
+                app:civ_border_color="@color/white"
+                app:civ_border_overlay="true"
+                app:civ_border_width="@dimen/space_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/profile_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profileImage"
+                android:layout_marginStart="@dimen/space_24"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_18"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/profileImage"
+                app:layout_constraintTop_toTopOf="@+id/profileImage" />
+
+            <TextView
+                android:id="@+id/profileDesignation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profileImage"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center"
+                android:text="@string/software_developer"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_16"
+                app:layout_constraintBottom_toBottomOf="@+id/profileImage"
+                app:layout_constraintEnd_toEndOf="@+id/profile_name"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/profile_name"
+                app:layout_constraintTop_toBottomOf="@+id/profile_name"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/profileEditBtn"
+                android:layout_width="@dimen/space_24"
+                android:layout_height="@dimen/space_24"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginEnd="@dimen/space_24"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/icon_edit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.882"
+                app:layout_constraintStart_toEndOf="@+id/profile_name"
+                app:layout_constraintTop_toTopOf="@+id/profile_name"
+                app:tint="@color/white" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cont2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_16"
+                android:backgroundTint="@color/blue_200"
+                app:layout_constraintTop_toBottomOf="@+id/profileImage"
+                >
+
+                <TextView
+                    android:id="@+id/profileAppliedTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:text="Applied"
+                    android:textColor="@color/light_grey"
+                    android:textSize="@dimen/text_14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_8"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:text="07"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_18"
+                    app:layout_constraintEnd_toEndOf="@+id/profileAppliedTitle"
+                    app:layout_constraintHorizontal_bias="0.3"
+                    app:layout_constraintStart_toStartOf="@+id/profileAppliedTitle"
+                    app:layout_constraintTop_toBottomOf="@id/profileAppliedTitle" />
+
+
+                <TextView
+                    android:id="@+id/profileChatTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="@dimen/space_0"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:text="Chats"
+                    android:textColor="@color/light_grey"
+                    android:textSize="@dimen/text_14"
+                    app:layout_constraintStart_toEndOf="@+id/profileAppliedTitle"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_8"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:text="05"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_18"
+                    app:layout_constraintEnd_toEndOf="@+id/profileChatTitle"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/profileChatTitle"
+                    app:layout_constraintTop_toBottomOf="@id/profileChatTitle" />
+
+                <TextView
+                    android:id="@+id/profileSavedTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="@dimen/space_0"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:text="Saved"
+                    android:textColor="@color/light_grey"
+                    android:textSize="@dimen/text_14"
+                    app:layout_constraintStart_toEndOf="@+id/profileChatTitle"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_8"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:text="15"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_18"
+                    app:layout_constraintEnd_toEndOf="@+id/profileSavedTitle"
+                    app:layout_constraintHorizontal_bias="0.1"
+                    app:layout_constraintStart_toStartOf="@+id/profileSavedTitle"
+                    app:layout_constraintTop_toBottomOf="@id/profileSavedTitle" />
+
+                <TextView
+                    android:id="@+id/profileSentTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="44dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:text="Sent Resume"
+                    android:textColor="@color/light_grey"
+                    android:textSize="@dimen/text_14"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/profileSavedTitle"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_8"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:text="03"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_18"
+                    app:layout_constraintEnd_toEndOf="@+id/profileSentTitle"
+                    app:layout_constraintHorizontal_bias="0.418"
+                    app:layout_constraintStart_toStartOf="@+id/profileSentTitle"
+                    app:layout_constraintTop_toBottomOf="@id/profileSentTitle" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_rounded_top"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/space_24"
+                android:paddingStart="@dimen/space_16"
+                android:paddingEnd="@dimen/space_16"
+                android:paddingBottom="@dimen/space_100"
+                app:layout_constraintTop_toBottomOf="@id/cont2"
+                tools:layout_editor_absoluteX="0dp">
 
 
 
@@ -268,6 +276,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/space_4"
+                    android:layout_marginTop="@dimen/space_24"
                     android:background="@drawable/bg_border_layout"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -311,12 +320,14 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/roboto_regular"
-                        android:text="TextView"
+                        android:text="Graduation"
                         android:textSize="@dimen/text_18"
                         app:layout_constraintBottom_toBottomOf="@+id/textView12"
                         app:layout_constraintEnd_toEndOf="@+id/textView16"
+                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="@+id/textView16"
-                        app:layout_constraintTop_toTopOf="@+id/textView12" />
+                        app:layout_constraintTop_toTopOf="@+id/textView12"
+                        app:layout_constraintVertical_bias="0.0" />
 
                     <TextView
                         android:id="@+id/textView9"
@@ -370,11 +381,11 @@
                         android:layout_marginStart="64dp"
                         android:layout_weight="1"
                         android:fontFamily="@font/roboto_regular"
-                        android:text="TextView"
+                        android:text="17-11-9998"
                         android:textSize="@dimen/text_18"
                         app:layout_constraintBottom_toBottomOf="@+id/textView11"
                         app:layout_constraintEnd_toEndOf="@+id/textView15"
-                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintHorizontal_bias="0.78"
                         app:layout_constraintStart_toStartOf="@+id/textView15"
                         app:layout_constraintTop_toTopOf="@+id/textView11"
                         app:layout_constraintVertical_bias="0.0" />
@@ -406,7 +417,7 @@
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="@+id/textView13"
                         app:layout_constraintTop_toTopOf="@+id/textView10"
-                        app:layout_constraintVertical_bias="0.0" />
+                       />
 
                     <TextView
                         android:id="@+id/textView10"
@@ -437,6 +448,186 @@
                         app:layout_constraintVertical_bias="0.0" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/const2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_4"
+                    android:layout_marginTop="@dimen/space_16"
+                    android:background="@drawable/bg_border_layout"
+                    app:layout_constraintTop_toBottomOf="@+id/const1"
+                    >
+
+
+                    <TextView
+                        android:id="@+id/profileProfeTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_8"
+                        android:drawablePadding="@dimen/space_4"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Professional Details"
+                        android:textColor="@color/blue_200"
+                        android:textSize="@dimen/text_18"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.498"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:drawableStart="@drawable/icon_profession"
+                        app:drawableTint="@color/blue_200" />
+
+                    <TextView
+                        android:id="@+id/profileCompNamTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_16"
+                        android:layout_marginTop="@dimen/space_24"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Company:"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_18"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/profileProfeTitle" />
+
+
+                    <TextView
+                        android:id="@+id/profileCurrComp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="60dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="Bits Pan India"
+                        android:textSize="@dimen/text_18"
+                        app:layout_constraintBottom_toBottomOf="@+id/profileCompNamTitle"
+                        app:layout_constraintStart_toEndOf="@+id/profileCompNamTitle"
+                        app:layout_constraintTop_toTopOf="@+id/profileCompNamTitle"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/profileDesignTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_16"
+                        android:layout_marginTop="@dimen/space_8"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Designation:"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_18"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/profileCompNamTitle" />
+
+
+                    <TextView
+                        android:id="@+id/profileCurrDesignation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="Software Developer"
+                        android:textSize="@dimen/text_18"
+                        app:layout_constraintBottom_toBottomOf="@+id/profileDesignTitle"
+                        app:layout_constraintEnd_toEndOf="@+id/profileCurrComp"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/profileCurrComp"
+                        app:layout_constraintTop_toTopOf="@+id/profileDesignTitle"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/profileFromTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_16"
+                        android:layout_marginTop="@dimen/space_8"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="From Date:"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_18"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/profileDesignTitle" />
+
+
+                    <TextView
+                        android:id="@+id/profileFromDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="17-11-1998"
+                        android:textSize="@dimen/text_18"
+                        app:layout_constraintBottom_toBottomOf="@+id/profileFromTitle"
+                        app:layout_constraintEnd_toEndOf="@+id/profileCurrDesignation"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/profileCurrDesignation"
+                        app:layout_constraintTop_toTopOf="@+id/profileFromTitle"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/profileToTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_16"
+                        android:layout_marginTop="@dimen/space_8"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="To Date:"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_18"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/profileFromTitle" />
+
+
+                    <TextView
+                        android:id="@+id/profileToDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="17-11-1998"
+                        android:textSize="@dimen/text_18"
+                        app:layout_constraintBottom_toBottomOf="@+id/profileToTitle"
+                        app:layout_constraintEnd_toEndOf="@+id/profileFromDate"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/profileFromDate"
+                        app:layout_constraintTop_toTopOf="@+id/profileToTitle"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/profileNoticeTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_16"
+                        android:layout_marginTop="@dimen/space_8"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Notice Period:"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_18"
+                        android:layout_marginBottom="@dimen/space_8"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/profileToTitle" />
+
+
+                    <TextView
+                        android:id="@+id/profileNotice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="30 Days"
+                        android:textSize="@dimen/text_18"
+                        app:layout_constraintBottom_toBottomOf="@+id/profileNoticeTitle"
+                        app:layout_constraintEnd_toEndOf="@+id/profileToDate"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/profileToDate"
+                        app:layout_constraintTop_toTopOf="@+id/profileNoticeTitle"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -446,7 +637,7 @@
                     android:background="@drawable/bg_border_layout"
                     android:layout_marginTop="@dimen/space_16"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/const1">
+                    app:layout_constraintTop_toBottomOf="@+id/const2">
 
 
                     <TextView
@@ -480,7 +671,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/otherInfo"
                         app:drawableEndCompat="@drawable/icon_right_arrow"
-                        app:drawableStartCompat="@drawable/icon_profile" />
+                        app:drawableStartCompat="@drawable/icon_preferences" />
 
 
                     <TextView
@@ -521,10 +712,15 @@
 
 
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 
 </layout>
