@@ -22,7 +22,6 @@ class RecJobListAdapter(val type: JobFragInfoEnum): RecyclerView.Adapter<RecJobL
         fun navigateToRecPage() {
             binding.root.findNavController().navigate(R.id.recruiterPageFragment)
         }
-
     }
 
 
