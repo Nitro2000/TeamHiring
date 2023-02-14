@@ -51,6 +51,13 @@ class HomeFragmentSeeker : Fragment() {
             val direction = HomeFragmentSeekerDirections.actionHomeFragmentSeekerToRecruiterProfileFragment()
             findNavController().navigate(direction)
         }
+
+        binding.homeSearchEdTxt.setOnClickListener{
+            val direction = HomeFragmentSeekerDirections.actionHomeFragmentSeekerToSearchFragment()
+            findNavController().navigate(direction)
+        }
+
+
     }
 
 }
