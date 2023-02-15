@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.teamhiring.R
 import com.example.teamhiring.databinding.FragmentRecruiterManageJobBinding
 import com.example.teamhiring.presentation.adapters.ManageJobListAdapter
@@ -34,7 +35,7 @@ class RecruiterManageJobFragment : Fragment() {
 
         binding.jobManageRecyView.apply {
             adapter = ManageJobListAdapter()
-            layoutManager = LinearLayoutManager(mContext)
+            layoutManager = LinearLayoutManager(mContext, RecyclerView.VERTICAL, false)
         }
     }
 
