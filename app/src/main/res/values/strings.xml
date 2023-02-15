@@ -19,7 +19,7 @@
     <string name="find_your_perfect_job">Find your perfect job</string>
     <string name="hi_welcome_back">Hi, Welcome back</string>
     <string name="recruiter">Recruiter</string>
-    <string name="job_seeker">Job Seeker</string>
+    <string name="job_seeker">Employee</string>
     <string name="or">OR</string>
     <string name="i_am_a">I am a</string>
     <string name="select_user_type">Select User Type</string>
@@ -104,4 +104,7 @@
     <string name="location">Location</string>
     <string name="career_pref_objective">I m looking for greatest opportunity where i can show my greatest skills.</string>
     <string name="request_resume">Request Resume</string>
+    <string name="gurgaon">Gurgaon</string>
+    <string name="opened">Opened</string>
+    <string name="num_responses">%d\nResponses</string>
 </resources>

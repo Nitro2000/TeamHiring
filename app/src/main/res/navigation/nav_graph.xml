@@ -77,8 +77,8 @@
             android:id="@+id/action_homeFragmentSeeker_to_recruiterHomeFragment"
             app:destination="@id/recruiterHomeFragment" />
         <action
-            android:id="@+id/action_homeFragmentSeeker_to_recruiterProfileFragment"
-            app:destination="@id/recruiterProfileFragment" />
+            android:id="@+id/action_homeFragmentSeeker_to_recruiterManageJobFragment"
+            app:destination="@id/recruiterManageJobFragment" />
     </fragment>
 
 
@@ -164,6 +164,11 @@
         android:name="com.example.teamhiring.ui.mainFragments.RecruiterPageFragment"
         android:label="RecruiterPageFragment"
         tools:layout="@layout/fragment_recruiter_page"/>
+    <fragment
+        android:id="@+id/recruiterManageJobFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.RecruiterManageJobFragment"
+        android:label="RecruiterManageJobFragment"
+        tools:layout="@layout/fragment_recruiter_manage_job"/>
 
 
 </navigation>
