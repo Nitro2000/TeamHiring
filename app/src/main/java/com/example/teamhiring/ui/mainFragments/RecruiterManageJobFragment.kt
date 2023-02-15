@@ -35,6 +35,7 @@ class RecruiterManageJobFragment : Fragment() {
 
         binding.jobManageRecyView.apply {
             adapter = ManageJobListAdapter()
+
             layoutManager = LinearLayoutManager(mContext, RecyclerView.VERTICAL, false)
         }
     }
