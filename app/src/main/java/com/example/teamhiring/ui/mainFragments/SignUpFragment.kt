@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.fragment.findNavController
+import com.example.teamhiring.HelperFunction
 import com.example.teamhiring.R
 import com.example.teamhiring.databinding.FragmentSignInBinding
 import com.example.teamhiring.databinding.FragmentSignUpBinding
@@ -22,6 +23,10 @@ class SignUpFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        mContext = requireContext()
+        mActivity = requireActivity()
+        HelperFunction.bottomNavBarVisibility(mActivity, View.GONE)
         // Inflate the layout for this fragment
         binding = FragmentSignUpBinding.inflate(inflater, container, false)
         return binding.root
@@ -30,7 +35,7 @@ class SignUpFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.signInLogBtn.setOnClickListener {
+        binding.signUpLogBtn.setOnClickListener {
             navigateToOtp()
         }
 

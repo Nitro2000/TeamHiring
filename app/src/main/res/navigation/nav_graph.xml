@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/userSelectFragment">
+    app:startDestination="@id/homeFragmentSeeker">
 
     <fragment
         android:id="@+id/splashFragment"
@@ -54,6 +54,8 @@
             android:id="@+id/action_userSelectFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
     </fragment>
+
+
     <fragment
         android:id="@+id/onBoardingFragment"
         android:name="com.example.teamhiring.ui.mainFragments.OnBoardingFragment"
@@ -64,11 +66,22 @@
             android:id="@+id/action_onBoardingFragment_to_userSelectFragment"
             app:destination="@id/userSelectFragment" />
     </fragment>
+
+
     <fragment
         android:id="@+id/homeFragmentSeeker"
         android:name="com.example.teamhiring.ui.mainFragments.HomeFragmentSeeker"
         android:label="HomeFragmentSeeker"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_home_seeker">
+        <action
+            android:id="@+id/action_homeFragmentSeeker_to_recruiterHomeFragment"
+            app:destination="@id/recruiterHomeFragment" />
+        <action
+            android:id="@+id/action_homeFragmentSeeker_to_recruiterProfileFragment"
+            app:destination="@id/recruiterProfileFragment" />
+    </fragment>
+
+
     <fragment
         android:id="@+id/signInFragment"
         android:name="com.example.teamhiring.ui.mainFragments.SignInFragment"
@@ -83,7 +96,12 @@
         <action
             android:id="@+id/action_signInFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_recruiterHomeFragment"
+            app:destination="@id/recruiterHomeFragment" />
     </fragment>
+
+
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.example.teamhiring.ui.mainFragments.SignUpFragment"
@@ -93,6 +111,67 @@
             android:id="@+id/action_signUpFragment_to_otpFragment"
             app:destination="@id/otpFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/recruiterHomeFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.RecruiterHomeFragment"
+        android:label="RecruiterHomeFragment"
+        tools:layout="@layout/fragment_home_recruiter"/>
+    <fragment
+        android:id="@+id/recruiterProfileFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.RecruiterProfileFragment"
+        android:label="fragment_recruiter_profile"
+        tools:layout="@layout/fragment_recruiter_profile" />
+
+
+    <fragment
+        android:id="@+id/appliedJobFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.InteractedJobFragment"
+        android:label="AppliedJobFragment"
+        tools:layout="@layout/fragment_interacted_job">
+        <action
+            android:id="@+id/action_appliedJobFragment_to_recruiterPageFragment"
+            app:destination="@id/recruiterPageFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_careerPreferencesFragment"
+            app:destination="@id/careerPreferencesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" />
+    <fragment
+        android:id="@+id/careerPreferencesFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.CareerPreferencesFragment"
+        android:label="CareerPreferencesFragment"
+        tools:layout="@layout/fragment_career_preferences"/>
+    <fragment
+        android:id="@+id/chatCompanyFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.ChatCompanyFragment"
+        android:label="ChatCompanyFragment"
+        tools:layout="@layout/fragment_chat_company">
+        <action
+            android:id="@+id/action_chatCompanyFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recruiterPageFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.RecruiterPageFragment"
+        android:label="RecruiterPageFragment"
+        tools:layout="@layout/fragment_recruiter_page"/>
+    <fragment
+        android:id="@+id/recruiterManageJobFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.RecruiterManageJobFragment"
+        android:label="RecruiterManageJobFragment"
+        tools:layout="@layout/fragment_recruiter_manage_job"/>
 
 
 </navigation>
