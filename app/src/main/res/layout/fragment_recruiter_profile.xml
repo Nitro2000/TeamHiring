@@ -30,7 +30,7 @@
                 android:id="@+id/rProfMyAccTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="My Account"
+                android:text="@string/my_account"
                 android:elevation="6dp"
                 android:fontFamily="@font/roboto_medium_600"
                 android:textColor="#FFFFFF"
