@@ -7,16 +7,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.teamhiring.HelperFunction
 import com.example.teamhiring.R
 import com.example.teamhiring.databinding.FragmentSignInBinding
+import com.example.teamhiring.presentation.viewmodels.CommonViewModel
+import kotlinx.coroutines.launch
 
 class SignInFragment : Fragment() {
 
     private lateinit var binding: FragmentSignInBinding
     private lateinit var mContext: Context
     private lateinit var mActivity: FragmentActivity
+    private val viewModel: CommonViewModel by activityViewModels()
+    private var userType: Boolean = true
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,6 +32,8 @@ class SignInFragment : Fragment() {
         mActivity = requireActivity()
         HelperFunction.bottomNavBarVisibility(mActivity, View.GONE)
         // Inflate the layout for this fragment
+        userType = viewModel.userTypeEmp.value ?: true
+
         binding = FragmentSignInBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -37,7 +45,10 @@ class SignInFragment : Fragment() {
             navigateToSignUp()
         }
 
-        binding.signInLogBtn.setOnClickListener { navigateToHomePage() }
+        binding.signInLogBtn.setOnClickListener {
+             navigateToHomePage()
+//            else navigateToRecHomePage()
+        }
 
         binding.signInMobileTxt.setOnClickListener { navigateToMobileLogin() }
     }
@@ -47,6 +58,10 @@ class SignInFragment : Fragment() {
         findNavController().navigate(direction)
     }
 
+    private fun navigateToRecHomePage() {
+        val direction = SignInFragmentDirections.actionSignInFragmentToRecruiterHomeFragment()
+        findNavController().navigate(direction)
+    }
     private fun navigateToHomePage() {
         val direction = SignInFragmentDirections.actionSignInFragmentToHomeFragmentSeeker()
         findNavController().navigate(direction)

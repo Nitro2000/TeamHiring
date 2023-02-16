@@ -27,83 +27,60 @@
                 <com.google.android.material.appbar.CollapsingToolbarLayout
                     android:id="@+id/collapse"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/space_250"
+                    android:layout_height="wrap_content"
                     app:collapsedTitleTextAppearance="@style/collapsedTitleStyle"
                     app:expandedTitleMarginBottom="@dimen/space_26"
                     app:expandedTitleMarginStart="@dimen/space_26"
                     app:expandedTitleTextAppearance="@style/expandedTitleStyle"
                     app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
                     app:title="@string/app_name"
+                    android:textAlignment="center"
                     app:titleEnabled="true">
 
-                    <RelativeLayout
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         app:layout_collapseMode="parallax"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="match_parent">
 
                         <ImageView
                             android:id="@+id/banner"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="150dp"
+                            android:scaleType="fitXY"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:src="@drawable/wave__47_" />
+
+                        <ImageView
+                            android:id="@+id/rHomeLogo"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/profile_top_wave" />
+                            android:layout_marginStart="@dimen/space_8"
+                            android:layout_marginTop="@dimen/space_8"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:src="@drawable/hiring_logo" />
 
-                        <TextView
-                            android:id="@+id/welcomeText"
-                            android:text="@string/hi_welcome_back"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="26dp"
-                            android:layout_marginTop="40dp"
-                            android:layout_marginEnd="10dp"
-                            android:fontFamily="@font/roboto_regular"
-                            android:textSize="16sp"
-                            android:textColor="@color/white"
-                            android:layout_toStartOf="@id/homeProfImg"/>
-
-                        <TextView
-                            android:id="@+id/homSecTxt"
-                            android:text="@string/find_your_perfect_job"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/welcomeText"
-                            android:layout_marginStart="@dimen/space_24"
-                            android:layout_marginTop="@dimen/space_2"
-                            android:layout_marginEnd="@dimen/space_10"
-                            android:layout_toStartOf="@id/homeProfImg"
-                            android:textSize="@dimen/text_24"
-                            android:textColor="@color/white"
-                            android:fontFamily="@font/roboto_bold" />
 
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/homeProfImg"
                             android:layout_width="@dimen/space_70"
                             android:layout_height="@dimen/space_70"
-                            android:layout_alignParentTop="true"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginTop="@dimen/space_40"
-                            android:clickable="true"
-                            android:focusable="true"
-                            app:civ_border_overlay="true"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
                             app:civ_border_color="@color/white"
                             app:civ_border_width="@dimen/space_2"
+                            android:layout_marginTop="@dimen/space_16"
                             android:contentDescription="@string/app_name"
-                            android:layout_marginEnd="@dimen/space_24"
-                            android:src="@drawable/image_boy_avatar"
+                            android:layout_marginEnd="@dimen/space_16"
+                            android:src="@drawable/img"
                             android:paddingBottom="@dimen/space_10"
                             />
-                        <ImageView
-                            android:id="@+id/searchIcon"
-                            android:layout_width="@dimen/space_44"
-                            android:layout_height="@dimen/space_44"
-                            android:src="@drawable/icon_search"
-                            android:layout_alignEnd="@id/homeProfImg"
-                            android:layout_alignTop="@id/homeProfImg"
-                            android:layout_marginTop="100dp"
-                            android:layout_marginEnd="@dimen/space_10"/>
 
 
-                    </RelativeLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.appcompat.widget.Toolbar
                         android:id="@+id/toolbar"

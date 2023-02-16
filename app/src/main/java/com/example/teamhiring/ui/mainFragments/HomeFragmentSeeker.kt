@@ -51,7 +51,7 @@ class HomeFragmentSeeker : Fragment() {
         }
 
         binding.profileImage.setOnClickListener {
-            val direction = HomeFragmentSeekerDirections.actionHomeFragmentSeekerToRecruiterManageJobFragment()
+            val direction = HomeFragmentSeekerDirections.actionHomeFragmentSeekerToRecruiterProfileFragment()
             findNavController().navigate(direction)
         }
     }

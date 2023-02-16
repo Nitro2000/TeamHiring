@@ -77,8 +77,8 @@
             android:id="@+id/action_homeFragmentSeeker_to_recruiterHomeFragment"
             app:destination="@id/recruiterHomeFragment" />
         <action
-            android:id="@+id/action_homeFragmentSeeker_to_recruiterManageJobFragment"
-            app:destination="@id/recruiterManageJobFragment" />
+            android:id="@+id/action_homeFragmentSeeker_to_recruiterProfileFragment"
+            app:destination="@id/recruiterProfileFragment" />
     </fragment>
 
 
@@ -96,6 +96,9 @@
         <action
             android:id="@+id/action_signInFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_recruiterHomeFragment"
+            app:destination="@id/recruiterHomeFragment" />
     </fragment>
 
 
