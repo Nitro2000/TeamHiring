@@ -21,7 +21,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:elevation="@dimen/space_0">
+                app:elevation="0dp">
 
                 <com.google.android.material.appbar.CollapsingToolbarLayout
                     android:id="@+id/collapse"
