@@ -20,9 +20,10 @@
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="250dp"
-                android:src="@drawable/wave__42_"
+                android:src="@drawable/wave__48_"
                 android:scaleType="fitXY"
-                android:scaleX="1.5"
+                android:scaleY="2"
+                android:scaleX="3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
