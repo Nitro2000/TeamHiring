@@ -40,6 +40,7 @@ class JobAppliedFragment : Fragment() {
 
         binding.jobAppRecyView.apply {
             adapter = RecJobListAdapter(JobFragInfoEnum.JobApplied)
+
             layoutManager = LinearLayoutManager(mContext, RecyclerView.VERTICAL, false)
         }
     }
