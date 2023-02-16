@@ -7,6 +7,7 @@
     <color name="blue_700">#F57C00</color>
     <color name="light_blue_200">#FFE0B2</color>
     <color name="light_blue_700">#FFCC80</color>
+    <color name="medium_orange">#FEAC33</color>
 
     // Extra colors
     <color name="blue_000">#7A5E9EFF</color>
