@@ -51,8 +51,8 @@ class UserSelectFragment : Fragment() {
     }
 
     private fun saveToDataStore(isEmployee: Boolean) {
+        Constant.userType = isEmployee
         viewModel.saveUserType(isEmployee)
-        viewModel.getUserType()
     }
 
     private fun navigateToSignInFragment() {

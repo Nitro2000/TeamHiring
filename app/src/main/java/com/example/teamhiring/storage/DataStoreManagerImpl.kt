@@ -20,6 +20,7 @@ class DataStoreManagerImpl(private val context: Context) : DataStoreManager {
     companion object {
         // Recruiter = false,   Employee = true  save data accordingly
         val USER_TYPE = booleanPreferencesKey("user_type")
+        val ALREADY_LOGIN = booleanPreferencesKey("login")
     }
 
     override suspend fun <T> put(key: Preferences.Key<T>, value: T) {

@@ -36,6 +36,7 @@
     <color name="dark_black">#131516</color>
     <color name="sub_views">#717070</color>
     <color name="layout_backgrounds">#F6F6F6</color>
+    <color name="layout_border_grey">#CFCBCB</color>
 
     <color name="view_lines_bottom">#CCCDCD</color>
 

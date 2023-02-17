@@ -1,10 +1,8 @@
 package com.example.teamhiring.presentation.viewmodels
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.teamhiring.storage.DataStoreManager
+import com.example.teamhiring.storage.DataStoreManagerImpl.Companion.ALREADY_LOGIN
 import com.example.teamhiring.storage.DataStoreManagerImpl.Companion.USER_TYPE
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
@@ -15,9 +13,10 @@ import javax.inject.Inject
 @HiltViewModel
 class CommonViewModel @Inject constructor(private val dataStore: DataStoreManager): ViewModel() {
 
-    private var _userTypeEmp: MutableLiveData<Boolean> = MutableLiveData()
-    val userTypeEmp: LiveData<Boolean> get() = _userTypeEmp
+//    private var _userTypeEmp: MutableLiveData<Boolean> = MutableLiveData()
+//    val userTypeEmp: LiveData<Boolean> get() = _userTypeEmp
 
+//    var userLogin = false
 
     fun saveUserType(isEmployee: Boolean) {
         viewModelScope.launch {
@@ -25,11 +24,16 @@ class CommonViewModel @Inject constructor(private val dataStore: DataStoreManage
         }
     }
 
-    fun getUserType() {
+    fun getUserType() = dataStore.get(USER_TYPE, true).asLiveData()
+
+    fun saveLogin(isLogin: Boolean) {
         viewModelScope.launch {
-            _userTypeEmp.value = dataStore.get(USER_TYPE, true).first()
+            dataStore.put(ALREADY_LOGIN, isLogin)
         }
     }
+
+    fun getLogin() = dataStore.get(ALREADY_LOGIN, false).asLiveData()
+
 
 
 }

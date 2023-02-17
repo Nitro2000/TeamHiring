@@ -11,10 +11,11 @@ import com.example.teamhiring.data.constants.enums.JobFragInfoEnum
 import com.example.teamhiring.data.constants.enums.JobFragInfoEnum.*
 import com.example.teamhiring.databinding.ItemJobAppliedBinding
 import com.example.teamhiring.databinding.ItemManageJobBinding
+import com.example.teamhiring.databinding.ItemRecHomePostedJobBinding
 
-class ManageJobListAdapter(): RecyclerView.Adapter<ManageJobListAdapter.ViewHolder>() {
+class PostedJobListAdapter(): RecyclerView.Adapter<PostedJobListAdapter.ViewHolder>() {
 
-    inner class ViewHolder(val binding: ItemManageJobBinding): RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(val binding: ItemRecHomePostedJobBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind() {
 //            binding.jobExpSubTxt.text = context.getString(R.string.exp_years, 1.02f)
 //            binding.jobAnnExpSalTxt.text = context.getString(R.string.ann_income, 1, 3)
@@ -28,7 +29,7 @@ class ManageJobListAdapter(): RecyclerView.Adapter<ManageJobListAdapter.ViewHold
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemManageJobBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemRecHomePostedJobBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
         return ViewHolder(binding)
     }

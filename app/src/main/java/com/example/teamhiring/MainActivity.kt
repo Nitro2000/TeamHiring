@@ -29,12 +29,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
-        navController=navHostFragment.navController
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
+        navController = navHostFragment.navController
+
+        viewModel.getUserType().observe(this) {
+            binding.mainBottomNav.menu.clear()
+            if (it) {
+                binding.mainBottomNav.inflateMenu(R.menu.bottom_nav_menu)
+            } else {
+                binding.mainBottomNav.inflateMenu(R.menu.recruiter_nav_menu)
+            }
+        }
 
         binding.mainBottomNav.setupWithNavController(navController)
         binding.mainBottomNav.setOnItemSelectedListener { item ->
-            popBackStack(item.itemId == R.id.homeFragmentSeeker)
+//            popBackStack(item.itemId == R.id.homeFragmentSeeker)
             when (item.itemId) {
                 R.id.homeFragmentSeeker -> {
                     navController.navigate(R.id.homeFragmentSeeker)
@@ -48,10 +58,16 @@ class MainActivity : AppCompatActivity() {
                 R.id.profileFragment -> {
                     navController.navigate(R.id.profileFragment)
                 }
+                R.id.recruiterHomeFragment -> {
+                    navController.navigate(R.id.recruiterHomeFragment)
+                }
+                R.id.recruiterProfileFragment -> {
+                    navController.navigate(R.id.recruiterProfileFragment)
+                }
             }
             true
         }
-        setupNav()
+//        setupNav()
     }
 
     private fun setupNav() {
@@ -62,7 +78,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.appliedJobFragment -> showBottomNav()
                 R.id.profileFragment -> showBottomNav()
                 R.id.chatFragment -> showBottomNav()
-                else -> hideBottomNav()
+                else -> showBottomNav()
             }
         }
     }
@@ -71,10 +87,12 @@ class MainActivity : AppCompatActivity() {
     fun bottomNavBarVisibility(visibility: Int) {
         binding.mainBottomNav.visibility = visibility
     }
+
     private fun showBottomNav() {
         binding.mainBottomNav.visibility = View.VISIBLE
 
     }
+
     private fun hideBottomNav() {
         binding.mainBottomNav.visibility = View.GONE
     }

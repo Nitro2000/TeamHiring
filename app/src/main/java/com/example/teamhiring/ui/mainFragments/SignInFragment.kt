@@ -12,6 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.teamhiring.HelperFunction
 import com.example.teamhiring.R
+import com.example.teamhiring.data.constants.Constant
 import com.example.teamhiring.databinding.FragmentSignInBinding
 import com.example.teamhiring.presentation.viewmodels.CommonViewModel
 import kotlinx.coroutines.launch
@@ -22,7 +23,6 @@ class SignInFragment : Fragment() {
     private lateinit var mContext: Context
     private lateinit var mActivity: FragmentActivity
     private val viewModel: CommonViewModel by activityViewModels()
-    private var userType: Boolean = true
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,7 +32,7 @@ class SignInFragment : Fragment() {
         mActivity = requireActivity()
         HelperFunction.bottomNavBarVisibility(mActivity, View.GONE)
         // Inflate the layout for this fragment
-        userType = viewModel.userTypeEmp.value ?: true
+
 
         binding = FragmentSignInBinding.inflate(inflater, container, false)
         return binding.root
@@ -46,8 +46,9 @@ class SignInFragment : Fragment() {
         }
 
         binding.signInLogBtn.setOnClickListener {
-             navigateToHomePage()
-//            else navigateToRecHomePage()
+            viewModel.saveLogin(true)
+            if (Constant.userType) navigateToHomePage()
+            else navigateToRecHomePage()
         }
 
         binding.signInMobileTxt.setOnClickListener { navigateToMobileLogin() }

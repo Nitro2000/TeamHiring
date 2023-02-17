@@ -7,4 +7,5 @@ object Constant {
     const val BASE_URL: String =
         "https://teamtest.xyz/hiring_system_ci/hiring_system_employee_ci/index.php/Rest_controller/"
     var userType: Boolean = true
+    var userLogin: Boolean = false
 }

@@ -12,10 +12,17 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.teamhiring.HelperFunction
+import com.example.teamhiring.R
+import com.example.teamhiring.data.dataList.PreDefinedList
+import com.example.teamhiring.data.dataList.PreDefinedList.jobPostTempList
 import com.example.teamhiring.databinding.FragmentHomeBinding
 import com.example.teamhiring.databinding.FragmentHomeRecruiterBinding
 import com.example.teamhiring.presentation.adapters.EmpListAdapter
+import com.example.teamhiring.presentation.adapters.ManageJobListAdapter
+import com.example.teamhiring.presentation.adapters.PostedJobListAdapter
 import com.example.teamhiring.presentation.viewmodels.RecruiterViewModel
+import com.google.android.material.chip.Chip
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -47,38 +54,43 @@ class RecruiterHomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        HelperFunction.bottomNavBarVisibility(mActivity, View.VISIBLE)
+        HelperFunction.changeStatusBarColor(mActivity, R.color.text_heading)
+        if (dataFlag) {
+            getEmpData()
+        }
 
-//        if (dataFlag) {
-//            getEmpData()
-//        }
+        binding.rHomeJobPostedRecView.apply {
+            adapter = PostedJobListAdapter()
+        }
 
-//        binding.homeRecRecyView.apply {
-//            adapter = empListAdapter
-//            layoutManager = LinearLayoutManager(mContext)
-//        }
+        for (head in jobPostTempList) {
+            val chip = Chip(mContext)
+            chip.text = head
+            binding.rHomeChipGroup.addView(chip)
+        }
     }
 
-//    private fun getEmpData() {
-//        viewLifecycleOwner.lifecycleScope.launch {
-//            recruiterViewModel.getEmpList().let {
-//                if (it.isSuccessful) {
-//                    val list = it.body() ?: listOf()
-//                    empListAdapter = EmpListAdapter(list, mContext)
-//                    setEmpListAdapter()
-//                    Log.d("rishabh", "${it.body()}")
-//                } else {
-//                    Log.d("hiring", "${it.errorBody()}")
-//                }
-//            }
-//        }
-//    }
+    private fun getEmpData() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            recruiterViewModel.getEmpList().let {
+                if (it.isSuccessful) {
+                    val list = it.body() ?: listOf()
+                    empListAdapter = EmpListAdapter(list, mContext)
+                    setEmpListAdapter()
+                    Log.d("rishabh", "${it.body()}")
+                } else {
+                    Log.d("hiring", "${it.errorBody()}")
+                }
+            }
+        }
+    }
 
-//    private fun setEmpListAdapter() {
-//        binding.homeRecRecyView.apply {
-//            adapter = empListAdapter
-//            layoutManager = LinearLayoutManager(mContext)
-//        }
-//    }
+    private fun setEmpListAdapter() {
+        binding.rHomeCandidatesRecView.apply {
+            adapter = empListAdapter
+        }
+    }
 
 
 }

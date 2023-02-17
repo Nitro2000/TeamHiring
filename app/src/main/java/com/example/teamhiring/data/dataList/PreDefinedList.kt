@@ -40,4 +40,6 @@ object PreDefinedList {
 
     val recChipGroupList = listOf("Java", "Kotlin", "Android sdk", "Android studio", "Retrofit", "UI/UX")
 
+    val jobPostTempList = listOf("Android Engineer", "Rs 2 - 3LPA", "Work from home", "Full time")
+
 }

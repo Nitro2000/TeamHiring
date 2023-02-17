@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragmentSeeker">
+    app:startDestination="@id/recruiterHomeFragment">
 
     <fragment
         android:id="@+id/splashFragment"
@@ -11,7 +11,13 @@
         android:label="SplashFragment"
         tools:layout="@layout/fragment_splash">
         <action
-            android:id="@+id/action_splashFragment_to_onboardingFragment"
+            android:id="@+id/action_splashFragment_to_homeFragmentSeeker"
+            app:destination="@id/homeFragmentSeeker" />
+        <action
+            android:id="@+id/action_splashFragment_to_recruiterHomeFragment"
+            app:destination="@id/recruiterHomeFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_onBoardingFragment"
             app:destination="@id/onBoardingFragment" />
     </fragment>
 
@@ -40,6 +46,9 @@
         <action
             android:id="@+id/action_otpFragment_to_homeFragmentSeeker"
             app:destination="@id/homeFragmentSeeker" />
+        <action
+            android:id="@+id/action_otpFragment_to_recruiterHomeFragment"
+            app:destination="@id/recruiterHomeFragment" />
 
     </fragment>
 
@@ -72,14 +81,7 @@
         android:id="@+id/homeFragmentSeeker"
         android:name="com.example.teamhiring.ui.mainFragments.HomeFragmentSeeker"
         android:label="HomeFragmentSeeker"
-        tools:layout="@layout/fragment_home_seeker">
-        <action
-            android:id="@+id/action_homeFragmentSeeker_to_recruiterHomeFragment"
-            app:destination="@id/recruiterHomeFragment" />
-        <action
-            android:id="@+id/action_homeFragmentSeeker_to_recruiterProfileFragment"
-            app:destination="@id/recruiterProfileFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_home_seeker"/>
 
 
     <fragment

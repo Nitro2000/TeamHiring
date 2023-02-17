@@ -38,6 +38,7 @@ class HomeFragmentSeeker : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         HelperFunction.changeStatusBarColor(mActivity, R.color.text_heading)
+        HelperFunction.bottomNavBarVisibility(mActivity, View.VISIBLE)
 
         binding.recyclerViewJobs.apply {
             adapter = RecJobListAdapter(JobFragInfoEnum.JobApplied)
@@ -45,15 +46,15 @@ class HomeFragmentSeeker : Fragment() {
         }
 
         // TODO Delete after merge
-        binding.secondaryText.setOnClickListener {
-            val direction = HomeFragmentSeekerDirections.actionHomeFragmentSeekerToRecruiterHomeFragment()
-            findNavController().navigate(direction)
-        }
-
-        binding.profileImage.setOnClickListener {
-            val direction = HomeFragmentSeekerDirections.actionHomeFragmentSeekerToRecruiterProfileFragment()
-            findNavController().navigate(direction)
-        }
+//        binding.secondaryText.setOnClickListener {
+//            val direction = HomeFragmentSeekerDirections.actionHomeFragmentSeekerToRecruiterHomeFragment()
+//            findNavController().navigate(direction)
+//        }
+//
+//        binding.profileImage.setOnClickListener {
+//            val direction = HomeFragmentSeekerDirections.actionHomeFragmentSeekerToRecruiterProfileFragment()
+//            findNavController().navigate(direction)
+//        }
     }
 
 }

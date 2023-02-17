@@ -107,4 +107,9 @@
     <string name="gurgaon">Gurgaon</string>
     <string name="opened">Opened</string>
     <string name="num_responses">%d\nResponses</string>
+    <string name="current_job">Current Job</string>
+    <string name="job_posted">Job Posted</string>
+    <string name="search_the_best_match">Search the best match</string>
+    <string name="cd_app_logo">cd app logo</string>
+    <string name="cd_wave_image">cd wave image</string>
 </resources>
