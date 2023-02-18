@@ -1,12 +1,15 @@
 package com.example.teamhiring.ui.mainFragments
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.util.Log
+import android.util.TypedValue
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -66,9 +69,26 @@ class RecruiterHomeFragment : Fragment() {
 
         for (head in jobPostTempList) {
             val chip = Chip(mContext)
-            chip.text = head
+            chip.apply {
+                text = head
+                chipBackgroundColor = getColorStateList(R.color.white)
+                chipStrokeWidth = HelperFunction.dpToFloat(mContext, 1)
+                setChipStrokeColorResource(R.color.sub_views)
+            }
+
             binding.rHomeChipGroup.addView(chip)
         }
+    }
+
+    private val stateList = arrayOf(
+        intArrayOf(-android.R.attr.state_checked)
+    )
+
+    private fun getColorStateList(color: Int): ColorStateList {
+        val colorList = intArrayOf(
+            ContextCompat.getColor(mContext, color),
+        )
+        return ColorStateList(stateList, colorList)
     }
 
     private fun getEmpData() {

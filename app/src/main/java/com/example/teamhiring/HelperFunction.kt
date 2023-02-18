@@ -1,5 +1,6 @@
 package com.example.teamhiring
 
+import android.content.Context
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 
@@ -21,6 +22,10 @@ object HelperFunction {
         try {
             (activity as MainActivity).bottomNavBarVisibility(visibility)
         } catch (e: Exception) {}
+    }
+
+    fun dpToFloat(context: Context, value: Int): Float {
+        return value * context.resources.displayMetrics.density
     }
 
 
