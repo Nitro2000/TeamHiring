@@ -19,6 +19,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:layout_marginTop="@dimen/space_16"
+            android:padding="@dimen/space_2"
             tools:listitem="@layout/item_job_applied"/>
 
     </FrameLayout>
