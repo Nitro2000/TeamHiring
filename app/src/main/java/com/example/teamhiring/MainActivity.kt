@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
                     navController.navigate(R.id.appliedJobFragment)
                 }
                 R.id.chatFragment -> {
-                    navController.navigate(R.id.chatFragment)
+                    navController.navigate(R.id.chatCompanyFragment)
                 }
                 R.id.profileFragment -> {
                     navController.navigate(R.id.profileFragment)
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.homeFragmentSeeker -> showBottomNav()
                 R.id.appliedJobFragment -> showBottomNav()
                 R.id.profileFragment -> showBottomNav()
-                R.id.chatFragment -> showBottomNav()
+                R.id.chatCompanyFragment -> showBottomNav()
                 else -> hideBottomNav()
             }
         }
