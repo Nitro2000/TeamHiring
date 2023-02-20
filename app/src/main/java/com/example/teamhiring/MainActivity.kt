@@ -61,6 +61,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.recruiterHomeFragment -> {
                     navController.navigate(R.id.recruiterHomeFragment)
                 }
+                R.id.recruiterInteractedFragment -> {
+                    navController.navigate(R.id.recruiterInteractedFragment)
+                }
                 R.id.recruiterProfileFragment -> {
                     navController.navigate(R.id.recruiterProfileFragment)
                 }

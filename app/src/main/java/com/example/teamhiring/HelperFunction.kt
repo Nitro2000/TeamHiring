@@ -1,8 +1,10 @@
 package com.example.teamhiring
 
 import android.content.Context
+import android.content.res.ColorStateList
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
+import com.google.android.material.chip.Chip
 
 object HelperFunction {
 
@@ -26,6 +28,28 @@ object HelperFunction {
 
     fun dpToFloat(context: Context, value: Int): Float {
         return value * context.resources.displayMetrics.density
+    }
+
+    fun createChip(textValue: String, context: Context): Chip {
+        val chip = Chip(context)
+        chip.apply {
+            text = textValue
+            chipBackgroundColor = getColorStateList(context, R.color.white)
+            chipStrokeWidth = dpToFloat(context, 1)
+            setChipStrokeColorResource(R.color.sub_views)
+        }
+        return chip;
+    }
+
+    private val stateList = arrayOf(
+        intArrayOf(-android.R.attr.state_checked)
+    )
+
+    private fun getColorStateList(context: Context, color: Int): ColorStateList {
+        val colorList = intArrayOf(
+            ContextCompat.getColor(context, color),
+        )
+        return ColorStateList(stateList, colorList)
     }
 
 

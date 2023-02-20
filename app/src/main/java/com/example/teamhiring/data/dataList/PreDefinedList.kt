@@ -6,6 +6,9 @@ import com.example.teamhiring.data.models.OnBoardData
 import com.example.teamhiring.ui.subFragment.jobInfo.JobAppliedFragment
 import com.example.teamhiring.ui.subFragment.jobInfo.JobSavedFragment
 import com.example.teamhiring.ui.subFragment.jobInfo.JobViewedByFragment
+import com.example.teamhiring.ui.subFragment.recInter.RecruiterManageJobFragment
+import com.example.teamhiring.ui.subFragment.recInter.RecruiterSavedFragment
+import com.example.teamhiring.ui.subFragment.recInter.RecruiterViewedByFragment
 
 object PreDefinedList {
     val imageList: List<OnBoardData> = listOf(
@@ -32,8 +35,21 @@ object PreDefinedList {
         JobViewedByFragment()
     )
 
+
     val jobFragmentNamesList = listOf<String>(
         "Applied",
+        "Saved",
+        "Viewed You"
+    )
+
+    val recInteractedFragmentList = listOf(
+        RecruiterManageJobFragment(),
+        RecruiterSavedFragment(),
+        RecruiterViewedByFragment()
+    )
+
+    val recInteractFragmentNamesList = listOf<String>(
+        "Posted Job",
         "Saved",
         "Viewed You"
     )

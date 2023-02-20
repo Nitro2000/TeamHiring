@@ -7,12 +7,13 @@
 
     </data>
 
-
+<!--This home page is temporary it is not used in recruiter side, This was remain
+unremoved from employee side if not in use you can delete safely -->
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        tools:context=".ui.mainFragments.RecruiterHomeFragment">
+        tools:context=".ui.mainFragments.recruiter.RecruiterHomeFragment">
 
 
         <com.google.android.material.appbar.AppBarLayout

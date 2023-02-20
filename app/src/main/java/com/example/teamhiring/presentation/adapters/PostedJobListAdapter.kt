@@ -46,9 +46,7 @@ class PostedJobListAdapter(): RecyclerView.Adapter<PostedJobListAdapter.ViewHold
 //                holder.binding.jobStarImg.setImageResource(R.drawable.icon_viewed)
 //            }
 //        }
-//        holder.binding.rootLayout.setOnClickListener {
-//            holder.navigateToRecPage()
-//        }
+
     }
 
     override fun getItemCount(): Int = 4

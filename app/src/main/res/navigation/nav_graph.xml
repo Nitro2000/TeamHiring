@@ -115,14 +115,9 @@
     </fragment>
     <fragment
         android:id="@+id/recruiterHomeFragment"
-        android:name="com.example.teamhiring.ui.mainFragments.RecruiterHomeFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.recruiter.RecruiterHomeFragment"
         android:label="RecruiterHomeFragment"
         tools:layout="@layout/fragment_home_recruiter"/>
-    <fragment
-        android:id="@+id/recruiterProfileFragment"
-        android:name="com.example.teamhiring.ui.mainFragments.RecruiterProfileFragment"
-        android:label="fragment_recruiter_profile"
-        tools:layout="@layout/fragment_recruiter_profile" />
 
 
     <fragment
@@ -166,14 +161,24 @@
     </fragment>
     <fragment
         android:id="@+id/recruiterPageFragment"
-        android:name="com.example.teamhiring.ui.mainFragments.RecruiterPageFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.recruiter.RecruiterPageFragment"
         android:label="RecruiterPageFragment"
         tools:layout="@layout/fragment_recruiter_page"/>
     <fragment
         android:id="@+id/recruiterManageJobFragment"
-        android:name="com.example.teamhiring.ui.mainFragments.RecruiterManageJobFragment"
+        android:name="com.example.teamhiring.ui.subFragment.recInter.RecruiterManageJobFragment"
         android:label="RecruiterManageJobFragment"
         tools:layout="@layout/fragment_recruiter_manage_job"/>
+    <fragment
+        android:id="@+id/recruiterInteractedFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.recruiter.RecruiterInteractedFragment"
+        android:label="RecruiterInteractedFragment"
+        tools:layout="@layout/fragment_recruiter_interacted"/>
+    <fragment
+        android:id="@+id/recruiterProfileFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.recruiter.RecruiterProfileFragment"
+        android:label="RecruiterProfileFragment"
+        tools:layout="@layout/fragment_recruiter_profile"/>
 
 
 </navigation>

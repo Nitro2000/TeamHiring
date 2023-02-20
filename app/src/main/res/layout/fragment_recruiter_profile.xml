@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/layout_backgrounds"
-            tools:context=".ui.mainFragments.RecruiterProfileFragment">
+            tools:context=".ui.mainFragments.recruiter.RecruiterProfileFragment">
 
             <ImageView
                 android:layout_width="0dp"

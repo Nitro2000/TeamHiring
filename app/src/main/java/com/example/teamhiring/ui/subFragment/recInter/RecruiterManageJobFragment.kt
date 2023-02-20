@@ -1,4 +1,4 @@
-package com.example.teamhiring.ui.mainFragments
+package com.example.teamhiring.ui.subFragment.recInter
 
 import android.content.Context
 import android.os.Bundle
@@ -7,16 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
-import com.example.teamhiring.R
-import com.example.teamhiring.data.dataList.PreDefinedList.recChipGroupList
-import com.example.teamhiring.databinding.FragmentJobSavedBinding
-import com.example.teamhiring.databinding.FragmentRecruiterPageBinding
-import com.google.android.material.chip.Chip
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.teamhiring.databinding.FragmentRecruiterManageJobBinding
+import com.example.teamhiring.presentation.adapters.ManageJobListAdapter
 
-class RecruiterPageFragment : Fragment() {
+class RecruiterManageJobFragment : Fragment() {
 
-
-    private lateinit var binding: FragmentRecruiterPageBinding
+    private lateinit var binding: FragmentRecruiterManageJobBinding
     private lateinit var mContext: Context
     private lateinit var mActivity: FragmentActivity
 
@@ -27,17 +25,18 @@ class RecruiterPageFragment : Fragment() {
         // Inflate the layout for this fragment
         mContext = requireContext()
         mActivity = requireActivity()
-        binding = FragmentRecruiterPageBinding.inflate(inflater, container, false)
+        binding = FragmentRecruiterManageJobBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        for (head in recChipGroupList) {
-            val chip = Chip(mContext)
-            chip.text = head
-            binding.recChipGroup.addView(chip)
+        binding.jobManageRecyView.apply {
+            adapter = ManageJobListAdapter()
+
+            layoutManager = LinearLayoutManager(mContext, RecyclerView.VERTICAL, false)
         }
     }
+
 }
