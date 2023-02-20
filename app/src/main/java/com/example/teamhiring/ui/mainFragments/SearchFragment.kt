@@ -9,34 +9,45 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.teamhiring.databinding.FragmentHomeRecruiterBinding
-import com.example.teamhiring.presentation.adapters.EmpListAdapter
+import com.example.teamhiring.R
+import com.example.teamhiring.data.constants.enums.JobFragInfoEnum
+import com.example.teamhiring.databinding.FragmentChatCompanyBinding
+import com.example.teamhiring.databinding.FragmentSearchBinding
+import com.example.teamhiring.presentation.adapters.RecJobListAdapter
 
 
-class RecruiterHomeFragment : Fragment() {
-
-    private lateinit var binding: FragmentHomeRecruiterBinding
-    private lateinit var mContext: Context
+class SearchFragment : Fragment() {
     private lateinit var mActivity: FragmentActivity
+    private lateinit var mContext: Context
+
+    private lateinit var binding: FragmentSearchBinding
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         mContext = requireContext()
         mActivity = requireActivity()
-        binding = FragmentHomeRecruiterBinding.inflate(inflater, container, false)
+        // Inflate the layout for this fragment
+        binding =  FragmentSearchBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.homeRecRecyView.apply {
-            adapter = EmpListAdapter(mContext)
+        binding.searchRecyclerView.apply {
+            adapter = RecJobListAdapter(JobFragInfoEnum.JobApplied)
             layoutManager = LinearLayoutManager(mContext, RecyclerView.VERTICAL, false)
         }
-    }
 
+        binding.searchFilter.setOnClickListener{
+
+            binding.searchRecyclerView.visibility = View.GONE
+            binding.searchFilLayout.visibility = View.VISIBLE
+        }
+    }
 }

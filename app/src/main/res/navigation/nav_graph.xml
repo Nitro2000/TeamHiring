@@ -72,13 +72,16 @@
         android:id="@+id/homeFragmentSeeker"
         android:name="com.example.teamhiring.ui.mainFragments.HomeFragmentSeeker"
         android:label="HomeFragmentSeeker"
-        tools:layout="@layout/fragment_home">
+        tools:layout="@layout/fragment_home_seeker">
         <action
             android:id="@+id/action_homeFragmentSeeker_to_recruiterHomeFragment"
             app:destination="@id/recruiterHomeFragment" />
         <action
             android:id="@+id/action_homeFragmentSeeker_to_recruiterProfileFragment"
             app:destination="@id/recruiterProfileFragment" />
+        <action
+            android:id="@+id/action_homeFragmentSeeker_to_searchFragment"
+            app:destination="@id/searchFragment" />
     </fragment>
 
 
@@ -177,6 +180,12 @@
             android:name="salary"
             app:argType="string" />
     </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search"/>
 
 
 </navigation>
