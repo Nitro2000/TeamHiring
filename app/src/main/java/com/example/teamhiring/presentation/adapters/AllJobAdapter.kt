@@ -5,10 +5,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.teamhiring.R
 import com.example.teamhiring.data.models.AllJobData
 import com.example.teamhiring.databinding.ItemJobAppliedBinding
+import com.example.teamhiring.ui.mainFragments.HomeFragmentSeekerDirections
 
 class AllJobAdapter(val jobList: List<AllJobData>) :
     RecyclerView.Adapter<AllJobAdapter.ViewHolder>() {
@@ -28,6 +31,8 @@ class AllJobAdapter(val jobList: List<AllJobData>) :
 
         fun navigateToRecPage() {
             binding.root.findNavController().navigate(R.id.recruiterPageFragment)
+
+
         }
     }
 
@@ -54,5 +59,10 @@ class AllJobAdapter(val jobList: List<AllJobData>) :
         holder.jobExpSubTxt.text = ItemJobModel.jobExperience
 
 
+
+
+        holder.binding.rootLayout.setOnClickListener {
+            holder.navigateToRecPage()
+        }
     }
 }

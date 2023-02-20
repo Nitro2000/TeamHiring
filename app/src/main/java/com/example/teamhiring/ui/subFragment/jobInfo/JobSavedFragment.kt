@@ -10,19 +10,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.teamhiring.R
 import com.example.teamhiring.data.constants.enums.JobFragInfoEnum
-import com.example.teamhiring.data.models.SavedJobData
-import com.example.teamhiring.databinding.FragmentJobAppliedBinding
+import com.example.teamhiring.data.models.AllJobData
 import com.example.teamhiring.databinding.FragmentJobSavedBinding
-import com.example.teamhiring.presentation.adapters.EmployeeSavedJobAdapter
+import com.example.teamhiring.presentation.adapters.AllJobAdapter
 import com.example.teamhiring.presentation.adapters.RecJobListAdapter
 import com.example.teamhiring.presentation.viewmodels.EmployeeSavedJobViewModel
-import com.example.teamhiring.presentation.viewmodels.ReferenceViewModel
-import com.example.teamhiring.ui.mainFragments.InteractedJobFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -35,8 +30,8 @@ class JobSavedFragment : Fragment() {
     private lateinit var mActivity: FragmentActivity
     private val savedJobViewModel: EmployeeSavedJobViewModel by viewModels()
 
-    private lateinit var savedJobList: List<SavedJobData>
-    private lateinit var adapter: EmployeeSavedJobAdapter
+    private lateinit var savedJobList: List<AllJobData>
+    private lateinit var adapter: AllJobAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -64,7 +59,7 @@ class JobSavedFragment : Fragment() {
 
                 binding.jobSavRecyView.layoutManager = LinearLayoutManager(mContext)
                 savedJobList = response.body()?: listOf()
-                adapter = EmployeeSavedJobAdapter(savedJobList)
+                adapter = AllJobAdapter(savedJobList)
                 binding.jobSavRecyView.adapter = adapter
 
                 Log.d("rishabh", "${response.body()}")

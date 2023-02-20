@@ -11,19 +11,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.teamhiring.R
-import com.example.teamhiring.data.constants.enums.JobFragInfoEnum
 import com.example.teamhiring.data.models.EmpAppViewedData
-import com.example.teamhiring.databinding.FragmentJobSavedBinding
 import com.example.teamhiring.databinding.FragmentJobViewedByBinding
 import com.example.teamhiring.presentation.adapters.EmpAppViewedAdapter
-import com.example.teamhiring.presentation.adapters.EmployeeAppliedJobAdapter
-import com.example.teamhiring.presentation.adapters.RecJobListAdapter
 import com.example.teamhiring.presentation.viewmodels.EmpViewedByViewModel
-import com.example.teamhiring.ui.mainFragments.InteractedJobFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

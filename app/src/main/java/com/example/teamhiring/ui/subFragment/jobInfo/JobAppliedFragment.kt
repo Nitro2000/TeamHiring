@@ -11,16 +11,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.teamhiring.data.constants.enums.JobFragInfoEnum
-import com.example.teamhiring.data.models.AppliedJobData
+import com.example.teamhiring.data.models.AllJobData
 import com.example.teamhiring.databinding.FragmentJobAppliedBinding
-import com.example.teamhiring.presentation.adapters.EmployeeAppliedJobAdapter
-import com.example.teamhiring.presentation.adapters.RecJobListAdapter
+import com.example.teamhiring.presentation.adapters.AllJobAdapter
 import com.example.teamhiring.presentation.viewmodels.EmployeeAppliedJobViewModel
-import com.example.teamhiring.ui.mainFragments.InteractedJobFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -33,8 +28,8 @@ class JobAppliedFragment : Fragment() {
     private lateinit var mActivity: FragmentActivity
 
     private val appliedJobViewModel: EmployeeAppliedJobViewModel by viewModels()
-    private lateinit var appliedJobList: List<AppliedJobData>
-    private lateinit var adapter: EmployeeAppliedJobAdapter
+    private lateinit var appliedJobList: List<AllJobData>
+    private lateinit var adapter: AllJobAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,11 +46,6 @@ class JobAppliedFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        binding.jobAppRecyView.apply {
-//            adapter = RecJobListAdapter(JobFragInfoEnum.JobApplied)
-//            layoutManager = LinearLayoutManager(mContext, RecyclerView.VERTICAL, false)
-//        }
-
 
         viewLifecycleOwner.lifecycleScope.launch{
             Log.d("Devashish","Hello Devashish")
@@ -65,7 +55,7 @@ class JobAppliedFragment : Fragment() {
 
                 binding.jobAppRecyView.layoutManager = LinearLayoutManager(mContext)
                 appliedJobList = response.body()?: listOf()
-                adapter = EmployeeAppliedJobAdapter(appliedJobList)
+                adapter = AllJobAdapter(appliedJobList)
                 binding.jobAppRecyView.adapter = adapter
             }else{
                 Log.d(TAG, "onViewCreated: No data found")

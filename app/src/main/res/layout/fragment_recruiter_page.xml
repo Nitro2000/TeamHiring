@@ -20,7 +20,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginBottom="@dimen/space_8"
-            app:layout_constraintBottom_toTopOf="@id/recChatBtn"
+            app:layout_constraintBottom_toBottomOf="@id/recChatBtn"
             >
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -120,7 +120,6 @@
                         android:layout_marginStart="8dp"
                         android:textSize="@dimen/text_14"
                         android:textColor="@color/text_heading"
-                        android:fontFamily="@font/roboto"
                         app:layout_constraintTop_toTopOf="@+id/recHighQualTxt"
                         app:layout_constraintStart_toEndOf="@+id/recLineViewFirst" />
 
@@ -232,7 +231,7 @@
                         android:layout_marginStart="@dimen/space_8"
                         android:textSize="@dimen/text_14"
                         android:textColor="@color/dark_black"
-                        android:fontFamily="@font/roboto"
+                        android:fontFamily="@font/roboto_medium"
                         app:layout_constraintBottom_toTopOf="@id/recExpCompTxt"
                         app:layout_constraintStart_toEndOf="@id/recProfImg"
                         app:layout_constraintTop_toTopOf="@id/recProfImg" />
@@ -257,7 +256,7 @@
                         android:textSize="@dimen/text_14"
                         android:layout_marginStart="@dimen/space_8"
                         android:textColor="@color/dark_black"
-                        android:fontFamily="@font/roboto"
+                        android:fontFamily="@font/roboto_medium"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@id/recExpDesignTxt"
                         app:layout_constraintStart_toEndOf="@id/recCircViewFourth" />
@@ -271,7 +270,7 @@
                         android:ellipsize="end"
                         android:textSize="@dimen/text_14"
                         android:textColor="@color/dark_black"
-                        android:fontFamily="@font/roboto"
+                        android:fontFamily="@font/roboto_medium"
                         app:layout_constraintTop_toBottomOf="@id/recExpDesignTxt"
                         app:layout_constraintBottom_toBottomOf="@id/recProfImg"
                         app:layout_constraintStart_toStartOf="@id/recExpDesignTxt" />

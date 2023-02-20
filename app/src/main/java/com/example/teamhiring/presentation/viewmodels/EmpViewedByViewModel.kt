@@ -1,6 +1,7 @@
 package com.example.teamhiring.presentation.viewmodels
 
 import androidx.lifecycle.ViewModel
+import com.example.teamhiring.data.models.AllJobData
 import com.example.teamhiring.data.models.EmpAppViewedData
 import com.example.teamhiring.data.repositories.EmpAppViewedRepository
 import dagger.hilt.android.lifecycle.HiltViewModel

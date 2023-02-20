@@ -163,7 +163,20 @@
         android:id="@+id/recruiterPageFragment"
         android:name="com.example.teamhiring.ui.mainFragments.RecruiterPageFragment"
         android:label="RecruiterPageFragment"
-        tools:layout="@layout/fragment_recruiter_page"/>
+        tools:layout="@layout/fragment_recruiter_page">
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="desc"
+            app:argType="string" />
+        <argument
+            android:name="salary"
+            app:argType="string" />
+    </fragment>
 
 
 </navigation>

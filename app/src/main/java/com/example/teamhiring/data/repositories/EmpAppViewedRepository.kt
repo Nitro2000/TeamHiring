@@ -1,5 +1,6 @@
 package com.example.teamhiring.data.repositories
 
+import com.example.teamhiring.data.models.AllJobData
 import com.example.teamhiring.data.models.EmpAppViewedData
 import com.example.teamhiring.data.services.ReferenceApiService
 import retrofit2.Response
