@@ -1,5 +1,6 @@
 package com.example.teamhiring.presentation.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,15 +10,27 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.teamhiring.R
 import com.example.teamhiring.data.constants.enums.JobFragInfoEnum
 import com.example.teamhiring.data.constants.enums.JobFragInfoEnum.*
+import com.example.teamhiring.data.models.recruiter.PostedJobData
 import com.example.teamhiring.databinding.ItemJobAppliedBinding
 import com.example.teamhiring.databinding.ItemManageJobBinding
 
-class ManageJobListAdapter(): RecyclerView.Adapter<ManageJobListAdapter.ViewHolder>() {
+class ManageJobListAdapter(val postedJobList: List<PostedJobData>, val context: Context): RecyclerView.Adapter<ManageJobListAdapter.ViewHolder>() {
 
     inner class ViewHolder(val binding: ItemManageJobBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind() {
-//            binding.jobExpSubTxt.text = context.getString(R.string.exp_years, 1.02f)
-//            binding.jobAnnExpSalTxt.text = context.getString(R.string.ann_income, 1, 3)
+
+        fun bind(item: PostedJobData) {
+            binding.apply {
+                jobTitleTxt.text = item.jTitle
+                jobHighQualTxt.text = item.quali
+                jobTypeTxt.text = item.empType
+                jobTimeTypeTxt.text = item.jobtype
+                jobExpCompTxt.text = item.shift
+                jobCompLocatTxt.text = item.city
+                jobAppAnnSalTxt.text = context.getString(R.string.ann_income, item.sMin?.toInt(), item.sMax?.toInt())
+                jobResponsesTxt.text = context.getString(R.string.num_responses, item.numberOfResponse?.toInt())
+                jobExpSubTxt.text = item.experience
+            }
+
         }
 
         fun navigateToRecPage() {
@@ -34,6 +47,8 @@ class ManageJobListAdapter(): RecyclerView.Adapter<ManageJobListAdapter.ViewHold
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val item = postedJobList[position]
+        holder.bind(item)
 //        when(type) {
 //            JobApplied -> {
 //
@@ -50,5 +65,5 @@ class ManageJobListAdapter(): RecyclerView.Adapter<ManageJobListAdapter.ViewHold
 //        }
     }
 
-    override fun getItemCount(): Int = 4
+    override fun getItemCount(): Int = postedJobList.size
 }

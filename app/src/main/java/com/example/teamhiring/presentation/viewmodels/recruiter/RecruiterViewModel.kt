@@ -1,12 +1,10 @@
-package com.example.teamhiring.presentation.viewmodels
+package com.example.teamhiring.presentation.viewmodels.recruiter
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.example.teamhiring.data.models.RecruiterData
-import com.example.teamhiring.data.repositories.RecruiterRepository
+import com.example.teamhiring.data.models.recruiter.RecruiterData
+import com.example.teamhiring.data.repositories.recruiter.RecruiterRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import retrofit2.Response
 import javax.inject.Inject

@@ -1,4 +1,4 @@
-package com.example.teamhiring.data.models
+package com.example.teamhiring.data.models.recruiter
 
 
 import com.google.gson.annotations.SerializedName

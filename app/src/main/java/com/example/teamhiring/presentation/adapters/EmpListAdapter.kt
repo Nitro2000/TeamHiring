@@ -4,12 +4,11 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentActivity
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.teamhiring.R
 import com.example.teamhiring.data.constants.enums.RecFragInfoEnum
-import com.example.teamhiring.data.models.RecruiterData
+import com.example.teamhiring.data.models.recruiter.RecruiterData
 import com.example.teamhiring.databinding.ItemHomeJobSeekersBinding
 
 class EmpListAdapter(val empList: List<RecruiterData>, val type: RecFragInfoEnum, val context: Context): RecyclerView.Adapter<EmpListAdapter.ViewHolder>() {

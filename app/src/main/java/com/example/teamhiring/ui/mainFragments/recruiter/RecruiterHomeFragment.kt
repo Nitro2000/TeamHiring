@@ -1,14 +1,12 @@
 package com.example.teamhiring.ui.mainFragments.recruiter
 
 import android.content.Context
-import android.content.res.ColorStateList
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -17,13 +15,10 @@ import com.example.teamhiring.HelperFunction.createChip
 import com.example.teamhiring.R
 import com.example.teamhiring.data.constants.enums.RecFragInfoEnum
 import com.example.teamhiring.data.dataList.PreDefinedList.jobPostTempList
-import com.example.teamhiring.databinding.FragmentHomeBinding
 import com.example.teamhiring.databinding.FragmentHomeRecruiterBinding
 import com.example.teamhiring.presentation.adapters.EmpListAdapter
 import com.example.teamhiring.presentation.adapters.PostedJobListAdapter
-import com.example.teamhiring.presentation.viewmodels.RecruiterViewModel
-import com.google.android.material.chip.Chip
-import com.google.android.material.sidesheet.SideSheetDialog
+import com.example.teamhiring.presentation.viewmodels.recruiter.RecruiterViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

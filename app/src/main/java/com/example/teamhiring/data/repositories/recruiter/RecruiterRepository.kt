@@ -1,6 +1,6 @@
-package com.example.teamhiring.data.repositories
+package com.example.teamhiring.data.repositories.recruiter
 
-import com.example.teamhiring.data.models.RecruiterData
+import com.example.teamhiring.data.models.recruiter.RecruiterData
 import com.example.teamhiring.data.services.RecruiterApiService
 import retrofit2.Response
 import javax.inject.Inject
