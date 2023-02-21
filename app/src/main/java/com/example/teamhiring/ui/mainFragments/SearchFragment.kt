@@ -19,6 +19,7 @@ import com.example.teamhiring.presentation.adapters.RecJobListAdapter
 class SearchFragment : Fragment() {
     private lateinit var mActivity: FragmentActivity
     private lateinit var mContext: Context
+     var isFilterShow: Boolean = false
 
     private lateinit var binding: FragmentSearchBinding
 
@@ -46,8 +47,14 @@ class SearchFragment : Fragment() {
 
         binding.searchFilter.setOnClickListener{
 
-            binding.searchRecyclerView.visibility = View.GONE
-            binding.searchFilLayout.visibility = View.VISIBLE
+            if (isFilterShow){
+                binding.searchRecyclerView.visibility = View.VISIBLE
+                binding.searchFilLayout.visibility = View.GONE
+            }else{
+                binding.searchRecyclerView.visibility = View.GONE
+                binding.searchFilLayout.visibility = View.VISIBLE
+            }
+
         }
     }
 }

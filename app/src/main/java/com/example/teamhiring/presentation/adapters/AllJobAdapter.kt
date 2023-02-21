@@ -18,20 +18,20 @@ class AllJobAdapter(val jobList: List<AllJobData>) :
 
     inner class ViewHolder(val binding: ItemJobAppliedBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        val jobTitle: TextView = itemView.findViewById(R.id.jobTitleTxt)
-        val jobQualification: TextView = itemView.findViewById(R.id.jobHighQualTxt)
-        val jobExpSubTxt: TextView = itemView.findViewById(R.id.jobExpSubTxt)
-        val jobAppAnnSalTxt: TextView = itemView.findViewById(R.id.jobAppAnnSalTxt)
-        val jobTypeTxt: TextView = itemView.findViewById(R.id.jobTypeTxt)
-        val jobTimeTypeTxt: TextView = itemView.findViewById(R.id.jobTimeTypeTxt)
-        val jobCompanyTxt: TextView = itemView.findViewById(R.id.jobExpCompTxt)
-        val jobRecNameTxt: TextView = itemView.findViewById(R.id.jobExpDesignTxt)
-        val jobAppNameTxt: TextView = itemView.findViewById(R.id.jobAppNameTxt)
-        val jobEmpDescTxt: TextView = itemView.findViewById(R.id.jobEmpDescTxt)
+
+        fun bind(item: AllJobData){
+            binding.jobTitleTxt.text = item.jobTitle
+            binding.jobHighQualTxt.text = item.jobQualification
+            binding.jobExpSubTxt.text = item.jobExperience
+            binding.jobAppAnnSalTxt.text = "Rs. "+item.jobExMinSalary +"-"+item.jobExMaxSalary +" LPA"
+            binding.jobTypeTxt.text = item.jobEmpType
+            binding.jobTimeTypeTxt.text  = item.jobJobType
+            binding.jobExpCompTxt.text = item.jobTitle
+            binding.jobEmpDescTxt.text = item.jobDescription
+        }
 
         fun navigateToRecPage() {
             binding.root.findNavController().navigate(R.id.recruiterPageFragment)
-
 
         }
     }
@@ -47,18 +47,7 @@ class AllJobAdapter(val jobList: List<AllJobData>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val ItemJobModel = jobList[position]
-
-        holder.jobTitle.text = ItemJobModel.jobTitle
-        holder.jobCompanyTxt.text = ItemJobModel.jobTitle
-        holder.jobAppAnnSalTxt.text = "Rs. "+ItemJobModel.jobExMinSalary +"-"+ItemJobModel.jobExMaxSalary +" LPA"
-        holder.jobEmpDescTxt.text = ItemJobModel.jobDescription
-        holder.jobQualification.text =ItemJobModel.jobQualification
-        holder.jobTypeTxt.text = ItemJobModel.jobEmpType
-        holder.jobExpSubTxt.text = ItemJobModel.jobExperience
-        holder.jobTimeTypeTxt.text = ItemJobModel.jobJobType
-        holder.jobExpSubTxt.text = ItemJobModel.jobExperience
-
-
+        holder.bind(ItemJobModel)
 
 
         holder.binding.rootLayout.setOnClickListener {
