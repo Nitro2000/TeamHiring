@@ -1,6 +1,7 @@
 package com.example.teamhiring.presentation.adapters
 
 import android.content.ClipData.Item
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
@@ -30,8 +31,10 @@ class AllJobAdapter(val jobList: List<AllJobData>) :
             binding.jobEmpDescTxt.text = item.jobDescription
         }
 
-        fun navigateToRecPage() {
-            binding.root.findNavController().navigate(R.id.recruiterPageFragment)
+        fun navigateToRecPage(recId: String) {
+            val bundle = Bundle()
+            bundle.putString("recId", recId)
+            binding.root.findNavController().navigate(R.id.recruiterPageFragment, bundle)
 
         }
     }
@@ -46,12 +49,12 @@ class AllJobAdapter(val jobList: List<AllJobData>) :
     override fun getItemCount(): Int = jobList.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val ItemJobModel = jobList[position]
-        holder.bind(ItemJobModel)
+        val itemJobModel = jobList[position]
+        holder.bind(itemJobModel)
 
 
         holder.binding.rootLayout.setOnClickListener {
-            holder.navigateToRecPage()
+            holder.navigateToRecPage(itemJobModel.jobId ?: "")
         }
     }
 }

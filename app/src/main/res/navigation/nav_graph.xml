@@ -168,16 +168,7 @@
         android:label="RecruiterPageFragment"
         tools:layout="@layout/fragment_recruiter_page">
         <argument
-            android:name="id"
-            app:argType="string" />
-        <argument
-            android:name="title"
-            app:argType="string" />
-        <argument
-            android:name="desc"
-            app:argType="string" />
-        <argument
-            android:name="salary"
+            android:name="recId"
             app:argType="string" />
     </fragment>
 

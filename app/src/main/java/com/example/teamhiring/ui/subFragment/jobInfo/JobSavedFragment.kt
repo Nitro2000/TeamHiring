@@ -17,7 +17,7 @@ import com.example.teamhiring.data.models.AllJobData
 import com.example.teamhiring.databinding.FragmentJobSavedBinding
 import com.example.teamhiring.presentation.adapters.AllJobAdapter
 import com.example.teamhiring.presentation.adapters.RecJobListAdapter
-import com.example.teamhiring.presentation.viewmodels.EmployeeSavedJobViewModel
+import com.example.teamhiring.presentation.viewmodels.EmpManageJobViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -28,7 +28,7 @@ class JobSavedFragment : Fragment() {
     private lateinit var binding: FragmentJobSavedBinding
     private lateinit var mContext: Context
     private lateinit var mActivity: FragmentActivity
-    private val savedJobViewModel: EmployeeSavedJobViewModel by viewModels()
+    private val savedJobViewModel: EmpManageJobViewModel by viewModels()
 
     private lateinit var savedJobList: List<AllJobData>
     private lateinit var adapter: AllJobAdapter

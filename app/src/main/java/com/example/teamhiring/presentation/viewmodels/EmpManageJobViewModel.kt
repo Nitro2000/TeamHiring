@@ -8,6 +8,6 @@ import retrofit2.Response
 import javax.inject.Inject
 
 @HiltViewModel
-class EmployeeSavedJobViewModel @Inject constructor(private val savedJobRepository: EmplyeeSavedJobRepository): ViewModel() {
+class EmpManageJobViewModel @Inject constructor(private val savedJobRepository: EmplyeeSavedJobRepository): ViewModel() {
     suspend fun getSavedJobs(): Response<List<AllJobData>> = savedJobRepository.getSavedJob()
 }
