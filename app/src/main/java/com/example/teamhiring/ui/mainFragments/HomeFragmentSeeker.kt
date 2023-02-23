@@ -8,10 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import com.example.teamhiring.databinding.FragmentHomeSeekerBinding
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.teamhiring.HelperFunction
+import com.example.teamhiring.CommonUiFunctions
 import com.example.teamhiring.R
 import com.example.teamhiring.data.constants.enums.JobFragInfoEnum
 import com.example.teamhiring.presentation.adapters.RecJobListAdapter
@@ -37,8 +36,8 @@ class HomeFragmentSeeker : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        HelperFunction.changeStatusBarColor(mActivity, R.color.text_heading)
-        HelperFunction.bottomNavBarVisibility(mActivity, View.VISIBLE)
+        CommonUiFunctions.changeStatusBarColor(mActivity, R.color.text_heading)
+        CommonUiFunctions.bottomNavBarVisibility(mActivity, View.VISIBLE)
 
         binding.recyclerViewJobs.apply {
             adapter = RecJobListAdapter(JobFragInfoEnum.JobApplied)

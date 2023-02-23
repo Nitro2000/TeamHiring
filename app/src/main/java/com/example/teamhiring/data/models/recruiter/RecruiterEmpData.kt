@@ -4,7 +4,7 @@ package com.example.teamhiring.data.models.recruiter
 import com.google.gson.annotations.SerializedName
 
 
-data class RecruiterData(
+data class RecruiterEmpData(
     @SerializedName("age") val age: String? = "",
     @SerializedName("c_contact") val cContact: String? = "",
     @SerializedName("c_email") val cEmail: String? = "",

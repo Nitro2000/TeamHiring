@@ -8,14 +8,14 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.teamhiring.R
 import com.example.teamhiring.data.constants.enums.RecFragInfoEnum
-import com.example.teamhiring.data.models.recruiter.RecruiterData
+import com.example.teamhiring.data.models.recruiter.RecruiterEmpData
 import com.example.teamhiring.databinding.ItemHomeJobSeekersBinding
 
-class EmpListAdapter(val empList: List<RecruiterData>, val type: RecFragInfoEnum, val context: Context): RecyclerView.Adapter<EmpListAdapter.ViewHolder>() {
+class EmpListAdapter(val empList: List<RecruiterEmpData>, val type: RecFragInfoEnum, val context: Context): RecyclerView.Adapter<EmpListAdapter.ViewHolder>() {
 
     inner class ViewHolder(val binding: ItemHomeJobSeekersBinding): RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: RecruiterData) {
+        fun bind(item: RecruiterEmpData) {
             binding.jobNameTxt.text = item.cName
             binding.jobHighQualTxt.text = item.highestQual
             binding.jobExpSubTxt.text = context.getString(R.string.exp_years,

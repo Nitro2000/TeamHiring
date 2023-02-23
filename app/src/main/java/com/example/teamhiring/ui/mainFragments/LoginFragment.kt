@@ -1,6 +1,5 @@
 package com.example.teamhiring.ui.mainFragments
 
-import android.app.Activity
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,8 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.fragment.findNavController
-import com.example.teamhiring.HelperFunction
-import com.example.teamhiring.R
+import com.example.teamhiring.CommonUiFunctions
 import com.example.teamhiring.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
@@ -27,7 +25,7 @@ class LoginFragment : Fragment() {
 
         mContext = requireActivity()
         mActivity = requireActivity()
-        HelperFunction.bottomNavBarVisibility(mActivity,View.GONE)
+        CommonUiFunctions.bottomNavBarVisibility(mActivity,View.GONE)
         // Inflate the layout for this fragment
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root

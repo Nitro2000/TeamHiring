@@ -54,8 +54,6 @@
     <string name="chat">Chat</string>
     <string name="cd_icon_chat">cd icon chat</string>
     <string name="posted">Posted</string>
-    <string name="cd_icon_job">cd icon job list</string>
-    <string name="cd_icon_saved">cd icon saved</string>
     <string name="company_verified">Company status: Approved</string>
     <string name="company_info">Company Info</string>
     <string name="add_detail">add detail</string>
@@ -109,9 +107,18 @@
     <string name="current_job">Current Job</string>
     <string name="job_posted">Job Posted</string>
     <string name="search_the_best_match">Search the best match</string>
-    <string name="cd_app_logo">cd app logo</string>
-    <string name="cd_wave_image">cd wave image</string>
     <string name="manage_jobs">Manage Jobs</string>
     <string name="filter">Filter</string>
     <string name="all_saved_candidates">All saved candidates</string>
+
+    // Demo text
+    <string name="android_engineer">Android Engineer</string>
+
+    // Content Descriptions
+    <string name="cd_icon_job">cd icon job list</string>
+    <string name="cd_icon_saved">cd icon saved</string>
+    <string name="cd_app_logo">cd app logo</string>
+    <string name="cd_wave_image">cd wave image</string>
+    <string name="select_your_job_post">Select your job post</string>
+
 </resources>

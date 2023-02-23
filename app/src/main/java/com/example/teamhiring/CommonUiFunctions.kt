@@ -6,7 +6,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import com.google.android.material.chip.Chip
 
-object HelperFunction {
+object CommonUiFunctions {
 
 
     fun changeStatusBarColor(activity: FragmentActivity, color: Int) {

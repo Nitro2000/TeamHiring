@@ -8,14 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.example.teamhiring.HelperFunction
-import com.example.teamhiring.R
+import com.example.teamhiring.CommonUiFunctions
 import com.example.teamhiring.data.constants.Constant
 import com.example.teamhiring.databinding.FragmentSignInBinding
 import com.example.teamhiring.presentation.viewmodels.CommonViewModel
-import kotlinx.coroutines.launch
 
 class SignInFragment : Fragment() {
 
@@ -30,7 +27,7 @@ class SignInFragment : Fragment() {
     ): View? {
         mContext = requireContext()
         mActivity = requireActivity()
-        HelperFunction.bottomNavBarVisibility(mActivity, View.GONE)
+        CommonUiFunctions.bottomNavBarVisibility(mActivity, View.GONE)
         // Inflate the layout for this fragment
 
 

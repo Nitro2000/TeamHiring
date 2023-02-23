@@ -10,8 +10,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.example.teamhiring.HelperFunction
-import com.example.teamhiring.HelperFunction.createChip
+import com.example.teamhiring.CommonUiFunctions
+import com.example.teamhiring.CommonUiFunctions.createChip
 import com.example.teamhiring.R
 import com.example.teamhiring.data.constants.enums.RecFragInfoEnum
 import com.example.teamhiring.data.dataList.PreDefinedList.jobPostTempList
@@ -50,8 +50,8 @@ class RecruiterHomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        HelperFunction.bottomNavBarVisibility(mActivity, View.VISIBLE)
-        HelperFunction.changeStatusBarColor(mActivity, R.color.text_heading)
+        CommonUiFunctions.bottomNavBarVisibility(mActivity, View.VISIBLE)
+        CommonUiFunctions.changeStatusBarColor(mActivity, R.color.text_heading)
         if (dataFlag) {
             getEmpData()
         }
@@ -71,7 +71,7 @@ class RecruiterHomeFragment : Fragment() {
 
 
     private fun getEmpData() {
-        viewLifecycleOwner.lifecycleScope.launch {
+        lifecycleScope.launch {
             recruiterViewModel.getEmpList().let {
                 if (it.isSuccessful) {
                     val list = it.body() ?: listOf()

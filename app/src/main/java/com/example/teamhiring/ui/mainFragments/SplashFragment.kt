@@ -7,18 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.*
-import androidx.lifecycle.lifecycleScope
-import com.example.teamhiring.R
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import com.example.teamhiring.HelperFunction
-import com.example.teamhiring.data.constants.Constant
+import com.example.teamhiring.CommonUiFunctions
 import com.example.teamhiring.data.constants.Constant.userLogin
 import com.example.teamhiring.data.constants.Constant.userType
 import com.example.teamhiring.databinding.FragmentSplashBinding
 import com.example.teamhiring.presentation.viewmodels.CommonViewModel
-import kotlinx.coroutines.launch
 
 
 class SplashFragment : Fragment() {
@@ -35,7 +29,7 @@ class SplashFragment : Fragment() {
         // Inflate the layout for this fragment
         mContext = requireContext()
         mActivity = requireActivity()
-        HelperFunction.bottomNavBarVisibility(mActivity, View.GONE)
+        CommonUiFunctions.bottomNavBarVisibility(mActivity, View.GONE)
         viewModel.getUserType().observe(viewLifecycleOwner) {
             userType = it
         }

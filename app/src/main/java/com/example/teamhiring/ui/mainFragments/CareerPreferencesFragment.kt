@@ -7,8 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
-import com.example.teamhiring.HelperFunction
-import com.example.teamhiring.R
+import com.example.teamhiring.CommonUiFunctions
 import com.example.teamhiring.databinding.FragmentCareerPreferencesBinding
 
 
@@ -26,7 +25,7 @@ class CareerPreferencesFragment : Fragment() {
 
         mContext = requireContext()
         mActivity = requireActivity()
-        HelperFunction.bottomNavBarVisibility(mActivity, View.GONE)
+        CommonUiFunctions.bottomNavBarVisibility(mActivity, View.GONE)
         // Inflate the layout for this fragment
         binding =  FragmentCareerPreferencesBinding.inflate(inflater, container, false)
         return binding.root

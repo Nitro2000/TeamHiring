@@ -8,9 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.fragment.findNavController
-import com.example.teamhiring.HelperFunction
-import com.example.teamhiring.R
-import com.example.teamhiring.databinding.FragmentSignInBinding
+import com.example.teamhiring.CommonUiFunctions
 import com.example.teamhiring.databinding.FragmentSignUpBinding
 
 class SignUpFragment : Fragment() {
@@ -26,7 +24,7 @@ class SignUpFragment : Fragment() {
 
         mContext = requireContext()
         mActivity = requireActivity()
-        HelperFunction.bottomNavBarVisibility(mActivity, View.GONE)
+        CommonUiFunctions.bottomNavBarVisibility(mActivity, View.GONE)
         // Inflate the layout for this fragment
         binding = FragmentSignUpBinding.inflate(inflater, container, false)
         return binding.root

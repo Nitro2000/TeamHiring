@@ -9,9 +9,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.teamhiring.HelperFunction
+import com.example.teamhiring.CommonUiFunctions
 import com.example.teamhiring.data.dataList.ChatCompanyDataList
-import com.example.teamhiring.data.dataList.ChatDataList
 import com.example.teamhiring.data.models.ChatCompanyData
 import com.example.teamhiring.databinding.FragmentChatCompanyBinding
 import com.example.teamhiring.presentation.adapters.ChatCompanyDataAdapter
@@ -34,7 +33,7 @@ class ChatCompanyFragment : Fragment() {
         mActivity = requireActivity()
         mContext = requireContext()
 
-        HelperFunction.bottomNavBarVisibility(mActivity, View.VISIBLE)
+        CommonUiFunctions.bottomNavBarVisibility(mActivity, View.VISIBLE)
         binding = FragmentChatCompanyBinding.inflate(inflater, container, false)
         return binding.root    }
 
