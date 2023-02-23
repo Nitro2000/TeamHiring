@@ -1,5 +1,6 @@
 package com.example.teamhiring.data.repositories.recruiter
 
+import com.example.teamhiring.data.models.recruiter.RecProfileData
 import com.example.teamhiring.data.models.recruiter.RecruiterEmpData
 import com.example.teamhiring.data.services.RecruiterApiService
 import retrofit2.Response
@@ -9,5 +10,9 @@ class RecruiterRepository @Inject constructor(private val recruiterApiService: R
 
     suspend fun getEmpList() : Response<List<RecruiterEmpData>> {
         return recruiterApiService.getEmpList()
+    }
+
+    suspend fun getRecProfileData() : Response<List<RecProfileData>> {
+        return recruiterApiService.getRecProfileData()
     }
 }

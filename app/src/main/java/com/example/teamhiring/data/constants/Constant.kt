@@ -8,4 +8,6 @@ object Constant {
         "https://teamtest.xyz/hiring_system_ci/hiring_system_employee_ci/index.php/Rest_controller/"
     var userType: Boolean = true
     var userLogin: Boolean = false
+    const val LOG_TAG: String = "Hiring"
+
 }

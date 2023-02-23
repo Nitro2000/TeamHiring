@@ -360,27 +360,7 @@
                     app:layout_constraintStart_toStartOf="@id/guideline2"
                     app:layout_constraintTop_toTopOf="@id/rProfConNumField" />
 
-                <TextView
-                    android:id="@+id/rProfRecDesignField"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
-                    android:text="@string/recruit_design"
-                    android:textColor="@color/dark_black"
-                    android:textSize="@dimen/text_14"
-                    app:layout_constraintStart_toStartOf="@id/rProfIndTypeField"
-                    app:layout_constraintTop_toBottomOf="@+id/rProfConNumField" />
 
-                <TextView
-                    android:id="@+id/rProfRecDesignTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
-                    android:text="@string/add_detail"
-                    android:textColor="@color/blue_200"
-                    android:textSize="@dimen/text_14"
-                    app:layout_constraintStart_toStartOf="@id/guideline2"
-                    app:layout_constraintTop_toTopOf="@id/rProfRecDesignField" />
 
                 <TextView
                     android:id="@+id/rProfComGSTNumField"
@@ -391,7 +371,7 @@
                     android:textColor="@color/dark_black"
                     android:textSize="@dimen/text_14"
                     app:layout_constraintStart_toStartOf="@id/rProfIndTypeField"
-                    app:layout_constraintTop_toBottomOf="@+id/rProfRecDesignField" />
+                    app:layout_constraintTop_toBottomOf="@+id/rProfConNumField" />
 
                 <TextView
                     android:id="@+id/rProfComGSTNumTxt"
@@ -551,27 +531,6 @@
                     app:layout_constraintStart_toStartOf="@id/guideline3"
                     app:layout_constraintTop_toTopOf="@id/rProfStateField" />
 
-                <TextView
-                    android:id="@+id/rProfNationField"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
-                    android:text="@string/nationality"
-                    android:textColor="@color/dark_black"
-                    android:textSize="@dimen/text_14"
-                    app:layout_constraintStart_toStartOf="@id/rProfAddField"
-                    app:layout_constraintTop_toBottomOf="@+id/rProfStateField" />
-
-                <TextView
-                    android:id="@+id/rProfNationTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
-                    android:text="@string/add_detail"
-                    android:textColor="@color/blue_200"
-                    android:textSize="@dimen/text_14"
-                    app:layout_constraintStart_toStartOf="@id/guideline3"
-                    app:layout_constraintTop_toTopOf="@id/rProfNationField" />
 
                 <TextView
                     android:id="@+id/rProfZipField"
@@ -582,7 +541,7 @@
                     android:textColor="@color/dark_black"
                     android:textSize="@dimen/text_14"
                     app:layout_constraintStart_toStartOf="@id/rProfAddField"
-                    app:layout_constraintTop_toBottomOf="@+id/rProfNationField" />
+                    app:layout_constraintTop_toBottomOf="@+id/rProfStateField" />
 
                 <TextView
                     android:id="@+id/rProfZipTxt"
