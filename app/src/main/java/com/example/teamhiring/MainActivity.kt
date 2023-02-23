@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
     private val viewModel: CommonViewModel by viewModels()
-    private val userType: Boolean = true
+    private var isEmployee: Boolean = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
@@ -38,13 +38,15 @@ class MainActivity : AppCompatActivity() {
             if (it) {
                 binding.mainBottomNav.inflateMenu(R.menu.bottom_nav_menu)
             } else {
+                isEmployee = false
                 binding.mainBottomNav.inflateMenu(R.menu.recruiter_nav_menu)
             }
         }
 
         binding.mainBottomNav.setupWithNavController(navController)
         binding.mainBottomNav.setOnItemSelectedListener { item ->
-//            popBackStack(item.itemId == R.id.homeFragmentSeeker)
+            if (isEmployee) popEmpBackStack(item.itemId == R.id.homeFragmentSeeker)
+            else popRecBackStack(item.itemId == R.id.recruiterHomeFragment)
             when (item.itemId) {
                 R.id.homeFragmentSeeker -> {
                     navController.navigate(R.id.homeFragmentSeeker)
@@ -100,7 +102,11 @@ class MainActivity : AppCompatActivity() {
         binding.mainBottomNav.visibility = View.GONE
     }
 
-    fun popBackStack(include: Boolean) {
+    fun popEmpBackStack(include: Boolean) {
         navController.popBackStack(R.id.homeFragmentSeeker, include)
+    }
+
+    fun popRecBackStack(include: Boolean) {
+        navController.popBackStack(R.id.recruiterHomeFragment, include)
     }
 }

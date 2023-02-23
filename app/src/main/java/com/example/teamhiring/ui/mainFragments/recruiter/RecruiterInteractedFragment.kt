@@ -25,7 +25,7 @@ class RecruiterInteractedFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         mContext = requireContext()
         mActivity = requireActivity()
         binding = FragmentRecruiterInteractedBinding.inflate(inflater, container, false)
