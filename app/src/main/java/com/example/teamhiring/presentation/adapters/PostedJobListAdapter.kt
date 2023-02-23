@@ -6,46 +6,57 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.teamhiring.CommonDataFunctions
 import com.example.teamhiring.R
 import com.example.teamhiring.data.constants.enums.JobFragInfoEnum
 import com.example.teamhiring.data.constants.enums.JobFragInfoEnum.*
+import com.example.teamhiring.data.models.recruiter.PostedJobData
 import com.example.teamhiring.databinding.ItemJobAppliedBinding
 import com.example.teamhiring.databinding.ItemManageJobBinding
 import com.example.teamhiring.databinding.ItemRecHomePostedJobBinding
 
-class PostedJobListAdapter(): RecyclerView.Adapter<PostedJobListAdapter.ViewHolder>() {
+class PostedJobListAdapter(
+    val postedJobList: List<PostedJobData>,
+    val callback: (jobId: Int, chipList: List<String>) -> Any
+) : RecyclerView.Adapter<PostedJobListAdapter.ViewHolder>() {
 
-    inner class ViewHolder(val binding: ItemRecHomePostedJobBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind() {
-//            binding.jobExpSubTxt.text = context.getString(R.string.exp_years, 1.02f)
-//            binding.jobAnnExpSalTxt.text = context.getString(R.string.ann_income, 1, 3)
+    inner class ViewHolder(val binding: ItemRecHomePostedJobBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(jobItem: PostedJobData) {
+            val expFloat = jobItem.experience
+            binding.apply {
+                jobTitleTxt.text = jobItem.jTitle
+                jobHighQualTxt.text = jobItem.quali
+                jobExpSubTxt.text = CommonDataFunctions.getFormattedExp(jobItem.experience)
+                jobAppAnnSalTxt.text = CommonDataFunctions.getFormattedSalary(jobItem.sMin, jobItem.sMax)
+                jobTypeTxt.text = CommonDataFunctions.checkJobType(jobItem.empType)
+                jobTimeTypeTxt.text = CommonDataFunctions.checkJobTimeType(jobItem.jobtype)
+            }
+
         }
 
-        fun navigateToRecPage() {
-            binding.root.findNavController().navigate(R.id.recruiterPageFragment)
-        }
     }
 
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemRecHomePostedJobBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ItemRecHomePostedJobBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
         return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//        when(type) {
-//            JobApplied -> {
-//
-//            }
-//            JobSaved -> {
-//                holder.binding.jobStarImg.setImageResource(R.drawable.icon_start_filled)
-//            }
-//            JobViewed -> {
-//                holder.binding.jobStarImg.setImageResource(R.drawable.icon_viewed)
-//            }
-//        }
+        val jobItem = postedJobList[position]
+        holder.bind(jobItem)
+
+        holder.binding.rootLayout.setOnClickListener {
+            callback(jobItem.id.toInt(), listOf(
+                jobItem.jTitle,
+                CommonDataFunctions.getFormattedSalary(jobItem.sMin, jobItem.sMax),
+                CommonDataFunctions.checkJobType(jobItem.empType),
+                CommonDataFunctions.checkJobTimeType(jobItem.jobtype)
+            ))
+        }
 
     }
 

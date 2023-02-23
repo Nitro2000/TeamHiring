@@ -75,7 +75,7 @@ class RecruiterSavedFragment : Fragment() {
             recManageViewModel.getPostedJobList().let {
                 if (it.isSuccessful) {
                     val list = it.body() ?: listOf()
-                    postJobListAdapter = RecSavedPostJobListAdapter(list, mContext) {jobId, chipList ->
+                    postJobListAdapter = RecSavedPostJobListAdapter(list) {jobId, chipList ->
                         getAllSavedCan(jobId)
                         setChipData(chipList)
                         sideSheet.hide()
@@ -118,12 +118,6 @@ class RecruiterSavedFragment : Fragment() {
     }
 
     private fun setEmpListAdapter() {
-        binding.jobSavedRecyView.apply {
-            adapter = empListAdapter
-        }
-    }
-
-    private fun referesEmpListAdapter() {
         binding.jobSavedRecyView.apply {
             adapter = empListAdapter
         }

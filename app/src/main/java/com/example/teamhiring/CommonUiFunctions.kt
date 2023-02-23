@@ -2,8 +2,11 @@ package com.example.teamhiring
 
 import android.content.Context
 import android.content.res.ColorStateList
+import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
+import androidx.recyclerview.widget.RecyclerView
+import com.facebook.shimmer.ShimmerFrameLayout
 import com.google.android.material.chip.Chip
 
 object CommonUiFunctions {
@@ -18,6 +21,18 @@ object CommonUiFunctions {
             }
 //            activity.window.decorView.systemUiVisibility = View.VISIBLE
         } catch (e: Exception){}
+    }
+
+    fun startShimmer(shimmer: ShimmerFrameLayout, recView: RecyclerView) {
+        recView.visibility = View.GONE
+        shimmer.startShimmer()
+        shimmer.visibility = View.VISIBLE
+    }
+
+    fun stopShimmer(shimmer: ShimmerFrameLayout, recView: RecyclerView) {
+        shimmer.stopShimmer()
+        shimmer.visibility = View.GONE
+        recView.visibility = View.VISIBLE
     }
 
     fun bottomNavBarVisibility(activity: FragmentActivity, visibility: Int) {

@@ -162,7 +162,7 @@
                         android:id="@+id/rHomeFirstLayout"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/space_16"
+                        android:layout_marginTop="@dimen/space_12"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         android:paddingHorizontal="@dimen/space_8"
@@ -189,6 +189,7 @@
                             android:layout_height="match_parent"
                             android:layout_marginTop="@dimen/space_12"
                             android:orientation="horizontal"
+                            android:visibility="gone"
                             tools:listitem="@layout/item_rec_home_posted_job"
                             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -196,13 +197,34 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/rHomeJobPostedTxt" />
 
+                        <com.facebook.shimmer.ShimmerFrameLayout
+                            android:id="@+id/rHomePostShimmer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:layout_marginTop="@dimen/space_12"
+                            app:layout_constraintTop_toBottomOf="@+id/rHomeJobPostedTxt">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:orientation="horizontal"
+                                android:layout_height="wrap_content">
+
+                                <include layout="@layout/shimmer_home_posted_job"/>
+                                <include layout="@layout/shimmer_home_posted_job"/>
+
+                            </LinearLayout>
+
+                        </com.facebook.shimmer.ShimmerFrameLayout>
+
+
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/rHomeSecLayout"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/space_16"
+                        android:layout_marginTop="@dimen/space_12"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         android:padding="@dimen/space_16"
@@ -236,12 +258,33 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="@dimen/space_12"
+                            android:visibility="gone"
                             tools:listitem="@layout/item_home_job_seekers"
                             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/rHomeChipGroup" />
+
+                        <com.facebook.shimmer.ShimmerFrameLayout
+                            android:id="@+id/rHomeEmpListShimmer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:layout_marginTop="@dimen/space_12"
+                            app:layout_constraintTop_toBottomOf="@+id/rHomeChipGroup">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:orientation="vertical"
+                                android:layout_height="wrap_content">
+
+                                <include layout="@layout/shimmer_home_emp_list"/>
+                                <include layout="@layout/shimmer_home_emp_list"/>
+
+                            </LinearLayout>
+
+                        </com.facebook.shimmer.ShimmerFrameLayout>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -264,43 +307,6 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.core.widget.NestedScrollView>
-
-            <com.facebook.shimmer.ShimmerFrameLayout
-                android:id="@+id/shimmer"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/space_16"
-                android:orientation="vertical"
-                android:visibility="gone"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                app:shimmer_auto_start="true"
-                app:shimmer_duration="800">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <include layout="@layout/item_onboarding_screen" />
-
-                    <include layout="@layout/item_onboarding_screen" />
-
-                    <include layout="@layout/item_onboarding_screen" />
-
-                    <include layout="@layout/item_onboarding_screen" />
-
-                    <include layout="@layout/item_onboarding_screen" />
-
-                    <include layout="@layout/item_onboarding_screen" />
-
-                    <include layout="@layout/item_onboarding_screen" />
-
-                    <include layout="@layout/item_onboarding_screen" />
-
-                    <include layout="@layout/item_onboarding_screen" />
-                </LinearLayout>
-            </com.facebook.shimmer.ShimmerFrameLayout>
-
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

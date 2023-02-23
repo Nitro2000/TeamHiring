@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/rootLayout"
         android:layout_width="220dp"
-        android:paddingHorizontal="@dimen/space_8"
+        android:paddingHorizontal="@dimen/space_16"
         android:paddingVertical="@dimen/space_16"
         android:background="@drawable/bg_item_stroke_white_corner"
         android:elevation="6dp"
@@ -45,7 +45,7 @@
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintEnd_toStartOf="@id/jobLineViewFirst"
             android:fontFamily="@font/roboto_regular_400"
-            app:layout_constraintStart_toStartOf="@id/jobTitleTxt"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/jobTitleTxt" />
 
         <View
@@ -80,9 +80,9 @@
             android:layout_marginTop="@dimen/space_8"
             android:textSize="@dimen/text_16"
             android:textColor="@color/blue_500"
-            app:layout_constraintEnd_toEndOf="@id/jobExpSubTxt"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/jobHighQualTxt"
-            app:layout_constraintStart_toStartOf="@id/jobHighQualTxt"/>
+            app:layout_constraintStart_toStartOf="parent"/>
 
 
 
@@ -115,10 +115,10 @@
             android:textSize="@dimen/text_16"
             android:textColor="@color/dark_black"
             android:drawablePadding="@dimen/space_8"
-            app:layout_constraintEnd_toEndOf="@id/jobExpSubTxt"
+            app:layout_constraintEnd_toEndOf="parent"
             android:fontFamily="@font/roboto_regular_400"
             app:layout_constraintTop_toBottomOf="@id/jobTypeTxt"
-            app:layout_constraintStart_toStartOf="@id/jobTypeTxt"
+            app:layout_constraintStart_toStartOf="parent"
             app:drawableStartCompat="@drawable/icon_clock" />
 
 

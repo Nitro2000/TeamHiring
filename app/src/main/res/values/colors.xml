@@ -42,4 +42,7 @@
 
     // Text
     <color name="text_heading">#242424</color>
+
+    // Shimmer color
+    <color name="shimmer_color">#BBB9B9</color>
 </resources>

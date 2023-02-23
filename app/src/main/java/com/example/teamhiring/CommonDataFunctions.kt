@@ -19,6 +19,15 @@ object CommonDataFunctions {
         }
     }
 
+    fun getFormattedExp(exp: String?): String {
+        return when(exp) {
+            "fresher" -> "Fresher"
+            "1_to_2" -> "1 - 2 yr"
+            "above_5" -> "5+ yr"
+            else -> "2 - 5 yr"
+        }
+    }
+
     fun getFormattedSalary(sMin: String?, sMax: String?): String {
         return "Rs $sMin - $sMax LPA"
     }

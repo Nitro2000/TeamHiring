@@ -22,7 +22,6 @@ import com.example.teamhiring.databinding.ItemRecSavedPostListBinding
 
 class RecSavedPostJobListAdapter(
     val postedJobList: List<PostedJobData>,
-    val context: Context,
     val callback: (jobId: Int, chipList: List<String>) -> Any
 ) : RecyclerView.Adapter<RecSavedPostJobListAdapter.ViewHolder>() {
 
