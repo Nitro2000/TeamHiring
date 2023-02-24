@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.teamhiring.CommonUiFunctions
 import com.example.teamhiring.CommonUiFunctions.createChip
 import com.example.teamhiring.CommonUiFunctions.startShimmer
@@ -78,7 +79,10 @@ class RecruiterHomeFragment : Fragment() {
             }
         }
 
-
+        binding.rHomeSearch.setOnClickListener {
+            val directions = RecruiterHomeFragmentDirections.actionRecruiterHomeFragmentToRecruiterSearchFragment()
+            findNavController().navigate(directions)
+        }
 
         binding.swipeRefresh.setOnRefreshListener {
             Log.d("Hiring", "refreshed")

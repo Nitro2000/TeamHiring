@@ -13,6 +13,6 @@ class RecruiterRepository @Inject constructor(private val recruiterApiService: R
     }
 
     suspend fun getRecProfileData() : Response<List<RecProfileData>> {
-        return recruiterApiService.getRecProfileData()
+        return recruiterApiService.getRecProfileData(12)
     }
 }

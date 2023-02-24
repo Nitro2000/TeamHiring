@@ -16,9 +16,11 @@ import com.example.teamhiring.data.models.recruiter.RecProfileData
 import com.example.teamhiring.databinding.FragmentHomeRecruiterBinding
 import com.example.teamhiring.databinding.FragmentRecruiterProfileBinding
 import com.example.teamhiring.presentation.viewmodels.recruiter.RecruiterViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 
+@AndroidEntryPoint
 class RecruiterProfileFragment : Fragment() {
 
 
@@ -42,7 +44,7 @@ class RecruiterProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        getProfData()
     }
 
     private fun getProfData() {
@@ -59,6 +61,7 @@ class RecruiterProfileFragment : Fragment() {
     }
 
     private fun setProfileData() {
+        // Todo Formate the text from api
         binding.apply {
             rProfNameTxt.text = recProfileData.rName
             rProfComName.text = recProfileData.name

@@ -33,15 +33,15 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
         navController = navHostFragment.navController
 
-        viewModel.getUserType().observe(this) {
-            binding.mainBottomNav.menu.clear()
-            if (it) {
-                binding.mainBottomNav.inflateMenu(R.menu.bottom_nav_menu)
-            } else {
-                isEmployee = false
-                binding.mainBottomNav.inflateMenu(R.menu.recruiter_nav_menu)
-            }
-        }
+//        viewModel.getUserType().observe(this) {
+//            binding.mainBottomNav.menu.clear()
+//            if (it) {
+//                binding.mainBottomNav.inflateMenu(R.menu.bottom_nav_menu)
+//            } else {
+//                isEmployee = false
+//                binding.mainBottomNav.inflateMenu(R.menu.recruiter_nav_menu)
+//            }
+//        }
 
         binding.mainBottomNav.setupWithNavController(navController)
         binding.mainBottomNav.setOnItemSelectedListener { item ->
