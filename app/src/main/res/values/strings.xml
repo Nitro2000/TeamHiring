@@ -132,5 +132,12 @@
     <string name="cd_icon_star">cd icon star</string>
     <string name="jan_2_present">Jan 2 - Present</string>
     <string name="notice_period">Notice period: 15 Days</string>
+    <string name="job_type">Job Type</string>
+    <string name="job_category">Job Category</string>
+    <string name="experience">Experience</string>
+    <string name="search">Search</string>
+    <string name="advance_filters">Advance Filters</string>
+    <string name="english_level">English level</string>
+    <string name="candidate_age">Candidate Age</string>
 
 </resources>

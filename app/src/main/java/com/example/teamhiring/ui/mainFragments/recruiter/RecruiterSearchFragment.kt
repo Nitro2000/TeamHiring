@@ -9,20 +9,32 @@ import android.view.ViewGroup
 import android.widget.Adapter
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.core.view.get
 import androidx.fragment.app.FragmentActivity
+import androidx.navigation.fragment.findNavController
 import com.example.teamhiring.CommonUiFunctions
 import com.example.teamhiring.R
 import com.example.teamhiring.data.dataList.PreDefinedList
+import com.example.teamhiring.data.dataList.PreDefinedList.ageList
+import com.example.teamhiring.data.dataList.PreDefinedList.engList
+import com.example.teamhiring.data.dataList.PreDefinedList.formattedExpList
+import com.example.teamhiring.data.dataList.PreDefinedList.qualList
 import com.example.teamhiring.databinding.FragmentRecruiterSearchBinding
+import com.example.teamhiring.databinding.SideSheetRecSavedBinding
+import com.example.teamhiring.databinding.SideSheetRecSearchBinding
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
+import com.google.android.material.sidesheet.SideSheetDialog
 
 class RecruiterSearchFragment : Fragment() {
 
 
     private lateinit var binding: FragmentRecruiterSearchBinding
+    private lateinit var sideSheetBinding: SideSheetRecSearchBinding
+    private lateinit var sideSheet: SideSheetDialog
     private lateinit var mContext: Context
     private lateinit var mActivity: FragmentActivity
 
@@ -33,7 +45,10 @@ class RecruiterSearchFragment : Fragment() {
         // Inflate the layout for this fragment
         mContext = requireContext()
         mActivity = requireActivity()
+        sideSheet = SideSheetDialog(mContext)
         binding = FragmentRecruiterSearchBinding.inflate(inflater, container, false)
+        sideSheetBinding = SideSheetRecSearchBinding.inflate(LayoutInflater.from(mContext))
+        sideSheet.setContentView(sideSheetBinding.root)
         return binding.root
     }
 
@@ -41,11 +56,26 @@ class RecruiterSearchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         CommonUiFunctions.bottomNavBarVisibility(mActivity, View.GONE)
 
-        for (text in PreDefinedList.jobPostTempList) {
-            val chip = layoutInflater.inflate(R.layout.item_chip_rec_search, binding.searchJobCatChipG, false) as Chip
-            chip.text = text
-            binding.searchExpChipG.addView(chip)
+        // Setting chip group
+        setChipData(PreDefinedList.formattedExpList, binding.searchExpChipG)
+        setChipData(PreDefinedList.jobTypeList, binding.searchJobTypeChipG)
+        setChipData(PreDefinedList.empTimeType, binding.searchJobCatChipG)
+
+        // Setting radio group
+        setRadioData(qualList, sideSheetBinding.filterQualRadioG)
+        setRadioData(ageList, sideSheetBinding.filterAgeRadioG)
+        setRadioData(engList, sideSheetBinding.filterEngRadioG)
+
+        binding.filterSearchImg.setOnClickListener {
+            sideSheet.show()
         }
+
+        binding.arrowBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
+
+
+
         binding.searchExpChipG.setOnCheckedStateChangeListener {group, checkedIdList: MutableList<Int> ->
 //            val viewd = group.get(checkedIdList[0] - 1) as Chip
 //            viewd.chipBackgroundColor = CommonUiFunctions.getColorStateList(mContext, R.color.white)
@@ -66,6 +96,32 @@ class RecruiterSearchFragment : Fragment() {
 //            override fun onNothingSelected(p0: AdapterView<*>?) {
 //            }
 //        }
+    }
+
+    private fun setChipData(chipList: List<String>, chipGroup: ChipGroup) {
+        var firstOpt = true
+        for (text in chipList) {
+            val chip = layoutInflater.inflate(R.layout.item_chip_rec_search, chipGroup, false) as Chip
+            if (firstOpt) {
+                chip.isChecked = true
+                firstOpt = false
+            }
+            chip.text = text
+            chipGroup.addView(chip)
+        }
+    }
+
+    private fun setRadioData(radioList: List<String>, radioGroup: RadioGroup) {
+        var firstOpt = true
+        for (text in radioList) {
+            val rad = layoutInflater.inflate(R.layout.item_radio_button_rec_search, radioGroup, false) as RadioButton
+            if (firstOpt) {
+                rad.isChecked = true
+                firstOpt = false
+            }
+            rad.text = text
+            radioGroup.addView(rad)
+        }
     }
 
 }
