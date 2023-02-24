@@ -18,4 +18,6 @@ class EmpProffessionalViewModel @Inject constructor(private val empProffessional
             empProffessionalRepository.getEmpProffData()
         }
     }
+
+
 }

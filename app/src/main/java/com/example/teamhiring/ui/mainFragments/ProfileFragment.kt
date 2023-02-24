@@ -20,8 +20,10 @@ import com.example.teamhiring.databinding.FragmentOtpBinding
 import com.example.teamhiring.databinding.FragmentProfileBinding
 import com.example.teamhiring.presentation.adapters.AllJobAdapter
 import com.example.teamhiring.presentation.viewmodels.EmpProffessionalViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class ProfileFragment : Fragment() {
 
     private lateinit var binding: FragmentProfileBinding
@@ -58,7 +60,11 @@ class ProfileFragment : Fragment() {
             val empProffData = response.body()
             val proffDetail = empProffData?.newPDetails?.get(0)
             if (response.isSuccessful){
-                binding.textView14.text = proffDetail?.currDTo
+                binding.profileCurrComp.text = proffDetail?.currComName
+                binding.profileDesignation.text = proffDetail?.currComDesig
+                binding.profileFromDate.text = proffDetail?.currDFrom
+                binding.profileToDate.text = proffDetail?.currDTo
+                binding.profileNotice.text = proffDetail?.currNotice
             }else{
                 Log.d("Devashish","No data found")
 

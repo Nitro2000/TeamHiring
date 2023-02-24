@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.teamhiring.data.constants.enums.JobFragInfoEnum
 import com.example.teamhiring.data.dataList.ChatCompanyDataList
 import com.example.teamhiring.data.models.AllJobData
+import com.example.teamhiring.helpers.ProgressDialog
 import com.example.teamhiring.presentation.adapters.AllJobAdapter
 import com.example.teamhiring.presentation.adapters.ChatCompanyDataAdapter
 import com.example.teamhiring.presentation.adapters.RecJobListAdapter
@@ -69,6 +70,43 @@ class HomeFragmentSeeker : Fragment() {
             findNavController().navigate(direction)
         }
 
+        binding.swipeRefresh.setOnRefreshListener {
+            getAllJobs()
+        }
+
+//        viewLifecycleOwner.lifecycleScope.launch{
+//            Log.d("Devashish","Hello Devashish")
+//            val response = allJobViewModel.getAllJobs()
+//            if (response.isSuccessful){
+//                Log.d("Devashish","${response.body()}")
+//                binding.recyclerViewJobs.layoutManager = LinearLayoutManager(mContext)
+//                jobList = response.body() ?: listOf()
+//
+//                adpater = AllJobAdapter(jobList)
+//                binding.recyclerViewJobs.layoutManager = LinearLayoutManager(mContext)
+//
+//                binding.recyclerViewJobs.adapter = adpater
+//
+//
+//            }else{
+//                Log.d("Devashish","No data found")
+//
+//            }
+//        }
+
+
+        getAllJobs()
+
+        binding.homeSearchEdTxt.setOnClickListener{
+            val direction = HomeFragmentSeekerDirections.actionHomeFragmentSeekerToSearchFragment()
+            findNavController().navigate(direction)
+        }
+
+
+    }
+
+    private fun getAllJobs() {
+        ProgressDialog.show(mContext)
         viewLifecycleOwner.lifecycleScope.launch{
             Log.d("Devashish","Hello Devashish")
             val response = allJobViewModel.getAllJobs()
@@ -83,20 +121,13 @@ class HomeFragmentSeeker : Fragment() {
                 binding.recyclerViewJobs.adapter = adpater
 
 
+                ProgressDialog.hideProgress()
             }else{
                 Log.d("Devashish","No data found")
-
+                ProgressDialog.hideProgress()
             }
         }
-
-
-
-        binding.homeSearchEdTxt.setOnClickListener{
-            val direction = HomeFragmentSeekerDirections.actionHomeFragmentSeekerToSearchFragment()
-            findNavController().navigate(direction)
-        }
-
-
     }
+
 
 }

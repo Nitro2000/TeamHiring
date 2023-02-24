@@ -1,18 +1,20 @@
 package com.example.teamhiring
 
+import android.text.TextUtils
+import android.util.Patterns
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 
 object HelperFunction {
-
-
 
     fun bottomNavBarVisibility(activity: FragmentActivity, visibility: Int) {
         try {
             (activity as MainActivity).bottomNavBarVisibility(visibility)
         } catch (e: Exception) {}
     }
-
+    fun isValidEmail(email: String): Boolean {
+        return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
 
 //    fun changeStatusBarColor(activity: FragmentActivity, color: Int) {
 //        try {
