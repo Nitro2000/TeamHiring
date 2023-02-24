@@ -35,7 +35,7 @@ class EmpListAdapter(val empList: List<RecruiterEmpData>, val type: RecFragInfoE
         }
 
         fun navigateToRecPage() {
-            binding.root.findNavController().navigate(R.id.recruiterPageFragment)
+            binding.root.findNavController().navigate(R.id.employeePageFragment)
         }
 
     }

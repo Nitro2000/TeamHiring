@@ -123,5 +123,14 @@
     <string name="logout">Logout</string>
     <string name="edit">Edit</string>
     <string name="basic_filters">Basic filters</string>
+    <string name="about_candidate">About Candidate</string>
+    <string name="male">Male</string>
+    <string name="skill">Skill</string>
+    <string name="job_preferences">Job Preferences</string>
+    <string name="_25_yr_old">25 yr old</string>
+    <string name="experiences">Experiences</string>
+    <string name="cd_icon_star">cd icon star</string>
+    <string name="jan_2_present">Jan 2 - Present</string>
+    <string name="notice_period">Notice period: 15 Days</string>
 
 </resources>

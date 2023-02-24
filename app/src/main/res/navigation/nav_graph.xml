@@ -169,11 +169,6 @@
         android:label="RecruiterPageFragment"
         tools:layout="@layout/fragment_recruiter_page"/>
     <fragment
-        android:id="@+id/recruiterManageJobFragment"
-        android:name="com.example.teamhiring.ui.subFragment.recInter.RecruiterManageJobFragment"
-        android:label="RecruiterManageJobFragment"
-        tools:layout="@layout/fragment_recruiter_manage_job"/>
-    <fragment
         android:id="@+id/recruiterInteractedFragment"
         android:name="com.example.teamhiring.ui.mainFragments.recruiter.RecruiterInteractedFragment"
         android:label="RecruiterInteractedFragment"
@@ -188,6 +183,11 @@
         android:name="com.example.teamhiring.ui.mainFragments.recruiter.RecruiterSearchFragment"
         android:label="RecruiterSearchFragment"
         tools:layout="@layout/fragment_recruiter_search"/>
+    <fragment
+        android:id="@+id/employeePageFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.EmployeePageFragment"
+        android:label="EmployeePageFragment"
+        tools:layout="@layout/fragment_employee_page"/>
 
 
 </navigation>
