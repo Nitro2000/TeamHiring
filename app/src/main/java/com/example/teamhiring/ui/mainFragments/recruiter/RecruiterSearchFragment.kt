@@ -99,29 +99,24 @@ class RecruiterSearchFragment : Fragment() {
     }
 
     private fun setChipData(chipList: List<String>, chipGroup: ChipGroup) {
-        var firstOpt = true
         for (text in chipList) {
             val chip = layoutInflater.inflate(R.layout.item_chip_rec_search, chipGroup, false) as Chip
-            if (firstOpt) {
-                chip.isChecked = true
-                firstOpt = false
-            }
             chip.text = text
             chipGroup.addView(chip)
         }
+        val chip = chipGroup.getChildAt(0) as Chip
+        chip.isChecked = true
+
     }
 
     private fun setRadioData(radioList: List<String>, radioGroup: RadioGroup) {
-        var firstOpt = true
         for (text in radioList) {
             val rad = layoutInflater.inflate(R.layout.item_radio_button_rec_search, radioGroup, false) as RadioButton
-            if (firstOpt) {
-                rad.isChecked = true
-                firstOpt = false
-            }
             rad.text = text
             radioGroup.addView(rad)
         }
+        val first: RadioButton = radioGroup.getChildAt(0) as RadioButton
+        first.isChecked = true
     }
 
 }
