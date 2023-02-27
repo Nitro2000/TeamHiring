@@ -41,11 +41,15 @@ class CareerPreferencesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        getCareerData()
+    }
+
+    private fun getCareerData() {
         viewLifecycleOwner.lifecycleScope.launch{
             Log.d("Devashish","Hello Devashish")
             val response = empProffViewModel.getEmpCarPrefData()
             val empProffData = response.body()
-            val carPrefDetail = empProffData?.careerEmpData?.get(0)
+            val carPrefDetail = empProffData?.get(0)
             if (response.isSuccessful){
                 binding.carPrefJob.text = carPrefDetail?.empJobRoles
                 binding.carPreExpLabel.text = carPrefDetail?.empTypeExp
@@ -65,5 +69,6 @@ class CareerPreferencesFragment : Fragment() {
 
             }
         }
+
     }
 }

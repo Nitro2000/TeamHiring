@@ -72,6 +72,7 @@ class HomeFragmentSeeker : Fragment() {
 
         binding.swipeRefresh.setOnRefreshListener {
             getAllJobs()
+            binding.swipeRefresh.isRefreshing = false
         }
 
 //        viewLifecycleOwner.lifecycleScope.launch{

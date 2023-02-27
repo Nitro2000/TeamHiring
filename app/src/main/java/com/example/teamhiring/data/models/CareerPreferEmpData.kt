@@ -1,9 +1,6 @@
 package com.example.teamhiring.data.models
 
 import com.google.gson.annotations.SerializedName
-data class CareerPreferEmpData(
-    val careerEmpData: List<CareerEmpData?>? = listOf()
-)
 
 data class CareerEmpData(
     @SerializedName("id")

@@ -1,7 +1,7 @@
 package com.example.teamhiring.presentation.viewmodels
 
 import androidx.lifecycle.ViewModel
-import com.example.teamhiring.data.models.CareerPreferEmpData
+import com.example.teamhiring.data.models.CareerEmpData
 import com.example.teamhiring.data.repositories.EmpProffessionalRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class EmpCarPrefViewModel @Inject constructor(private val empProffRepository: EmpProffessionalRepository): ViewModel() {
-    suspend fun getEmpCarPrefData(): Response<CareerPreferEmpData>{
+    suspend fun getEmpCarPrefData(): Response<List<CareerEmpData>>{
         return withContext(Dispatchers.IO){
             empProffRepository.getEmpCarPrefData()
         }
