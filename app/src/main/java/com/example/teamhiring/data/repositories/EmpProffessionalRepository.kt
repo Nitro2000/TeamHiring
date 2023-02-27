@@ -7,4 +7,6 @@ import javax.inject.Inject
 class EmpProffessionalRepository @Inject constructor(private val empProffService: EmpProffService) {
 
     suspend fun getEmpProffData() = empProffService.getEmpProffData()
+
+    suspend fun getEmpCarPrefData() = empProffService.getEmpCarPrefData()
 }

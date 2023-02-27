@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.teamhiring.data.constants.NetworkResult
 import com.example.teamhiring.data.models.EmpLoginBody
+import com.example.teamhiring.data.models.EmpRegisterBody
 import com.example.teamhiring.data.models.LoginData
 import com.example.teamhiring.data.services.LoginEmployeeService
 import org.json.JSONObject
@@ -13,17 +14,27 @@ import retrofit2.Response
 import javax.inject.Inject
 
 class EmpLoginRepository @Inject constructor(private val loginEmployeeService: LoginEmployeeService) {
-    //    suspend fun getLoginData() = loginEmployeeService.getEmpLoginData()
 
 
+//  Response is same for the Login and Registration
     private val _userResponseLiveData = MutableLiveData<NetworkResult<LoginData>>()
     val userResponseLiveData: LiveData<NetworkResult<LoginData>>
         get() = _userResponseLiveData
 
+
+//    For Employee Login
     suspend fun loginUser(empLoginBody: EmpLoginBody) {
         val response = loginEmployeeService.getEmpLoginData(empLoginBody)
         Log.d(TAG, "loginUser:$response")
         handleResponse(response)
+    }
+
+
+//    For Employee Registration
+    suspend fun registerUser(empRegisterBody: EmpRegisterBody) {
+        val registerResponse = loginEmployeeService.getEmpRegisterData(empRegisterBody)
+        Log.d(TAG, "registerUser:$registerResponse")
+        handleResponse(registerResponse)
     }
 
     private fun handleResponse(response: Response<LoginData>) {

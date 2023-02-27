@@ -13,6 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import com.example.teamhiring.HelperFunction
 import com.example.teamhiring.R
 import com.example.teamhiring.databinding.FragmentCareerPreferencesBinding
+import com.example.teamhiring.presentation.viewmodels.EmpCarPrefViewModel
 import com.example.teamhiring.presentation.viewmodels.EmpProffessionalViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -24,7 +25,7 @@ class CareerPreferencesFragment : Fragment() {
     private lateinit var mContext: Context
 
     private lateinit var binding: FragmentCareerPreferencesBinding
-    private val empProffViewModel: EmpProffessionalViewModel by viewModels()
+    private val empProffViewModel: EmpCarPrefViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,15 +43,23 @@ class CareerPreferencesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewLifecycleOwner.lifecycleScope.launch{
             Log.d("Devashish","Hello Devashish")
-            val response = empProffViewModel.getEmpProffData()
+            val response = empProffViewModel.getEmpCarPrefData()
             val empProffData = response.body()
-            val proffDetail = empProffData?.newPDetails?.get(0)
+            val carPrefDetail = empProffData?.careerEmpData?.get(0)
             if (response.isSuccessful){
-                binding.carPrefJob.text = proffDetail?.currComDesig
-                binding.carPreExpLabel.text = proffDetail?.currComDesig
-                binding.carPrefEmpType.text = proffDetail?.currComName
-                binding.carPrefEngTitle.text = proffDetail?.oldDTo
-                binding.carPrefCity.text = proffDetail?.currComName
+                binding.carPrefJob.text = carPrefDetail?.empJobRoles
+                binding.carPreExpLabel.text = carPrefDetail?.empTypeExp
+                binding.carPrefEmpType.text = carPrefDetail?.empTypeOH
+                binding.carPrefEngTitle.text = carPrefDetail?.empEnglishLabel
+                binding.carPrefCity.text = carPrefDetail?.empPrefCities
+                binding.carPrefExpSalary.text = carPrefDetail?.empSalaryLakh+","+carPrefDetail?.empSalaryThousand
+                binding.carPrefSkills.text = carPrefDetail?.empSkills
+                binding.carPrefState.text = carPrefDetail?.empPrefState
+                binding.carPrefShift.text = carPrefDetail?.empPrefShift
+                binding.carPrefJobType.text = carPrefDetail?.empPrefEmpType
+                binding.carTotalExp.text = carPrefDetail?.empExpYear+" years"+ carPrefDetail?.empExpMonth+" months"
+
+
             }else{
                 Log.d("Devashish","No data found")
 

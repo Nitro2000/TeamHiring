@@ -95,7 +95,7 @@ class SignInFragment : Fragment() {
     private fun validateUserInput(): Pair<Boolean, String> {
         val emailAddress: String = binding.signInEmailEdTxt.editText?.text.toString()
         val password = binding.signInPassEdTxt.editText?.text.toString()
-        return empLoginViewModel.validateCredentials(emailAddress, password, true)
+        return empLoginViewModel.validateLoginCredentials(emailAddress, password, true)
     }
 
     private fun bindObservers() {
