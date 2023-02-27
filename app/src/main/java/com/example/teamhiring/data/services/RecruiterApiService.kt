@@ -1,5 +1,7 @@
 package com.example.teamhiring.data.services
 
+import com.example.teamhiring.data.models.EmpCareerPrefeData
+import com.example.teamhiring.data.models.EmpExpData
 import com.example.teamhiring.data.models.recruiter.RecProfileData
 import com.example.teamhiring.data.models.recruiter.RecruiterEmpData
 import retrofit2.Response
@@ -14,4 +16,10 @@ interface RecruiterApiService {
 
     @GET("aboutcompany")
     suspend fun getRecProfileData(@Query("rec_id") recId: Int): Response<List<RecProfileData>>
+
+    @GET("career_pref_emp")
+    suspend fun getEmpCareerPref(@Query("emp_id") empId: Int): Response<List<EmpCareerPrefeData>>
+
+    @GET("p_details")
+    suspend fun getEmpExpData(@Query("emp_id") empId: Int): Response<EmpExpData>
 }

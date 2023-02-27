@@ -95,7 +95,7 @@ class RecruiterHomeFragment : Fragment() {
     private fun setChipData(chipList: List<String>) {
         binding.rHomeChipGroup.removeAllViews()
         for (text in chipList) {
-            binding.rHomeChipGroup.addView(createChip(text, mContext))
+            binding.rHomeChipGroup.addView(createChip(text, R.color.white, mContext))
         }
     }
 

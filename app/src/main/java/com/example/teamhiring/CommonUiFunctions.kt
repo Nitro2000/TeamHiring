@@ -45,11 +45,11 @@ object CommonUiFunctions {
         return value * context.resources.displayMetrics.density
     }
 
-    fun createChip(textValue: String, context: Context): Chip {
+    fun createChip(textValue: String, color: Int, context: Context): Chip {
         val chip = Chip(context)
         chip.apply {
             text = textValue
-            chipBackgroundColor = getColorStateList(context, R.color.white)
+            chipBackgroundColor = getColorStateList(context, color)
             chipStrokeWidth = dpToFloat(context, 1)
             setChipStrokeColorResource(R.color.sub_views)
         }
