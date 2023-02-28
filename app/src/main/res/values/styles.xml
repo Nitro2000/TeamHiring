@@ -57,4 +57,10 @@
         <item name="cornerSizeBottomRight">@dimen/space_10</item>
     </style>
 
+    // Post job bottom corner
+    <style name="ShapeAppearanceOverlay.App.PostJobCorner" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeBottomRight">50dp</item>
+    </style>
+
 </resources>
