@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/recruiterHomeFragment">
+    app:startDestination="@id/postJobFragment">
 
     <fragment
         android:id="@+id/splashFragment"
@@ -188,6 +188,11 @@
         android:name="com.example.teamhiring.ui.mainFragments.EmployeePageFragment"
         android:label="EmployeePageFragment"
         tools:layout="@layout/fragment_employee_page"/>
+    <fragment
+        android:id="@+id/postJobFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.recruiter.PostJobFragment"
+        android:label="PostJobFragment"
+        tools:layout="@layout/fragment_post_job"/>
 
 
 </navigation>

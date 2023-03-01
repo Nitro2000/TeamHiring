@@ -27,7 +27,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/postJobLayout"
             android:layout_width="300dp"
-            android:layout_height="180dp"
+            android:layout_height="150dp"
             android:background="@drawable/bg_post_job_solid_cornered"
             android:paddingHorizontal="@dimen/space_24"
             app:layout_constraintBottom_toBottomOf="@id/userMatchImg"
@@ -67,6 +67,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/postJobLayout">
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/postJobNavFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navGraph="@navigation/post_job_nav_graph"
+                app:defaultNavHost="true"
+                app:layout_constraintBottom_toBottomOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
