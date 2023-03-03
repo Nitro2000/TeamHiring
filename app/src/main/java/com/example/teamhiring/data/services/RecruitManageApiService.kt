@@ -2,6 +2,7 @@ package com.example.teamhiring.data.services
 
 import com.example.teamhiring.data.models.GeneralDataModel
 import com.example.teamhiring.data.models.recruiter.PostedJobData
+import com.example.teamhiring.data.models.recruiter.RecViewedData
 import com.example.teamhiring.data.models.recruiter.RecruiterEmpData
 import retrofit2.Response
 import retrofit2.http.GET
@@ -18,4 +19,8 @@ interface RecruitManageApiService {
         @Query("job_id") jobId: Int?
     ): Response<GeneralDataModel<List<RecruiterEmpData>>>
 
+    @GET("rec_viewed_by_detail")
+    suspend fun getViewedData(
+        @Query("rec_id") recId: Int
+    ): Response<RecViewedData>
 }

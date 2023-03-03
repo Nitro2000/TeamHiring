@@ -1,5 +1,3 @@
-@file:Suppress("DEPRECATION")
-
 package com.example.teamhiring
 
 import androidx.appcompat.app.AppCompatActivity

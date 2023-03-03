@@ -139,5 +139,7 @@
     <string name="advance_filters">Advance Filters</string>
     <string name="english_level">English level</string>
     <string name="candidate_age">Candidate Age</string>
+    <string name="employee_applied">Employee applied</string>
+    <string name="employee_viewed_you">Employee Viewed You</string>
 
 </resources>
