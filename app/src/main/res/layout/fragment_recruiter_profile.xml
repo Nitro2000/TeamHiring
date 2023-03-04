@@ -15,8 +15,30 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/layout_backgrounds"
-            android:padding="@dimen/space_16"
             tools:context=".ui.mainFragments.RecruiterProfileFragment">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="250dp"
+                android:src="@drawable/wave__49_"
+                android:scaleType="fitXY"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/rProfMyAccTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Account"
+                android:elevation="6dp"
+                android:fontFamily="@font/roboto_medium_600"
+                android:textColor="#FFFFFF"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="@dimen/space_16"
+                android:layout_marginStart="@dimen/space_16"
+                android:textSize="22sp"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/rProfFirstLayout"
@@ -24,10 +46,12 @@
                 android:layout_height="wrap_content"
                 android:elevation="@dimen/space_4"
                 android:padding="@dimen/space_8"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="@dimen/space_16"
                 android:background="@drawable/bg_profile_layout_white_corner"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rProfMyAccTxt"
                 >
 
                 <de.hdodenhof.circleimageview.CircleImageView
@@ -45,7 +69,7 @@
                     android:text="@string/rishabh_garg"
                     app:layout_constraintStart_toEndOf="@id/rProfMainImg"
                     android:fontFamily="@font/roboto_medium_500"
-                    android:textSize="@dimen/text_20"
+                    android:textSize="@dimen/text_18"
                     android:textColor="@color/dark_black"
                     android:layout_marginStart="@dimen/space_16"
                     app:layout_constraintTop_toTopOf="@id/rProfMainImg"
@@ -116,7 +140,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:elevation="@dimen/space_4"
-                android:padding="@dimen/space_8"
+                android:padding="@dimen/space_10"
+                android:layout_marginHorizontal="@dimen/space_16"
                 android:layout_marginTop="@dimen/space_12"
                 app:layout_constraintHorizontal_chainStyle="spread"
                 app:layout_constraintEnd_toStartOf="@id/rProfJobLayout"
@@ -167,8 +192,9 @@
                 android:id="@+id/rProfJobLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/space_8"
+                android:padding="@dimen/space_10"
                 android:elevation="@dimen/space_4"
+                android:layout_marginHorizontal="@dimen/space_16"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:background="@drawable/bg_profile_layout_white_corner"
                 app:layout_constraintTop_toTopOf="@id/rProfSavedLayout"
@@ -220,6 +246,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_12"
                 android:elevation="@dimen/space_4"
+                android:layout_marginHorizontal="@dimen/space_16"
                 app:layout_constraintTop_toBottomOf="@id/rProfSavedLayout"
                 app:layout_constraintStart_toStartOf="parent"
                 android:background="@drawable/grad_rec_proff_card"
@@ -239,7 +266,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_medium_500"
                     android:text="@string/company_info"
-                    android:textColor="@color/dark_black"
+                    android:textColor="@color/text_heading"
                     android:textSize="@dimen/text_16"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -250,17 +277,18 @@
                     android:layout_height="24dp"
                     android:layout_marginEnd="@dimen/space_8"
                     android:contentDescription="@string/cd_icon_chat"
-                    android:src="@drawable/icon_company"
+                    android:src="@drawable/icon_company_info"
                     app:layout_constraintBottom_toBottomOf="@id/rProfComInfo"
                     app:layout_constraintEnd_toStartOf="@id/rProfComInfo"
                     app:layout_constraintTop_toTopOf="@id/rProfComInfo" />
 
-                <ImageView
+                <TextView
                     android:id="@+id/rProfEditImg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/space_10"
-                    android:src="@drawable/icon_chat_blue"
+                    android:text="Edit"
+                    android:textColor="@color/blue_200"
                     app:layout_constraintBottom_toBottomOf="@id/rProfComInfo"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/rProfComInfo" />
@@ -407,6 +435,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_12"
                 android:elevation="@dimen/space_4"
+                android:layout_marginHorizontal="@dimen/space_16"
                 app:layout_constraintTop_toBottomOf="@id/rProfComLayout"
                 app:layout_constraintStart_toStartOf="parent"
                 android:background="@drawable/grad_rec_proff_card"
@@ -438,18 +467,19 @@
                     android:layout_height="24dp"
                     android:layout_marginEnd="@dimen/space_8"
                     android:contentDescription="@string/cd_icon_saved"
-                    android:src="@drawable/icon_company"
+                    android:src="@drawable/icon_company_address"
                     app:layout_constraintBottom_toBottomOf="@id/rProfComAdd"
                     app:layout_constraintEnd_toStartOf="@id/rProfComAdd"
                     app:layout_constraintTop_toTopOf="@id/rProfComAdd" />
 
-                <ImageView
+                <TextView
                     android:id="@+id/profLocatEditImg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/cd_icon_saved"
                     android:padding="@dimen/space_10"
-                    android:src="@drawable/icon_chat_blue"
+                    android:text="Edit"
+                    android:textColor="@color/blue_200"
                     app:layout_constraintBottom_toBottomOf="@id/rProfComAdd"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/rProfComAdd" />
@@ -576,6 +606,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:elevation="@dimen/space_4"
+                android:layout_marginHorizontal="@dimen/space_16"
                 android:background="@drawable/bg_profile_layout_white_corner"
                 app:layout_constraintTop_toBottomOf="@id/rProfComAddressLayout">
 
@@ -588,7 +619,7 @@
                     android:fontFamily="@font/roboto_medium_500"
                     android:paddingVertical="@dimen/space_12"
                     android:text="@string/managed_jobs"
-                    android:textColor="@color/dark_black"
+                    android:textColor="@color/text_heading"
                     android:textSize="@dimen/text_14"
                     app:drawableStartCompat="@drawable/icon_manage_job"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -611,7 +642,7 @@
                     android:fontFamily="@font/roboto_medium_500"
                     android:paddingVertical="@dimen/space_12"
                     android:text="@string/help_desk"
-                    android:textColor="@color/dark_black"
+                    android:textColor="@color/text_heading"
                     android:textSize="@dimen/text_14"
                     app:drawableStartCompat="@drawable/icon_help_desk"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -635,7 +666,7 @@
                     android:fontFamily="@font/roboto_medium_500"
                     android:paddingVertical="@dimen/space_12"
                     android:text="@string/rate_us"
-                    android:textColor="@color/dark_black"
+                    android:textColor="@color/text_heading"
                     android:textSize="@dimen/text_14"
                     app:drawableStartCompat="@drawable/icon_star"
                     app:layout_constraintEnd_toEndOf="parent"

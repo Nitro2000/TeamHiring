@@ -35,4 +35,11 @@
         <item name="android:fontFamily">@font/roboto_medium</item>
     </style>
 
+    // ImageView
+    <style name="ShapeAppearanceOverlay.App.BottomBothCorners" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeBottomLeft">@dimen/space_10</item>
+        <item name="cornerSizeBottomRight">@dimen/space_10</item>
+    </style>
+
 </resources>

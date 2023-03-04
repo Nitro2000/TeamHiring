@@ -7,6 +7,18 @@ import androidx.fragment.app.FragmentActivity
 
 object HelperFunction {
 
+
+    fun changeStatusBarColor(activity: FragmentActivity, color: Int) {
+        try {
+            activity.window.let {
+//                it.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+//                it.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+                it.statusBarColor = ContextCompat.getColor(activity, color)
+            }
+//            activity.window.decorView.systemUiVisibility = View.VISIBLE
+        } catch (e: Exception){}
+    }
+
     fun bottomNavBarVisibility(activity: FragmentActivity, visibility: Int) {
         try {
             (activity as MainActivity).bottomNavBarVisibility(visibility)

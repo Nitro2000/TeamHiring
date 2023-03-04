@@ -100,8 +100,8 @@
             android:id="@+id/action_signInFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
         <action
-            android:id="@+id/action_signInFragment_to_homeFragmentSeeker2"
-            app:destination="@id/homeFragmentSeeker" />
+            android:id="@+id/action_signInFragment_to_recruiterHomeFragment"
+            app:destination="@id/recruiterHomeFragment" />
     </fragment>
 
 
@@ -180,6 +180,12 @@
         android:name="com.example.teamhiring.ui.mainFragments.SearchFragment"
         android:label="SearchFragment"
         tools:layout="@layout/fragment_search"/>
+
+    <fragment
+        android:id="@+id/recruiterManageJobFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.RecruiterManageJobFragment"
+        android:label="RecruiterManageJobFragment"
+        tools:layout="@layout/fragment_recruiter_manage_job"/>
 
 
 </navigation>

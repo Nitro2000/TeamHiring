@@ -127,6 +127,7 @@
                     android:theme="@style/Theme.TeamHiring.Toolbar"
                     app:background="@android:color/transparent"
                     app:layout_collapseMode="pin"
+                    android:text="@string/chat"
                     app:popupTheme="@style/Theme.TeamHiring.PopupOverlay"
                     app:titleTextColor="@color/white" />
 

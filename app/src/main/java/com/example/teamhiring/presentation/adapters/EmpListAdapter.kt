@@ -7,15 +7,30 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.teamhiring.R
+import com.example.teamhiring.data.models.RecruiterData
 import com.example.teamhiring.databinding.ItemHomeJobSeekersBinding
 
-class EmpListAdapter(val context: Context): RecyclerView.Adapter<EmpListAdapter.ViewHolder>() {
+class EmpListAdapter(val empList: List<RecruiterData>, val context: Context): RecyclerView.Adapter<EmpListAdapter.ViewHolder>() {
 
     inner class ViewHolder(val binding: ItemHomeJobSeekersBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind() {
 
-            binding.jobExpSubTxt.text = context.getString(R.string.exp_years, 1.02f)
+        fun bind(item: RecruiterData) {
+            binding.jobNameTxt.text = item.cName
+            binding.jobHighQualTxt.text = item.highestQual
+            binding.jobExpSubTxt.text = context.getString(R.string.exp_years,
+                item.tExpYr?.toFloat() ?: 0.0f
+            )
             binding.jobAnnExpSalTxt.text = context.getString(R.string.ann_income, 1, 3)
+            binding.jobRolesTxt.text = item.pJobRoles
+            binding.jobTypeTxt.text = item.eTYpe
+            binding.jobExpDesignTxt.text = item.pJobRoles
+        }
+
+        fun arrowClick() {
+            binding.jobDownArrowImg.setOnClickListener {
+                val visibility = binding.jobSecLayout.visibility
+                binding.jobSecLayout.visibility = if (visibility == View.GONE) View.VISIBLE else View.GONE
+            }
         }
 
     }
@@ -29,9 +44,11 @@ class EmpListAdapter(val context: Context): RecyclerView.Adapter<EmpListAdapter.
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind()
+        val item = empList[position]
+        holder.bind(item)
+        holder.arrowClick()
 
     }
 
-    override fun getItemCount(): Int = 4
+    override fun getItemCount(): Int = empList.size
 }

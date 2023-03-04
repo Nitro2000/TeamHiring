@@ -3,6 +3,7 @@ package com.example.teamhiring.di
 import com.example.teamhiring.data.constants.Constant
 import com.example.teamhiring.data.services.EmpProffService
 import com.example.teamhiring.data.services.LoginEmployeeService
+import com.example.teamhiring.data.services.RecruiterApiService
 import com.example.teamhiring.data.services.ReferenceApiService
 import dagger.Module
 import dagger.Provides
@@ -16,13 +17,15 @@ import javax.inject.Singleton
 @Module
 class NetworkModule {
 
+    @Provides
+    fun provideBaseUrl() = Constant.BASE_URL
 
     @Provides
     @Singleton
-    fun provideRetrofit(): Retrofit {
+    fun provideRetrofit(baseUrl: String): Retrofit {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(Constant.BASE_URL)
+            .baseUrl(baseUrl)
             .build()
     }
 
@@ -30,6 +33,11 @@ class NetworkModule {
     @Singleton
     fun provideReferenceApiService(retrofit: Retrofit): ReferenceApiService =
         retrofit.create(ReferenceApiService::class.java)
+
+    @Provides
+    @Singleton
+    fun provideRecruiterApiService(retrofit: Retrofit): RecruiterApiService =
+        retrofit.create(RecruiterApiService::class.java)
 
     @Provides
     @Singleton

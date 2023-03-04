@@ -12,9 +12,12 @@ import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.teamhiring.data.constants.enums.JobFragInfoEnum
 import com.example.teamhiring.data.models.AllJobData
 import com.example.teamhiring.databinding.FragmentJobAppliedBinding
 import com.example.teamhiring.presentation.adapters.AllJobAdapter
+import com.example.teamhiring.presentation.adapters.RecJobListAdapter
 import com.example.teamhiring.presentation.viewmodels.AllJobViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -34,7 +37,7 @@ class JobAppliedFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
 
         mContext = requireContext()
@@ -46,19 +49,24 @@ class JobAppliedFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.jobAppRecyView.apply {
+            adapter = RecJobListAdapter(JobFragInfoEnum.JobApplied)
 
-        viewLifecycleOwner.lifecycleScope.launch{
-            Log.d("Devashish","Hello Devashish")
-            val response = appliedJobViewModel.getAppliedJob()
-            if (response.isSuccessful){
-                Log.d(TAG, "onViewCreated: Data Found")
+            layoutManager = LinearLayoutManager(mContext, RecyclerView.VERTICAL, false)
 
-                binding.jobAppRecyView.layoutManager = LinearLayoutManager(mContext)
-                appliedJobList = response.body()?: listOf()
-                adapter = AllJobAdapter(appliedJobList)
-                binding.jobAppRecyView.adapter = adapter
-            }else{
-                Log.d(TAG, "onViewCreated: No data found")
+            viewLifecycleOwner.lifecycleScope.launch {
+                Log.d("Devashish", "Hello Devashish")
+                val response = appliedJobViewModel.getAppliedJob()
+                if (response.isSuccessful) {
+                    Log.d(TAG, "onViewCreated: Data Found")
+
+                    binding.jobAppRecyView.layoutManager = LinearLayoutManager(mContext)
+                    appliedJobList = response.body() ?: listOf()
+                    adapter = AllJobAdapter(appliedJobList)
+                    binding.jobAppRecyView.adapter = adapter
+                } else {
+                    Log.d(TAG, "onViewCreated: No data found")
+                }
             }
         }
     }

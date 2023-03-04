@@ -9,15 +9,17 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/space_12"
         android:background="@color/layout_backgrounds"
-        tools:context=".ui.mainFragments.RecruiterHomeFragment">
+        android:paddingHorizontal="@dimen/space_12"
+        tools:context=".ui.mainFragments.RecruiterManageJobFragment">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/homeRecRecyView"
+            android:id="@+id/jobManageRecyView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/item_home_job_seekers" />
+            android:gravity="center"
+            android:layout_marginTop="@dimen/space_16"
+            tools:listitem="@layout/item_manage_job" />
 
     </FrameLayout>
 </layout>

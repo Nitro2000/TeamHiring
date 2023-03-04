@@ -19,6 +19,11 @@ import com.example.teamhiring.presentation.adapters.AllJobAdapter
 import com.example.teamhiring.presentation.viewmodels.AllJobViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import androidx.recyclerview.widget.RecyclerView
+import com.example.teamhiring.HelperFunction
+import com.example.teamhiring.R
+import com.example.teamhiring.data.constants.enums.JobFragInfoEnum
+import com.example.teamhiring.presentation.adapters.RecJobListAdapter
 
 @AndroidEntryPoint
 class HomeFragmentSeeker : Fragment() {
@@ -47,6 +52,7 @@ class HomeFragmentSeeker : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        HelperFunction.changeStatusBarColor(mActivity, R.color.text_heading)
 
         // TODO Delete after merge
         binding.secondaryText.setOnClickListener {

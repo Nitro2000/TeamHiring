@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.teamhiring.HelperFunction
 import com.example.teamhiring.R
@@ -19,6 +21,8 @@ import com.example.teamhiring.helpers.ProgressDialog
 import com.example.teamhiring.presentation.viewmodels.EmpLoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+import com.example.teamhiring.presentation.viewmodels.CommonViewModel
+import kotlinx.coroutines.launch
 
 
 @AndroidEntryPoint
@@ -27,6 +31,8 @@ class SignInFragment : Fragment() {
     private lateinit var binding: FragmentSignInBinding
     private lateinit var mContext: Context
     private lateinit var mActivity: FragmentActivity
+    private val viewModel: CommonViewModel by activityViewModels()
+    private var userType: Boolean = true
     private val empLoginViewModel: EmpLoginViewModel by viewModels()
 
 
@@ -38,6 +44,8 @@ class SignInFragment : Fragment() {
         mActivity = requireActivity()
         HelperFunction.bottomNavBarVisibility(mActivity, View.GONE)
         // Inflate the layout for this fragment
+        userType = viewModel.userTypeEmp.value ?: true
+
         binding = FragmentSignInBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -82,6 +90,10 @@ class SignInFragment : Fragment() {
         findNavController().navigate(direction)
     }
 
+    private fun navigateToRecHomePage() {
+        val direction = SignInFragmentDirections.actionSignInFragmentToRecruiterHomeFragment()
+        findNavController().navigate(direction)
+    }
     private fun navigateToHomePage() {
         val direction = SignInFragmentDirections.actionSignInFragmentToHomeFragmentSeeker()
         findNavController().navigate(direction)

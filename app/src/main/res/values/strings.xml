@@ -59,7 +59,7 @@
     <string name="posted">Posted</string>
     <string name="cd_icon_job">cd icon job list</string>
     <string name="cd_icon_saved">cd icon saved</string>
-    <string name="company_verified">Company verified: Approved</string>
+    <string name="company_verified">Company status: Approved</string>
     <string name="company_info">Company Info</string>
     <string name="add_detail">add detail</string>
     <string name="industrial_type">Industrial Type</string>
@@ -105,4 +105,8 @@
     <string name="apply_space">Apply</string>
     <string name="location">Location</string>
     <string name="career_pref_objective">I m looking for greatest opportunity where i can show my greatest skills.</string>
+    <string name="request_resume">Request Resume</string>
+    <string name="gurgaon">Gurgaon</string>
+    <string name="opened">Opened</string>
+    <string name="num_responses">%d\nResponses</string>
 </resources>

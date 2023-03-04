@@ -8,16 +8,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.teamhiring.HelperFunction
 import com.example.teamhiring.R
+import com.example.teamhiring.data.constants.Constant
 import com.example.teamhiring.databinding.FragmentUserSelectBinding
+import com.example.teamhiring.presentation.viewmodels.CommonViewModel
 
 class UserSelectFragment : Fragment() {
 
     private lateinit var binding: FragmentUserSelectBinding
     private lateinit var mContext: Context
     private lateinit var mActivity: FragmentActivity
+    private val viewModel: CommonViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,8 +40,23 @@ class UserSelectFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.userSelectSeekerBtn.setOnClickListener {
-            val direction = UserSelectFragmentDirections.actionUserSelectFragmentToSignInFragment()
-            findNavController().navigate(direction)
+            saveToDataStore(true)
+            navigateToSignInFragment()
         }
+
+        binding.userSelectRecruiterBtn.setOnClickListener {
+            saveToDataStore(false)
+            navigateToSignInFragment()
+        }
+    }
+
+    private fun saveToDataStore(isEmployee: Boolean) {
+        viewModel.saveUserType(isEmployee)
+        viewModel.getUserType()
+    }
+
+    private fun navigateToSignInFragment() {
+        val direction = UserSelectFragmentDirections.actionUserSelectFragmentToSignInFragment()
+        findNavController().navigate(direction)
     }
 }

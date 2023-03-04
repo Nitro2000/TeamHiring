@@ -7,6 +7,7 @@
     <color name="blue_700">#F57C00</color>
     <color name="light_blue_200">#FFE0B2</color>
     <color name="light_blue_700">#FFCC80</color>
+    <color name="medium_orange">#FEAC33</color>
 
     // Extra colors
     <color name="blue_000">#7A5E9EFF</color>
@@ -39,5 +40,5 @@
     <color name="view_lines_bottom">#CCCDCD</color>
 
     // Text
-    <color name="text_heading">#1A1A1A</color>
+    <color name="text_heading">#242424</color>
 </resources>
