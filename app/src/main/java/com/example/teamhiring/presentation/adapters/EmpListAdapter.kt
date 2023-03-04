@@ -4,17 +4,18 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentActivity
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.teamhiring.R
-import com.example.teamhiring.data.models.RecruiterData
+import com.example.teamhiring.data.constants.enums.RecFragInfoEnum
+import com.example.teamhiring.data.models.recruiter.RecruiterEmpData
 import com.example.teamhiring.databinding.ItemHomeJobSeekersBinding
 
-class EmpListAdapter(val empList: List<RecruiterData>, val context: Context): RecyclerView.Adapter<EmpListAdapter.ViewHolder>() {
+class EmpListAdapter(val empList: List<RecruiterEmpData>, val type: RecFragInfoEnum, val context: Context): RecyclerView.Adapter<EmpListAdapter.ViewHolder>() {
 
     inner class ViewHolder(val binding: ItemHomeJobSeekersBinding): RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: RecruiterData) {
+        fun bind(item: RecruiterEmpData) {
             binding.jobNameTxt.text = item.cName
             binding.jobHighQualTxt.text = item.highestQual
             binding.jobExpSubTxt.text = context.getString(R.string.exp_years,
@@ -33,6 +34,10 @@ class EmpListAdapter(val empList: List<RecruiterData>, val context: Context): Re
             }
         }
 
+        fun navigateToRecPage() {
+            binding.root.findNavController().navigate(R.id.employeePageFragment)
+        }
+
     }
 
 
@@ -44,9 +49,21 @@ class EmpListAdapter(val empList: List<RecruiterData>, val context: Context): Re
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        when (type) {
+            RecFragInfoEnum.RecHome -> {
+
+            }
+            RecFragInfoEnum.RecSaved -> {
+                holder.binding.jobStarImg.setImageResource(R.drawable.icon_start_filled)
+            }
+        }
         val item = empList[position]
         holder.bind(item)
         holder.arrowClick()
+
+        holder.binding.jobRootLayout.setOnClickListener {
+            holder.navigateToRecPage()
+        }
 
     }
 

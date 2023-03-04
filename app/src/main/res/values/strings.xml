@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">TeamHiring</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="notification_title">Job|Bits Pan India</string>
     <string name="notification_demo">Bits Pan India Viewed Your Profile</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -57,8 +56,6 @@
     <string name="chat">Chat</string>
     <string name="cd_icon_chat">cd icon chat</string>
     <string name="posted">Posted</string>
-    <string name="cd_icon_job">cd icon job list</string>
-    <string name="cd_icon_saved">cd icon saved</string>
     <string name="company_verified">Company status: Approved</string>
     <string name="company_info">Company Info</string>
     <string name="add_detail">add detail</string>
@@ -94,6 +91,7 @@
     <string name="rs_2_6_lpa">Rs 2 – 6 LPA</string>
     <string name="little_english">Little English</string>
     <string name="human_resorce">Human resorce</string>
+    <string name="date_format">%s - %s</string>
     <string name="job_description">Job Description</string>
     <string name="job_desc_para">We are looking for an Android engineer responsible for the development and maintenance of applications aimed at a vast
     number of diverse Android devices. Your primary focus will be the development of android applications and their integration with back-end services.
@@ -109,4 +107,62 @@
     <string name="gurgaon">Gurgaon</string>
     <string name="opened">Opened</string>
     <string name="num_responses">%d\nResponses</string>
+    <string name="current_job">Current Job</string>
+    <string name="job_posted">Job Posted</string>
+    <string name="search_the_best_match">Search the best match</string>
+    <string name="manage_jobs">Manage Jobs</string>
+    <string name="filter">Filter</string>
+    <string name="all_saved_candidates">All saved candidates</string>
+
+    // Demo text
+    <string name="android_engineer">Android Engineer</string>
+
+    // Content Descriptions
+    <string name="cd_icon_job">cd icon job list</string>
+    <string name="cd_icon_saved">cd icon saved</string>
+    <string name="cd_app_logo">cd app logo</string>
+    <string name="cd_wave_image">cd wave image</string>
+    <string name="select_your_job_post">Select your job post</string>
+    <string name="logout">Logout</string>
+    <string name="edit">Edit</string>
+    <string name="basic_filters">Basic filters</string>
+    <string name="about_candidate">About Candidate</string>
+    <string name="male">Male</string>
+    <string name="skill">Skill</string>
+    <string name="job_preferences">Job Preferences</string>
+    <string name="_25_yr_old">25 yr old</string>
+    <string name="experiences">Experiences</string>
+    <string name="cd_icon_star">cd icon star</string>
+    <string name="jan_2_present">Jan 2 - Present</string>
+    <string name="notice_period">Notice period: %s Days</string>
+    <string name="previous_companies">Previous Companies</string>
+    <string name="current_company">Current company</string>
+
+    // Post job recruiter
+    <string name="job_title">Job Title</string>
+    <string name="enter_job_title">Enter job title</string>
+    <string name="skills_prefered">Skills Prefered</string>
+    <string name="skills">Skills</string>
+    <string name="openings">Openings</string>
+    <string name="enter_openings">Enter Openings</string>
+    <string name="enter_type">Enter Type</string>
+    <string name="find_best_employee_s">Find best employee\'s</string>
+    <string name="post_your_job_here">Post Your Job Here</string>
+    <string name="job_detail">Job Detail</string>
+    <string name="employee_prefer">Employee prefer</string>
+    <string name="exp_required">Exp. Required</string>
+    <string name="select">Select</string>
+    <string name="post">Post</string>
+    <string name="description">Description</string>
+    <string name="post_job">Post Job</string>
+    <string name="job_type">Job Type</string>
+    <string name="job_category">Job Category</string>
+    <string name="experience">Experience</string>
+    <string name="search">Search</string>
+    <string name="advance_filters">Advance Filters</string>
+    <string name="english_level">English level</string>
+    <string name="candidate_age">Candidate Age</string>
+    <string name="employee_applied">Employee applied</string>
+    <string name="employee_viewed_you">Employee Viewed You</string>
+
 </resources>

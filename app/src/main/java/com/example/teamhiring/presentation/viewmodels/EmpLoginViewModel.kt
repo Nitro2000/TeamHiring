@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.teamhiring.HelperFunction
+import com.example.teamhiring.CommonUiFunctions
 import com.example.teamhiring.data.constants.NetworkResult
 import com.example.teamhiring.data.models.EmpLoginBody
 import com.example.teamhiring.data.models.EmpRegisterBody
@@ -48,7 +48,7 @@ class EmpLoginViewModel @Inject constructor(private val empLoginRepository: EmpL
         if(TextUtils.isEmpty(emailAddress) || TextUtils.isEmpty(password)){
             result = Pair(false, "Please provide the credentials")
         }
-        else if(!HelperFunction.isValidEmail(emailAddress)){
+        else if(!CommonUiFunctions.isValidEmail(emailAddress)){
             result = Pair(false, "Email is invalid")
         }
         else if(!TextUtils.isEmpty(password) && password.length <= 5){
@@ -64,7 +64,7 @@ class EmpLoginViewModel @Inject constructor(private val empLoginRepository: EmpL
         if(TextUtils.isEmpty(emailAddress) || TextUtils.isEmpty(password) || TextUtils.isEmpty(empName) || TextUtils.isEmpty(mobile)){
             result = Pair(false, "Please provide the credentials")
         }
-        else if(!HelperFunction.isValidEmail(emailAddress)){
+        else if(!CommonUiFunctions.isValidEmail(emailAddress)){
             result = Pair(false, "Email is invalid")
         }
         else if(!TextUtils.isEmpty(password) && password.length <= 5){

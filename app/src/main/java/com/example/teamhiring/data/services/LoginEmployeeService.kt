@@ -1,7 +1,6 @@
 package com.example.teamhiring.data.services
 
 import com.example.teamhiring.data.models.EmpLoginBody
-import com.example.teamhiring.data.models.EmpProffData
 import com.example.teamhiring.data.models.EmpRegisterBody
 import com.example.teamhiring.data.models.LoginData
 import retrofit2.Response

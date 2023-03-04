@@ -1,4 +1,4 @@
-package com.example.teamhiring.ui.mainFragments
+package com.example.teamhiring.ui.mainFragments.recruiter
 
 import android.content.Context
 import android.os.Bundle
@@ -26,7 +26,7 @@ class RecruiterPageFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         mContext = requireContext()
         mActivity = requireActivity()

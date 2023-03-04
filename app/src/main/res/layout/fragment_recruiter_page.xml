@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/gradient_signup_card_round"
-        tools:context=".ui.mainFragments.RecruiterPageFragment">
+        tools:context=".ui.mainFragments.recruiter.RecruiterPageFragment">
 
         <ScrollView
             android:layout_width="0dp"

@@ -9,13 +9,14 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingBottom="60dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/layout_backgrounds"
-            tools:context=".ui.mainFragments.RecruiterProfileFragment">
+            tools:context=".ui.mainFragments.recruiter.RecruiterProfileFragment">
 
             <ImageView
                 android:layout_width="0dp"
@@ -24,13 +25,14 @@
                 android:scaleType="fitXY"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/cd_wave_image" />
 
             <TextView
                 android:id="@+id/rProfMyAccTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="My Account"
+                android:text="@string/my_account"
                 android:elevation="6dp"
                 android:fontFamily="@font/roboto_medium_600"
                 android:textColor="#FFFFFF"
@@ -287,7 +289,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/space_10"
-                    android:text="Edit"
+                    android:text="@string/edit"
                     android:textColor="@color/blue_200"
                     app:layout_constraintBottom_toBottomOf="@id/rProfComInfo"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -307,12 +309,15 @@
 
                 <TextView
                     android:id="@+id/rProfIndTypeTxt"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
                     android:text="@string/add_detail"
                     android:textColor="@color/blue_200"
                     android:textSize="@dimen/text_14"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/guideline2"
                     app:layout_constraintTop_toTopOf="@id/rProfIndTypeField" />
 
@@ -329,12 +334,15 @@
 
                 <TextView
                     android:id="@+id/rProfEmailTxt"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
                     android:text="@string/add_detail"
                     android:textColor="@color/blue_200"
                     android:textSize="@dimen/text_14"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/guideline2"
                     app:layout_constraintTop_toTopOf="@id/rProfEmailField" />
 
@@ -351,36 +359,19 @@
 
                 <TextView
                     android:id="@+id/rProfConNumTxt"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
                     android:text="@string/add_detail"
                     android:textColor="@color/blue_200"
                     android:textSize="@dimen/text_14"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/guideline2"
                     app:layout_constraintTop_toTopOf="@id/rProfConNumField" />
 
-                <TextView
-                    android:id="@+id/rProfRecDesignField"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
-                    android:text="@string/recruit_design"
-                    android:textColor="@color/dark_black"
-                    android:textSize="@dimen/text_14"
-                    app:layout_constraintStart_toStartOf="@id/rProfIndTypeField"
-                    app:layout_constraintTop_toBottomOf="@+id/rProfConNumField" />
 
-                <TextView
-                    android:id="@+id/rProfRecDesignTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
-                    android:text="@string/add_detail"
-                    android:textColor="@color/blue_200"
-                    android:textSize="@dimen/text_14"
-                    app:layout_constraintStart_toStartOf="@id/guideline2"
-                    app:layout_constraintTop_toTopOf="@id/rProfRecDesignField" />
 
                 <TextView
                     android:id="@+id/rProfComGSTNumField"
@@ -391,16 +382,19 @@
                     android:textColor="@color/dark_black"
                     android:textSize="@dimen/text_14"
                     app:layout_constraintStart_toStartOf="@id/rProfIndTypeField"
-                    app:layout_constraintTop_toBottomOf="@+id/rProfRecDesignField" />
+                    app:layout_constraintTop_toBottomOf="@+id/rProfConNumField" />
 
                 <TextView
                     android:id="@+id/rProfComGSTNumTxt"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
                     android:text="@string/add_detail"
                     android:textColor="@color/blue_200"
                     android:textSize="@dimen/text_14"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/guideline2"
                     app:layout_constraintTop_toTopOf="@id/rProfComGSTNumField" />
 
@@ -417,12 +411,15 @@
 
                 <TextView
                     android:id="@+id/rProfNumEmpTxt"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
                     android:text="@string/add_detail"
                     android:textColor="@color/blue_200"
                     android:textSize="@dimen/text_14"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/guideline2"
                     app:layout_constraintTop_toTopOf="@id/rProfNumEmpField" />
 
@@ -478,7 +475,7 @@
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/cd_icon_saved"
                     android:padding="@dimen/space_10"
-                    android:text="Edit"
+                    android:text="@string/edit"
                     android:textColor="@color/blue_200"
                     app:layout_constraintBottom_toBottomOf="@id/rProfComAdd"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -498,12 +495,15 @@
 
                 <TextView
                     android:id="@+id/rProfAddTxt"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
                     android:text="@string/add_detail"
                     android:textColor="@color/blue_200"
                     android:textSize="@dimen/text_14"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/guideline3"
                     app:layout_constraintTop_toTopOf="@id/rProfAddField" />
 
@@ -520,12 +520,15 @@
 
                 <TextView
                     android:id="@+id/rProfCityTxt"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
                     android:text="@string/add_detail"
                     android:textColor="@color/blue_200"
                     android:textSize="@dimen/text_14"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/guideline3"
                     app:layout_constraintTop_toTopOf="@id/rProfCityField" />
 
@@ -542,36 +545,18 @@
 
                 <TextView
                     android:id="@+id/rProfStateTxt"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
                     android:text="@string/add_detail"
                     android:textColor="@color/blue_200"
                     android:textSize="@dimen/text_14"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/guideline3"
                     app:layout_constraintTop_toTopOf="@id/rProfStateField" />
 
-                <TextView
-                    android:id="@+id/rProfNationField"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
-                    android:text="@string/nationality"
-                    android:textColor="@color/dark_black"
-                    android:textSize="@dimen/text_14"
-                    app:layout_constraintStart_toStartOf="@id/rProfAddField"
-                    app:layout_constraintTop_toBottomOf="@+id/rProfStateField" />
-
-                <TextView
-                    android:id="@+id/rProfNationTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
-                    android:text="@string/add_detail"
-                    android:textColor="@color/blue_200"
-                    android:textSize="@dimen/text_14"
-                    app:layout_constraintStart_toStartOf="@id/guideline3"
-                    app:layout_constraintTop_toTopOf="@id/rProfNationField" />
 
                 <TextView
                     android:id="@+id/rProfZipField"
@@ -582,16 +567,19 @@
                     android:textColor="@color/dark_black"
                     android:textSize="@dimen/text_14"
                     app:layout_constraintStart_toStartOf="@id/rProfAddField"
-                    app:layout_constraintTop_toBottomOf="@+id/rProfNationField" />
+                    app:layout_constraintTop_toBottomOf="@+id/rProfStateField" />
 
                 <TextView
                     android:id="@+id/rProfZipTxt"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
                     android:text="@string/add_detail"
                     android:textColor="@color/blue_200"
                     android:textSize="@dimen/text_14"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/guideline3"
                     app:layout_constraintTop_toTopOf="@id/rProfZipField" />
 
@@ -621,7 +609,7 @@
                     android:text="@string/managed_jobs"
                     android:textColor="@color/text_heading"
                     android:textSize="@dimen/text_14"
-                    app:drawableStartCompat="@drawable/icon_manage_job"
+                    app:drawableStartCompat="@drawable/icon_profile_manage_job"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"/>
@@ -632,6 +620,29 @@
                     android:layout_height="1dp"
                     android:background="@color/bottom_line"
                     app:layout_constraintTop_toBottomOf="@+id/rProfManageJobTxt" />
+
+                <TextView
+                    android:id="@+id/rProfPostJobTxt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:drawablePadding="@dimen/space_14"
+                    android:fontFamily="@font/roboto_medium_500"
+                    android:paddingVertical="@dimen/space_12"
+                    android:text="@string/post_job"
+                    android:textColor="@color/text_heading"
+                    android:textSize="@dimen/text_14"
+                    app:drawableStartCompat="@drawable/icon_profile_post_job"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rProfManageJobTxt"/>
+
+                <View
+                    android:id="@+id/profViewLineFifth"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/bottom_line"
+                    app:layout_constraintTop_toBottomOf="@+id/rProfPostJobTxt" />
 
                 <TextView
                     android:id="@+id/profCustomerSuppText"
@@ -647,7 +658,7 @@
                     app:drawableStartCompat="@drawable/icon_help_desk"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/profViewLineSec"/>
+                    app:layout_constraintTop_toBottomOf="@id/profViewLineFifth"/>
 
                 <View
                     android:id="@+id/profViewLineThird"
@@ -690,7 +701,7 @@
                     android:drawablePadding="@dimen/space_14"
                     android:fontFamily="@font/roboto_medium_500"
                     android:paddingVertical="@dimen/space_12"
-                    android:text="Logout"
+                    android:text="@string/logout"
                     android:textColor="@color/blue_500"
                     android:textSize="@dimen/text_14"
                     app:drawableStartCompat="@drawable/icon_logout"

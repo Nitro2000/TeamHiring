@@ -10,8 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.example.teamhiring.databinding.FragmentHomeSeekerBinding
 import androidx.navigation.fragment.findNavController
+import com.example.teamhiring.databinding.FragmentHomeSeekerBinding
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.teamhiring.data.models.AllJobData
 import com.example.teamhiring.helpers.ProgressDialog
@@ -19,11 +19,8 @@ import com.example.teamhiring.presentation.adapters.AllJobAdapter
 import com.example.teamhiring.presentation.viewmodels.AllJobViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import androidx.recyclerview.widget.RecyclerView
-import com.example.teamhiring.HelperFunction
+import com.example.teamhiring.CommonUiFunctions
 import com.example.teamhiring.R
-import com.example.teamhiring.data.constants.enums.JobFragInfoEnum
-import com.example.teamhiring.presentation.adapters.RecJobListAdapter
 
 @AndroidEntryPoint
 class HomeFragmentSeeker : Fragment() {
@@ -41,7 +38,7 @@ class HomeFragmentSeeker : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         mContext = requireContext()
         mActivity = requireActivity()
@@ -52,18 +49,8 @@ class HomeFragmentSeeker : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        HelperFunction.changeStatusBarColor(mActivity, R.color.text_heading)
-
-        // TODO Delete after merge
-        binding.secondaryText.setOnClickListener {
-            val direction = HomeFragmentSeekerDirections.actionHomeFragmentSeekerToRecruiterHomeFragment()
-            findNavController().navigate(direction)
-        }
-
-        binding.profileImage.setOnClickListener {
-            val direction = HomeFragmentSeekerDirections.actionHomeFragmentSeekerToRecruiterProfileFragment()
-            findNavController().navigate(direction)
-        }
+        CommonUiFunctions.changeStatusBarColor(mActivity, R.color.text_heading)
+        CommonUiFunctions.bottomNavBarVisibility(mActivity, View.VISIBLE)
 
         binding.swipeRefresh.setOnRefreshListener {
             getAllJobs()
@@ -77,6 +64,15 @@ class HomeFragmentSeeker : Fragment() {
         }
 
         getAllJobs()
+//        binding.secondaryText.setOnClickListener {
+//            val direction = HomeFragmentSeekerDirections.actionHomeFragmentSeekerToRecruiterHomeFragment()
+//            findNavController().navigate(direction)
+//        }
+//
+//        binding.profileImage.setOnClickListener {
+//            val direction = HomeFragmentSeekerDirections.actionHomeFragmentSeekerToRecruiterProfileFragment()
+//            findNavController().navigate(direction)
+//        }
     }
 
     private fun getAllJobs() {

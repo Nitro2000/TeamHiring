@@ -1,4 +1,4 @@
-package com.example.teamhiring.ui.mainFragments
+package com.example.teamhiring.ui.subFragment.postJob
 
 import android.content.Context
 import android.os.Bundle
@@ -7,15 +7,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import com.example.teamhiring.R
-import com.example.teamhiring.databinding.FragmentRecruiterManageJobBinding
-import com.example.teamhiring.presentation.adapters.ManageJobListAdapter
+import com.example.teamhiring.databinding.FragmentHomeSeekerBinding
+import com.example.teamhiring.databinding.FragmentPostJobFirstBinding
 
-class RecruiterManageJobFragment : Fragment() {
+class PostJobFirstFragment : Fragment() {
 
-    private lateinit var binding: FragmentRecruiterManageJobBinding
+
+    private lateinit var binding: FragmentPostJobFirstBinding
     private lateinit var mContext: Context
     private lateinit var mActivity: FragmentActivity
 
@@ -26,18 +27,18 @@ class RecruiterManageJobFragment : Fragment() {
         // Inflate the layout for this fragment
         mContext = requireContext()
         mActivity = requireActivity()
-        binding = FragmentRecruiterManageJobBinding.inflate(inflater, container, false)
+        // Inflate the layout for this fragment
+        binding = FragmentPostJobFirstBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.jobManageRecyView.apply {
-            adapter = ManageJobListAdapter()
-
-            layoutManager = LinearLayoutManager(mContext, RecyclerView.VERTICAL, false)
-        }
+//        binding.text.setOnClickListener {
+//            val directions = PostJobFirstFragmentDirections.actionPostJobFirstFragmentToPostJobSecFragment()
+//            findNavController().navigate(directions)
+//        }
     }
+
 
 }

@@ -7,6 +7,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/jobRootLayout"
         android:layout_width="match_parent"
         android:layout_marginBottom="@dimen/space_12"
         android:elevation="6dp"
@@ -43,6 +44,16 @@
                 app:layout_constraintTop_toTopOf="@id/jobNameTxt"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="@id/jobHighQualTxt"/>
+
+            <ImageView
+                android:id="@+id/jobStarImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_star"
+                app:layout_constraintTop_toBottomOf="@id/jobProfImg"
+                app:layout_constraintEnd_toEndOf="@id/jobProfImg"
+                app:layout_constraintBottom_toTopOf="@id/jobEmpDescTxt"/>
+
 
 
             <TextView

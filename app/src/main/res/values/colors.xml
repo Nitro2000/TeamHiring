@@ -36,9 +36,15 @@
     <color name="dark_black">#131516</color>
     <color name="sub_views">#717070</color>
     <color name="layout_backgrounds">#F6F6F6</color>
+    <color name="layout_border_grey">#CFCBCB</color>
 
     <color name="view_lines_bottom">#CCCDCD</color>
 
     // Text
     <color name="text_heading">#242424</color>
+
+    // Shimmer color
+    <color name="shimmer_color">#BBB9B9</color>
+
+    <color name="chip_bg_greyish">#E8E8E8</color>
 </resources>

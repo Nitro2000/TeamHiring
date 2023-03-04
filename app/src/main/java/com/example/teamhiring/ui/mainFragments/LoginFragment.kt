@@ -10,9 +10,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.teamhiring.HelperFunction
-import com.example.teamhiring.R
-import com.example.teamhiring.data.models.EmpLoginBody
+import com.example.teamhiring.CommonUiFunctions
 import com.example.teamhiring.databinding.FragmentLoginBinding
 import com.example.teamhiring.presentation.viewmodels.AllJobViewModel
 import com.example.teamhiring.presentation.viewmodels.EmpLoginViewModel
@@ -33,7 +31,7 @@ class LoginFragment : Fragment() {
 
         mContext = requireActivity()
         mActivity = requireActivity()
-        HelperFunction.bottomNavBarVisibility(mActivity,View.GONE)
+        CommonUiFunctions.bottomNavBarVisibility(mActivity,View.GONE)
         // Inflate the layout for this fragment
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root

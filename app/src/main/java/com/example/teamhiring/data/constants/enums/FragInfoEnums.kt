@@ -5,3 +5,8 @@ enum class JobFragInfoEnum (val value: Int) {
     JobSaved(2),
     JobViewed(3)
 }
+
+enum class RecFragInfoEnum {
+    RecHome,
+    RecSaved
+}

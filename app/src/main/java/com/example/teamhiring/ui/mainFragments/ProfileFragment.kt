@@ -1,6 +1,5 @@
 package com.example.teamhiring.ui.mainFragments
 
-import android.app.Activity
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
@@ -12,8 +11,8 @@ import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.teamhiring.CommonUiFunctions
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.teamhiring.HelperFunction
 import com.example.teamhiring.R
 import com.example.teamhiring.databinding.FragmentCareerPreferencesBinding
 import com.example.teamhiring.databinding.FragmentOtpBinding
@@ -38,7 +37,7 @@ class ProfileFragment : Fragment() {
 
         mContext = requireContext()
         mActivity = requireActivity()
-        HelperFunction.bottomNavBarVisibility(mActivity, View.VISIBLE)
+        CommonUiFunctions.bottomNavBarVisibility(mActivity, View.VISIBLE)
         // Inflate the layout for this fragment
         binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding.root

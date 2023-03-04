@@ -37,7 +37,7 @@
             android:layout_marginEnd="@dimen/space_16"
             android:layout_marginBottom="@dimen/space_8"
             app:itemRippleColor="@android:color/darker_gray"
-            app:labelVisibilityMode="selected"
-            app:menu="@menu/bottom_nav_menu" />
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/recruiter_nav_menu"/>
     </RelativeLayout>
 </layout>

@@ -10,10 +10,9 @@ import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.example.teamhiring.HelperFunction
-import com.example.teamhiring.R
+import com.example.teamhiring.CommonUiFunctions
+import com.example.teamhiring.data.constants.Constant
 import com.example.teamhiring.data.constants.NetworkResult
 import com.example.teamhiring.data.models.EmpLoginBody
 import com.example.teamhiring.databinding.FragmentSignInBinding
@@ -22,7 +21,6 @@ import com.example.teamhiring.presentation.viewmodels.EmpLoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import com.example.teamhiring.presentation.viewmodels.CommonViewModel
-import kotlinx.coroutines.launch
 
 
 @AndroidEntryPoint
@@ -42,9 +40,9 @@ class SignInFragment : Fragment() {
     ): View? {
         mContext = requireContext()
         mActivity = requireActivity()
-        HelperFunction.bottomNavBarVisibility(mActivity, View.GONE)
+        CommonUiFunctions.bottomNavBarVisibility(mActivity, View.GONE)
         // Inflate the layout for this fragment
-        userType = viewModel.userTypeEmp.value ?: true
+
 
         binding = FragmentSignInBinding.inflate(inflater, container, false)
         return binding.root
@@ -58,6 +56,9 @@ class SignInFragment : Fragment() {
         }
 
         binding.signInLogBtn.setOnClickListener {
+            viewModel.saveLogin(true)
+            if (Constant.userType) navigateToHomePage()
+            else navigateToRecHomePage()
 //            navigateToHomePage()
 
             val validationResult = validateUserInput()
