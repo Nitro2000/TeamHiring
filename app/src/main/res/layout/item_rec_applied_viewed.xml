@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:padding="@dimen/space_16"
+        android:background="@drawable/bg_item_stroke_white_corner"
+        android:elevation="6dp"
+        android:layout_marginBottom="@dimen/space_16"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/titleTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Rishabh has viewed your job post of python developer"
+            android:textSize="@dimen/text_16"
+            android:maxLines="2"
+            android:ellipsize="end"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:fontFamily="@font/roboto_medium_500"
+            android:textColor="@color/dark_black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/vertViewLine"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/sub_views"
+            app:layout_constraintTop_toBottomOf="@id/titleTxt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginVertical="@dimen/space_4"
+            app:layout_constraintBottom_toTopOf="@id/jobEmpDescTxt"/>
+
+
+        <TextView
+            android:id="@+id/expTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/b_tech"
+            android:layout_marginTop="4dp"
+            android:textSize="@dimen/text_14"
+            app:layout_constraintEnd_toStartOf="@id/jobLineViewFirst"
+            android:textColor="@color/text_heading"
+            android:fontFamily="@font/roboto_regular_400"
+            app:layout_constraintStart_toStartOf="@id/titleTxt"
+            app:layout_constraintTop_toBottomOf="@id/titleTxt" />
+
+        <View
+            android:id="@+id/jobLineViewFirst"
+            android:layout_width="1dp"
+            android:layout_height="15dp"
+            android:background="@color/sub_views"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@+id/expTxt"
+            app:layout_constraintTop_toTopOf="@+id/expTxt"
+            app:layout_constraintBottom_toBottomOf="@+id/expTxt" />
+
+        <TextView
+            android:id="@+id/expValueTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/exp_years"
+            android:layout_marginStart="8dp"
+            android:textSize="@dimen/text_14"
+            android:textColor="@color/text_heading"
+            app:layout_constraintEnd_toStartOf="@id/vertViewLine"
+            android:fontFamily="@font/roboto_regular_400"
+            app:layout_constraintTop_toTopOf="@+id/expTxt"
+            app:layout_constraintStart_toEndOf="@+id/jobLineViewFirst" />
+
+
+
+        <TextView
+            android:id="@+id/empJobNameTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/work_from_office"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:drawablePadding="@dimen/space_8"
+            android:layout_marginTop="@dimen/space_8"
+            android:textSize="@dimen/text_14"
+            android:textColor="@color/dark_black"
+            app:layout_constraintEnd_toEndOf="@id/vertViewLine"
+            android:fontFamily="@font/roboto_regular_400"
+            app:layout_constraintTop_toBottomOf="@id/expValueTxt"
+            app:layout_constraintStart_toStartOf="@id/expTxt"
+            app:drawableStartCompat="@drawable/icon_job_type" />
+
+
+        <TextView
+            android:id="@+id/engLevelTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/english_level"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginTop="@dimen/space_8"
+            android:layout_marginStart="@dimen/space_10"
+            android:textSize="@dimen/text_14"
+            android:textColor="@color/dark_black"
+            android:fontFamily="@font/roboto_regular_400"
+            app:layout_constraintTop_toBottomOf="@id/empJobNameTxt"
+            app:layout_constraintStart_toEndOf="@id/jobLineViewFourth"/>
+
+
+
+        <View
+            android:id="@+id/jobLineViewFourth"
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:background="@drawable/bg_view_full_circle"
+            android:backgroundTint="@color/sub_views"
+            android:layout_marginStart="@dimen/space_4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/engLevelTxt"
+            app:layout_constraintBottom_toBottomOf="@id/engLevelTxt"/>
+
+        <TextView
+            android:id="@+id/jobEmpDescTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/job_emp_descr"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_marginTop="@dimen/space_8"
+            android:textSize="@dimen/text_14"
+            android:textColor="#5E5F5F"
+            android:fontFamily="@font/roboto_regular_400"
+            app:layout_constraintTop_toBottomOf="@id/engLevelTxt"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/recJobTitleTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/vertViewLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Android developer"
+            app:layout_constraintTop_toTopOf="@id/vertViewLine"
+            android:layout_marginStart="@dimen/space_12"
+            android:textSize="@dimen/text_14"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/text_heading"
+            android:fontFamily="@font/roboto_regular_400"/>
+
+        <TextView
+            android:id="@+id/recJobAnnSalTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rs 2 - 6 LPA"
+            android:textSize="@dimen/text_14"
+            android:layout_marginTop="@dimen/space_8"
+            android:textColor="@color/blue_500"
+            app:layout_constraintStart_toStartOf="@id/recJobTitleTxt"
+            app:layout_constraintTop_toBottomOf="@id/recJobTitleTxt"/>
+
+        <TextView
+            android:id="@+id/recJobLocTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gurgaon"
+            android:textSize="@dimen/text_14"
+            android:layout_marginTop="@dimen/space_8"
+            android:textColor="@color/text_heading"
+            app:layout_constraintStart_toStartOf="@id/recJobTitleTxt"
+            app:layout_constraintTop_toBottomOf="@id/recJobAnnSalTxt"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

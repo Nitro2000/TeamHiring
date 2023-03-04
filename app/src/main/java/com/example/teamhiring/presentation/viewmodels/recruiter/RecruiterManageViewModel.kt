@@ -3,6 +3,7 @@ package com.example.teamhiring.presentation.viewmodels.recruiter
 import androidx.lifecycle.ViewModel
 import com.example.teamhiring.data.models.GeneralDataModel
 import com.example.teamhiring.data.models.recruiter.PostedJobData
+import com.example.teamhiring.data.models.recruiter.RecViewedData
 import com.example.teamhiring.data.models.recruiter.RecruiterEmpData
 import com.example.teamhiring.data.repositories.recruiter.RecruiterManageJobRepo
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -23,6 +24,12 @@ class RecruiterManageViewModel @Inject constructor(private val recruiterManageJo
     suspend fun getSavedCandidates(recId: Int, jobId: Int?): Response<GeneralDataModel<List<RecruiterEmpData>>> {
         return withContext(Dispatchers.IO) {
             recruiterManageJobRepo.getSavedCandidates(recId, jobId)
+        }
+    }
+
+    suspend fun getViewedData(): Response<RecViewedData> {
+        return withContext(Dispatchers.IO) {
+            recruiterManageJobRepo.getViewedData(1)
         }
     }
 }
