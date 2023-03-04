@@ -10,6 +10,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import com.example.teamhiring.CommonUiFunctions
 import com.example.teamhiring.R
 import com.example.teamhiring.data.constants.Constant
 import com.example.teamhiring.data.models.recruiter.RecProfileData
@@ -44,7 +46,16 @@ class RecruiterProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        CommonUiFunctions.bottomNavBarVisibility(mActivity, View.VISIBLE)
         getProfData()
+        binding.rProfPostJobTxt.setOnClickListener {
+            navigateToPostJob()
+        }
+    }
+
+    private fun navigateToPostJob() {
+        val directions = RecruiterProfileFragmentDirections.actionRecruiterProfileFragmentToPostJobFragment()
+        findNavController().navigate(directions)
     }
 
     private fun getProfData() {

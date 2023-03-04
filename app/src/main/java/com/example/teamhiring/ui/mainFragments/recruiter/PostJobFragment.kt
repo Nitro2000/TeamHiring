@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
@@ -53,18 +54,11 @@ class PostJobFragment : Fragment() {
         binding.postNextTxt.setOnClickListener {
             val currFragment = navController.currentDestination?.id
             val direction = when(currFragment) {
-                R.id.postJobFirstFragment -> {
-                    PostJobFirstFragmentDirections.actionPostJobFirstFragmentToPostJobSecFragment()
-                }
+                R.id.postJobFirstFragment -> PostJobFirstFragmentDirections.actionPostJobFirstFragmentToPostJobSecFragment()
                 else -> {
-                    binding.postNextTxt.visibility = View.INVISIBLE
-//                    binding.postJobProgress.progress = PostJobProgressEnum.COMPLETED.value
-//                    binding.postProgSecImg.setImageResource(R.drawable.icon_post_checkpoint)
-                    binding.postJobBtn.apply {
-                        visibility = View.VISIBLE
-                        animation = AnimationUtils.loadAnimation(mContext, R.anim.button_animation)
-                    }
+                    binding.postJobBtn.animation = AnimationUtils.loadAnimation(mContext, R.anim.button_animation)
                     PostJobSecFragmentDirections.actionPostJobSecFragmentToPostJobThirdFragment()
+
                 }
             }
             navController.navigate(direction)
@@ -73,23 +67,31 @@ class PostJobFragment : Fragment() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.postJobFirstFragment -> {
-
-                    binding.postNextTxt.visibility = View.INVISIBLE
-                    binding.postJobProgress.progress = 0
-                    binding.postProgSecImg.setImageResource(R.drawable.ic_post_uncheck)
-                    binding.postProgThirdImg.setImageResource(R.drawable.ic_post_uncheck)
+                    setBtnVisibility()
+                    setProgBar(PostJobProgressEnum.START.value)
                 }
                 R.id.postJobSecFragment -> {
-                    binding.postJobProgress.progress = PostJobProgressEnum.HALF_COMPLETED.value
-                    binding.postProgSecImg.setImageResource(R.drawable.icon_post_checkpoint)
-                    binding.postProgThirdImg.setImageResource(R.drawable.ic_post_uncheck)
+                    setBtnVisibility()
+                    setProgBar(PostJobProgressEnum.HALF_COMPLETED.value, R.drawable.icon_post_checkpoint)
                 }
                 else -> {
-                    binding.postJobProgress.progress = PostJobProgressEnum.COMPLETED.value
-                    binding.postProgSecImg.setImageResource(R.drawable.icon_post_checkpoint)
-                    binding.postProgThirdImg.setImageResource(R.drawable.icon_post_checkpoint)
+                    setBtnVisibility(View.INVISIBLE, View.VISIBLE)
+                    setProgBar(PostJobProgressEnum.COMPLETED.value, R.drawable.icon_post_checkpoint, R.drawable.icon_post_checkpoint)
                 }
             }
+        }
+    }
+
+    private fun setBtnVisibility(nextVisible: Int = View.VISIBLE, postVisible: Int = View.INVISIBLE) {
+        binding.postNextTxt.visibility = nextVisible
+        binding.postJobBtn.visibility = postVisible
+    }
+
+    private fun setProgBar(lenCovered: Int, secImg: Int = R.drawable.ic_post_uncheck, thirdImg: Int = R.drawable.ic_post_uncheck) {
+        binding.apply {
+            postJobProgress.progress = lenCovered
+            postProgSecImg.setImageResource(secImg)
+            postProgThirdImg.setImageResource(thirdImg)
         }
     }
 
