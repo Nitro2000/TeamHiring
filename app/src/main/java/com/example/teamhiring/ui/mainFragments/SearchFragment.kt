@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.teamhiring.CommonUiFunctions
 import com.example.teamhiring.R
 import com.example.teamhiring.data.constants.enums.JobFragInfoEnum
 import com.example.teamhiring.databinding.FragmentChatCompanyBinding
@@ -28,7 +29,7 @@ class SearchFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         mContext = requireContext()
         mActivity = requireActivity()
@@ -39,7 +40,7 @@ class SearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        CommonUiFunctions.bottomNavBarVisibility(mActivity, View.GONE)
         binding.searchRecyclerView.apply {
             adapter = RecJobListAdapter(JobFragInfoEnum.JobApplied)
             layoutManager = LinearLayoutManager(mContext, RecyclerView.VERTICAL, false)

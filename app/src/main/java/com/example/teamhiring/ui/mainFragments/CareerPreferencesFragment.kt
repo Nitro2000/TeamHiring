@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentActivity
 import com.example.teamhiring.CommonUiFunctions
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.teamhiring.R
 import com.example.teamhiring.databinding.FragmentCareerPreferencesBinding
 import com.example.teamhiring.presentation.viewmodels.EmpCarPrefViewModel
@@ -43,6 +44,9 @@ class CareerPreferencesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getCareerData()
+        binding.profileBackBtn.setOnClickListener {
+            findNavController().popBackStack()
+        }
         binding.editCarPref.setOnClickListener{
             binding.carPrefJob.isEnabled
             binding.carPreExpLabel.isEnabled

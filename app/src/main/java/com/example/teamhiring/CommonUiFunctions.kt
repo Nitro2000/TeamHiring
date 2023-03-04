@@ -65,7 +65,7 @@ object CommonUiFunctions {
         intArrayOf(-android.R.attr.state_checked)
     )
 
-    fun getColorStateList(context: Context, color: Int): ColorStateList {
+    private fun getColorStateList(context: Context, color: Int): ColorStateList {
         val colorList = intArrayOf(
             ContextCompat.getColor(context, color),
         )
