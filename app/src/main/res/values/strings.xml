@@ -136,4 +136,21 @@
     <string name="previous_companies">Previous Companies</string>
     <string name="current_company">Current company</string>
 
+    // Post job recruiter
+    <string name="job_title">Job Title</string>
+    <string name="enter_job_title">Enter job title</string>
+    <string name="skills_prefered">Skills Prefered</string>
+    <string name="skills">Skills</string>
+    <string name="openings">Openings</string>
+    <string name="enter_openings">Enter Openings</string>
+    <string name="enter_type">Enter Type</string>
+    <string name="find_best_employee_s">Find best employee\'s</string>
+    <string name="post_your_job_here">Post Your Job Here</string>
+    <string name="job_detail">Job Detail</string>
+    <string name="employee_prefer">Employee prefer</string>
+    <string name="exp_required">Exp. Required</string>
+    <string name="select">Select</string>
+    <string name="post">Post</string>
+    <string name="description">Description</string>
+
 </resources>

@@ -29,18 +29,15 @@ class PostJobFirstFragment : Fragment() {
         mActivity = requireActivity()
         // Inflate the layout for this fragment
         binding = FragmentPostJobFirstBinding.inflate(inflater, container, false)
-        val navHostFragment =
-            parentFragment?.childFragmentManager?.findFragmentById(R.id.postJobNavFragment) as NavHostFragment
-//        val navController = navHostFragment.navController
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.text.setOnClickListener {
+//        binding.text.setOnClickListener {
 //            val directions = PostJobFirstFragmentDirections.actionPostJobFirstFragmentToPostJobSecFragment()
 //            findNavController().navigate(directions)
-        }
+//        }
     }
 
 

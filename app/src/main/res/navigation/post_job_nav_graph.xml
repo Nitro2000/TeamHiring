@@ -18,5 +18,14 @@
         android:id="@+id/postJobSecFragment"
         android:name="com.example.teamhiring.ui.subFragment.postJob.PostJobSecFragment"
         android:label="fragment_post_job_sec"
-        tools:layout="@layout/fragment_post_job_sec" />
+        tools:layout="@layout/fragment_post_job_sec" >
+        <action
+            android:id="@+id/action_postJobSecFragment_to_postJobThirdFragment"
+            app:destination="@id/postJobThirdFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postJobThirdFragment"
+        android:name="com.example.teamhiring.ui.subFragment.postJob.PostJobThirdFragment"
+        android:label="fragment_post_job_third"
+        tools:layout="@layout/fragment_post_job_third" />
 </navigation>
