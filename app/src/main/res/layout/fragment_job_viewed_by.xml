@@ -10,13 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/layout_backgrounds"
-        android:paddingHorizontal="@dimen/space_12"
         tools:context=".ui.subFragment.jobInfo.JobViewedByFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/jobViewedRecyView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="@dimen/space_2"
             android:gravity="center"
             android:layout_marginTop="@dimen/space_16"
             tools:listitem="@layout/item_job_applied"/>

@@ -3,10 +3,9 @@ package com.example.teamhiring.ui.mainFragments
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.text.Layout
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.teamhiring.HelperFunction
@@ -18,13 +17,14 @@ import com.example.teamhiring.databinding.FragmentChatBinding
 import com.example.teamhiring.presentation.adapters.ChatAdapter
 
 
+@Suppress("DEPRECATION")
 class ChatFragment : Fragment() {
 
     private lateinit var mActivity: FragmentActivity
     private lateinit var mContext: Context
 
     private lateinit var binding: FragmentChatBinding
-
+    var isAttachShow: Boolean = false
     private lateinit var chatAdapter: ChatAdapter
     private lateinit var chatList: List<ChatData>
 
@@ -44,12 +44,25 @@ class ChatFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setHasOptionsMenu(true)
 
         // this creates a vertical layout Manager
         binding.chatRecView.layoutManager = LinearLayoutManager(mContext)
 
         chatList = ChatDataList.chatList
 
+        binding.chatAttachImg.setOnClickListener {
+            if (isAttachShow){
+                isAttachShow = false
+                binding.attachLinearLay.visibility = View.GONE
+
+            }
+            else{
+                isAttachShow = true
+                binding.attachLinearLay.visibility = View.VISIBLE
+            }
+
+        }
         // This will pass the ArrayList to our Adapter
         chatAdapter = ChatAdapter(chatList)
 
@@ -57,4 +70,11 @@ class ChatFragment : Fragment() {
         binding.chatRecView.adapter = chatAdapter
 
     }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.chat_menu, menu)
+
+
+    }
+
+
 }

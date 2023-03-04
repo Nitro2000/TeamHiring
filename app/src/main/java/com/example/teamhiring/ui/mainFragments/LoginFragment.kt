@@ -8,11 +8,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.teamhiring.HelperFunction
 import com.example.teamhiring.R
+import com.example.teamhiring.data.models.EmpLoginBody
 import com.example.teamhiring.databinding.FragmentLoginBinding
+import com.example.teamhiring.presentation.viewmodels.AllJobViewModel
+import com.example.teamhiring.presentation.viewmodels.EmpLoginViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
 
     private lateinit var binding: FragmentLoginBinding

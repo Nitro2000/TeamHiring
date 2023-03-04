@@ -12,7 +12,10 @@
         android:padding="@dimen/space_16"
         android:background="@drawable/bg_item_stroke_white_corner"
         android:elevation="6dp"
-        android:layout_marginBottom="@dimen/space_16"
+        android:layout_marginStart="@dimen/space_2"
+        android:layout_marginEnd="@dimen/space_2"
+        android:layout_marginBottom="@dimen/space_8"
+        android:layout_marginTop="@dimen/space_8"
         android:layout_height="wrap_content">
 
         <TextView

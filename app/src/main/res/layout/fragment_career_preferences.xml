@@ -76,7 +76,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/carPrefJob" />
 
                 <TextView
-                    android:id="@+id/textView20"
+                    android:id="@+id/carPreExpLabel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_edit_text"
@@ -95,10 +95,10 @@
                     android:textColor="@color/blue_200"
                     android:textSize="@dimen/text_16"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView20" />
+                    app:layout_constraintTop_toBottomOf="@+id/carPreExpLabel" />
 
                 <TextView
-                    android:id="@+id/textView22"
+                    android:id="@+id/carTotalExp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_edit_text"
@@ -117,7 +117,7 @@
                     android:textColor="@color/blue_200"
                     android:textSize="@dimen/text_16"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView22" />
+                    app:layout_constraintTop_toBottomOf="@+id/carTotalExp" />
 
                 <TextView
                     android:id="@+id/carPrefEngLabel"
@@ -157,7 +157,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/space_10"
                     android:fontFamily="@font/roboto_medium"
-                    android:text="Preferred State"
+                    android:text="Preferred City"
                     android:textColor="@color/blue_200"
                     android:textSize="@dimen/text_16"
                     app:layout_constraintStart_toStartOf="parent"
@@ -285,6 +285,16 @@
                     app:layout_constraintTop_toBottomOf="@+id/carPrefSkillTitle" />
 
 
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/carPrefSaveBtn"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/carPrefSkills"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -303,6 +313,20 @@
                 app:layout_constraintStart_toEndOf="@+id/profileBackBtn"
                 app:layout_constraintTop_toTopOf="@+id/profileBackBtn"
                 app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/editCarPref"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="@dimen/space_16"
+                app:layout_constraintBottom_toBottomOf="@+id/carPrefTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.767"
+                app:layout_constraintStart_toEndOf="@+id/carPrefTitle"
+                app:layout_constraintTop_toTopOf="@+id/carPrefTitle"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/icon_edit"
+                app:tint="@color/white" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

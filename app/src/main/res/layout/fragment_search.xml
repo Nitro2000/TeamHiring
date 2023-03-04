@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.mainFragments.SearchFragment">
+
+        <EditText
+            android:id="@+id/searchEdTxt"
+            android:layout_width="288dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_border_layout"
+            android:drawableStart="@drawable/icon_search"
+            android:drawableEnd="@drawable/icon_cancel"
+            android:drawablePadding="@dimen/space_4"
+            android:drawableTint="@color/blue_500"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="@string/what_are_you_looking_for"
+            android:inputType="textAutoComplete"
+            android:paddingStart="@dimen/space_8"
+            android:paddingTop="@dimen/space_16"
+            android:paddingEnd="@dimen/space_8"
+            android:paddingBottom="@dimen/space_16"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray_300"
+            android:textSize="@dimen/text_16"
+            app:layout_constraintEnd_toStartOf="@+id/searchFilter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/searchFilter"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="@dimen/space_16"
+            android:rotation="90"
+            app:layout_constraintBottom_toBottomOf="@+id/searchEdTxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/searchEdTxt"
+            app:srcCompat="@drawable/icon_preferences"
+            app:tint="@color/blue_700" />
+
+        <EditText
+            android:id="@+id/searchLocation"
+            android:layout_width="288dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_border_layout"
+            android:drawableStart="@drawable/icon_location"
+            android:drawableTint="@color/blue_500"
+            android:drawablePadding="@dimen/space_4"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="Search for cities"
+            android:inputType="textAutoComplete"
+            android:paddingBottom="@dimen/space_16"
+            android:paddingStart="@dimen/space_8"
+            android:paddingTop="@dimen/space_16"
+            android:paddingEnd="@dimen/space_8"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray_300"
+            android:textSize="@dimen/text_16"
+            app:layout_constraintEnd_toEndOf="@+id/searchEdTxt"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/searchEdTxt"
+            app:layout_constraintTop_toBottomOf="@+id/searchEdTxt" />
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchLocation">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/searchRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:layout_marginTop="@dimen/space_8"
+                />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/searchFilLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:padding="@dimen/space_8">
+
+
+                <TextView
+                    android:id="@+id/searchFilJobType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Job Type"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_18"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@drawable/bg_edit_text"
+                    android:backgroundTint="@color/blue_200"
+                    android:padding="@dimen/space_10"
+                    android:text="Full Time"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/searchFilJobType" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@drawable/bg_edit_text"
+                    android:padding="@dimen/space_10"
+                    android:text="Part Time"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView3"
+                    app:layout_constraintStart_toEndOf="@+id/textView3"
+                    app:layout_constraintTop_toBottomOf="@+id/searchFilJobType"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@drawable/bg_edit_text"
+                    android:padding="@dimen/space_10"
+                    android:text="Contractual"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView17"
+                    app:layout_constraintStart_toEndOf="@+id/textView17"
+                    app:layout_constraintTop_toTopOf="@+id/textView17"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@drawable/bg_edit_text"
+                    android:padding="@dimen/space_10"
+                    android:text="Internship"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView18"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView18"
+                    app:layout_constraintTop_toTopOf="@+id/textView18"
+                    app:layout_constraintVertical_bias="1.0" />
+
+
+                <TextView
+                    android:id="@+id/searchFilSalary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_16"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Salary ( In LPA)"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_18"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_edit_text"
+                    android:padding="@dimen/space_10"
+                    android:text="0-3 Lakhs"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/searchFilSalary" />
+
+
+                <TextView
+                    android:id="@+id/carTotalExp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edit_text"
+                    android:padding="@dimen/space_10"
+                    android:text="3-6 Lakhs"
+                    android:layout_marginLeft="@dimen/space_12"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView21"
+                    app:layout_constraintStart_toEndOf="@+id/textView21"
+                    app:layout_constraintTop_toTopOf="@+id/textView21" />
+
+
+                <TextView
+                    android:id="@+id/textView23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edit_text"
+                    android:padding="@dimen/space_10"
+                    android:backgroundTint="@color/blue_200"
+                    android:text="6-8 Lakhs"
+                    android:layout_marginStart="@dimen/space_12"
+                    app:layout_constraintBottom_toBottomOf="@+id/carTotalExp"
+                    app:layout_constraintStart_toEndOf="@+id/carTotalExp"
+                    app:layout_constraintTop_toTopOf="@+id/carTotalExp" />
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edit_text"
+                    android:padding="@dimen/space_10"
+                    android:text="8-12 Lakhs"
+                    android:layout_marginLeft="@dimen/space_12"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView23"
+                    app:layout_constraintStart_toEndOf="@+id/textView23"
+                    app:layout_constraintTop_toTopOf="@+id/textView23" />
+
+
+                <TextView
+                    android:id="@+id/searchFilShift"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Preffered Shift"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_18"
+                    android:layout_marginTop="@dimen/space_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:background="@drawable/bg_edit_text"
+                    android:padding="@dimen/space_10"
+                    android:text="Day Shift"
+                    android:backgroundTint="@color/blue_200"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/searchFilShift" />
+
+
+                <TextView
+                    android:id="@+id/textView28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edit_text"
+                    android:padding="@dimen/space_10"
+                    android:text="Night Shift"
+                    android:layout_marginStart="@dimen/space_12"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView27"
+                    app:layout_constraintStart_toEndOf="@+id/textView27"
+                    app:layout_constraintTop_toTopOf="@+id/textView27" />
+
+
+                <TextView
+                    android:id="@+id/textView29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edit_text"
+                    android:padding="@dimen/space_10"
+                    android:text="Roatational"
+                    android:layout_marginStart="@dimen/space_12"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView28"
+                    app:layout_constraintStart_toEndOf="@+id/textView28"
+                    app:layout_constraintTop_toTopOf="@+id/textView28" />
+
+                <TextView
+                    android:id="@+id/searchFilEmplType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Preffered Shift"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="@dimen/space_16"
+                    android:textSize="@dimen/text_18"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+                <TextView
+                    android:id="@+id/textView31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edit_text"
+                    android:padding="@dimen/space_10"
+                    android:text="Remote"
+                    android:layout_marginTop="@dimen/space_8"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/searchFilEmplType" />
+
+
+                <TextView
+                    android:id="@+id/textView32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edit_text"
+                    android:padding="@dimen/space_10"
+                    android:text="On-site"
+                        android:layout_marginStart="@dimen/space_12"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView31"
+                    app:layout_constraintStart_toEndOf="@+id/textView31"
+                    app:layout_constraintTop_toTopOf="@+id/textView31" />
+
+                <TextView
+                    android:id="@+id/textView30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edit_text"
+                    android:padding="@dimen/space_10"
+                    android:text="Hybrid Mode"
+                    android:backgroundTint="@color/blue_200"
+                    android:layout_marginStart="@dimen/space_12"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView32"
+                    app:layout_constraintStart_toEndOf="@+id/textView32"
+                    app:layout_constraintTop_toTopOf="@+id/textView32" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

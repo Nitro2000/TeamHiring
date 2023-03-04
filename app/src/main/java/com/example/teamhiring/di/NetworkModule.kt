@@ -1,6 +1,8 @@
 package com.example.teamhiring.di
 
 import com.example.teamhiring.data.constants.Constant
+import com.example.teamhiring.data.services.EmpProffService
+import com.example.teamhiring.data.services.LoginEmployeeService
 import com.example.teamhiring.data.services.RecruiterApiService
 import com.example.teamhiring.data.services.ReferenceApiService
 import dagger.Module
@@ -36,5 +38,16 @@ class NetworkModule {
     @Singleton
     fun provideRecruiterApiService(retrofit: Retrofit): RecruiterApiService =
         retrofit.create(RecruiterApiService::class.java)
+
+    @Provides
+    @Singleton
+    fun provideEmpProffApiService(retrofit: Retrofit): EmpProffService =
+        retrofit.create(EmpProffService::class.java)
+
+
+    @Provides
+    @Singleton
+    fun provideEmpLoginApiService(retrofit: Retrofit): LoginEmployeeService =
+        retrofit.create(LoginEmployeeService::class.java)
 
 }
