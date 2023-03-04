@@ -3,6 +3,8 @@ package com.example.teamhiring
 import android.content.Context
 import android.content.res.ColorStateList
 import android.view.View
+import android.text.TextUtils
+import android.util.Patterns
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
@@ -39,6 +41,9 @@ object CommonUiFunctions {
         try {
             (activity as MainActivity).bottomNavBarVisibility(visibility)
         } catch (e: Exception) {}
+    }
+    fun isValidEmail(email: String): Boolean {
+        return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 
     fun dpToFloat(context: Context, value: Int): Float {

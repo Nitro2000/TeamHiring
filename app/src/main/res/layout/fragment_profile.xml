@@ -315,7 +315,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/empProfQuali"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -323,9 +323,9 @@
                         android:text="Graduation"
                         android:textSize="@dimen/text_18"
                         app:layout_constraintBottom_toBottomOf="@+id/textView12"
-                        app:layout_constraintEnd_toEndOf="@+id/textView16"
+                        app:layout_constraintEnd_toEndOf="@+id/empProfDob"
                         app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/textView16"
+                        app:layout_constraintStart_toStartOf="@+id/empProfDob"
                         app:layout_constraintTop_toTopOf="@+id/textView12"
                         app:layout_constraintVertical_bias="0.0" />
 
@@ -344,7 +344,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
                     <TextView
-                        android:id="@+id/textView13"
+                        android:id="@+id/empProfMail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -352,9 +352,9 @@
                         android:text="@string/dummy_email"
                         android:textSize="@dimen/text_18"
                         app:layout_constraintBottom_toBottomOf="@+id/textView9"
-                        app:layout_constraintEnd_toEndOf="@+id/textView14"
+                        app:layout_constraintEnd_toEndOf="@+id/empProfMob"
                         app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/textView14"
+                        app:layout_constraintStart_toStartOf="@+id/empProfMob"
                         app:layout_constraintTop_toTopOf="@+id/textView9"
                         app:layout_constraintVertical_bias="0.0" />
 
@@ -375,7 +375,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
                     <TextView
-                        android:id="@+id/textView16"
+                        android:id="@+id/empProfDob"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="64dp"
@@ -384,9 +384,9 @@
                         android:text="17-11-9998"
                         android:textSize="@dimen/text_18"
                         app:layout_constraintBottom_toBottomOf="@+id/textView11"
-                        app:layout_constraintEnd_toEndOf="@+id/textView15"
+                        app:layout_constraintEnd_toEndOf="@+id/empProfGender"
                         app:layout_constraintHorizontal_bias="0.78"
-                        app:layout_constraintStart_toStartOf="@+id/textView15"
+                        app:layout_constraintStart_toStartOf="@+id/empProfGender"
                         app:layout_constraintTop_toTopOf="@+id/textView11"
                         app:layout_constraintVertical_bias="0.0" />
 
@@ -405,7 +405,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
                     <TextView
-                        android:id="@+id/textView15"
+                        android:id="@+id/empProfGender"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -413,9 +413,9 @@
                         android:text="TextView"
                         android:textSize="@dimen/text_18"
                         app:layout_constraintBottom_toBottomOf="@+id/textView10"
-                        app:layout_constraintEnd_toEndOf="@+id/textView13"
+                        app:layout_constraintEnd_toEndOf="@+id/empProfMail"
                         app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/textView13"
+                        app:layout_constraintStart_toStartOf="@+id/empProfMail"
                         app:layout_constraintTop_toTopOf="@+id/textView10"
                        />
 
@@ -434,7 +434,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
                     <TextView
-                        android:id="@+id/textView14"
+                        android:id="@+id/empProfMob"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="68dp"

@@ -49,9 +49,5 @@ class ChatCompanyFragment : Fragment() {
         binding.chatCompRecView.adapter = chatCompAdapter
 
 
-        binding.chatCompRecView.setOnClickListener(View.OnClickListener {
-            val direction = ChatCompanyFragmentDirections.actionChatCompanyFragmentToChatFragment()
-            findNavController().navigate(direction)
-        })
     }
 }

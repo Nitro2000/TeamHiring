@@ -32,6 +32,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 app:tabMode="scrollable"
+                app:tabGravity="fill"
                 android:layout_marginTop="@dimen/space_8"
                 app:tabSelectedTextColor="@color/blue_500"
                 app:tabTextColor="#686767"

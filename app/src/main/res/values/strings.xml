@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">TeamHiring</string>
+    <string name="notification_title">Job|Bits Pan India</string>
+    <string name="notification_demo">Bits Pan India Viewed Your Profile</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="terms_login">By Creating Passcode You Agree With Our Terms And Conditions And Privacy Policy</string>
     <string name="cd_signin">cd signin illustration</string>

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/userSelectFragment">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/splashFragment"
@@ -82,6 +82,16 @@
         android:name="com.example.teamhiring.ui.mainFragments.HomeFragmentSeeker"
         android:label="HomeFragmentSeeker"
         tools:layout="@layout/fragment_home_seeker"/>
+        <action
+            android:id="@+id/action_homeFragmentSeeker_to_recruiterHomeFragment"
+            app:destination="@id/recruiterHomeFragment" />
+        <action
+            android:id="@+id/action_homeFragmentSeeker_to_recruiterProfileFragment"
+            app:destination="@id/recruiterProfileFragment" />
+        <action
+            android:id="@+id/action_homeFragmentSeeker_to_searchFragment"
+            app:destination="@id/searchFragment" />
+
 
 
     <fragment
@@ -167,7 +177,18 @@
         android:id="@+id/recruiterPageFragment"
         android:name="com.example.teamhiring.ui.mainFragments.recruiter.RecruiterPageFragment"
         android:label="RecruiterPageFragment"
-        tools:layout="@layout/fragment_recruiter_page"/>
+        tools:layout="@layout/fragment_recruiter_page">
+        <argument
+            android:name="recId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search"/>
+
     <fragment
         android:id="@+id/recruiterInteractedFragment"
         android:name="com.example.teamhiring.ui.mainFragments.recruiter.RecruiterInteractedFragment"
