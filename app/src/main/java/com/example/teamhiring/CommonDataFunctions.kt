@@ -31,4 +31,9 @@ object CommonDataFunctions {
     fun getFormattedSalary(sMin: String?, sMax: String?): String {
         return "Rs $sMin - $sMax LPA"
     }
+
+    fun getFormattedExpYr(year: String?, month: String? = "00"): String {
+        val mon = if (month?.length == 1) "0$month" else month
+        return "${year}.$mon Yr"
+    }
 }

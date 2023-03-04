@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/recruiterHomeFragment">
+    app:startDestination="@id/userSelectFragment">
 
     <fragment
         android:id="@+id/splashFragment"
@@ -177,7 +177,14 @@
         android:id="@+id/recruiterProfileFragment"
         android:name="com.example.teamhiring.ui.mainFragments.recruiter.RecruiterProfileFragment"
         android:label="RecruiterProfileFragment"
-        tools:layout="@layout/fragment_recruiter_profile"/>
+        tools:layout="@layout/fragment_recruiter_profile">
+        <action
+            android:id="@+id/action_recruiterProfileFragment_to_postJobFragment"
+            app:destination="@id/postJobFragment" />
+        <action
+            android:id="@+id/action_recruiterProfileFragment_to_recruiterManageJobFragment"
+            app:destination="@id/recruiterManageJobFragment" />
+    </fragment>
     <fragment
         android:id="@+id/recruiterSearchFragment"
         android:name="com.example.teamhiring.ui.mainFragments.recruiter.RecruiterSearchFragment"
@@ -188,6 +195,21 @@
         android:name="com.example.teamhiring.ui.mainFragments.EmployeePageFragment"
         android:label="EmployeePageFragment"
         tools:layout="@layout/fragment_employee_page"/>
+    <fragment
+        android:id="@+id/postJobFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.recruiter.PostJobFragment"
+        android:label="PostJobFragment"
+        tools:layout="@layout/fragment_post_job"/>
+    <fragment
+        android:id="@+id/recruiterManageJobFragment"
+        android:name="com.example.teamhiring.ui.subFragment.recInter.RecruiterManageJobFragment"
+        android:label="RecruiterManageJobFragment"
+        tools:layout="@layout/fragment_recruiter_manage_job">
+        <argument
+            android:name="bottomVisibility"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
 
 
 </navigation>

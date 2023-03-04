@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.teamhiring.CommonUiFunctions
+import com.example.teamhiring.R
 import com.example.teamhiring.data.constants.enums.RecFragInfoEnum
 import com.example.teamhiring.data.dataList.PreDefinedList
 import com.example.teamhiring.databinding.FragmentRecruiterSavedBinding
@@ -92,7 +93,7 @@ class RecruiterSavedFragment : Fragment() {
         binding.rSavedChipGroup.visibility = View.VISIBLE
         binding.rSavedChipGroup.removeAllViews()
         for (text in chipList) {
-            binding.rSavedChipGroup.addView(CommonUiFunctions.createChip(text, mContext))
+            binding.rSavedChipGroup.addView(CommonUiFunctions.createChip(text, R.color.white, mContext))
         }
     }
 

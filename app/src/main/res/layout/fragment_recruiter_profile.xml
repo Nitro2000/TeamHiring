@@ -9,7 +9,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingBottom="60dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -608,7 +609,7 @@
                     android:text="@string/managed_jobs"
                     android:textColor="@color/text_heading"
                     android:textSize="@dimen/text_14"
-                    app:drawableStartCompat="@drawable/icon_manage_job"
+                    app:drawableStartCompat="@drawable/icon_profile_manage_job"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"/>
@@ -619,6 +620,29 @@
                     android:layout_height="1dp"
                     android:background="@color/bottom_line"
                     app:layout_constraintTop_toBottomOf="@+id/rProfManageJobTxt" />
+
+                <TextView
+                    android:id="@+id/rProfPostJobTxt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:drawablePadding="@dimen/space_14"
+                    android:fontFamily="@font/roboto_medium_500"
+                    android:paddingVertical="@dimen/space_12"
+                    android:text="@string/post_job"
+                    android:textColor="@color/text_heading"
+                    android:textSize="@dimen/text_14"
+                    app:drawableStartCompat="@drawable/icon_profile_post_job"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rProfManageJobTxt"/>
+
+                <View
+                    android:id="@+id/profViewLineFifth"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/bottom_line"
+                    app:layout_constraintTop_toBottomOf="@+id/rProfPostJobTxt" />
 
                 <TextView
                     android:id="@+id/profCustomerSuppText"
@@ -634,7 +658,7 @@
                     app:drawableStartCompat="@drawable/icon_help_desk"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/profViewLineSec"/>
+                    app:layout_constraintTop_toBottomOf="@id/profViewLineFifth"/>
 
                 <View
                     android:id="@+id/profViewLineThird"

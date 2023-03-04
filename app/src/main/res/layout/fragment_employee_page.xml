@@ -361,7 +361,7 @@
 
 
                     <TextView
-                        android:id="@+id/jobTypeTxt"
+                        android:id="@+id/empJobTypeTxt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/work_from_office"
@@ -382,12 +382,12 @@
                         android:layout_height="4dp"
                         android:layout_marginStart="8dp"
                         android:background="@drawable/bg_view_full_circle_themed"
-                        app:layout_constraintStart_toEndOf="@+id/jobTypeTxt"
-                        app:layout_constraintTop_toTopOf="@+id/jobTypeTxt"
-                        app:layout_constraintBottom_toBottomOf="@+id/jobTypeTxt" />
+                        app:layout_constraintStart_toEndOf="@+id/empJobTypeTxt"
+                        app:layout_constraintTop_toTopOf="@+id/empJobTypeTxt"
+                        app:layout_constraintBottom_toBottomOf="@+id/empJobTypeTxt" />
 
                     <TextView
-                        android:id="@+id/jobTimeTypeTxt"
+                        android:id="@+id/empJobTimeTypeTxt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/full_time"
@@ -414,7 +414,7 @@
                         android:drawablePadding="@dimen/space_8"
                         android:textColor="@color/dark_black"
                         android:fontFamily="@font/roboto"
-                        app:layout_constraintTop_toBottomOf="@id/jobTypeTxt"
+                        app:layout_constraintTop_toBottomOf="@id/empJobTypeTxt"
                         app:layout_constraintStart_toStartOf="parent"
                         app:drawableStartCompat="@drawable/icon_person" />
 
@@ -430,7 +430,7 @@
                         app:layout_constraintBottom_toBottomOf="@+id/empJobCityTxt" />
 
                     <TextView
-                        android:id="@+id/jobAppNameTxt"
+                        android:id="@+id/empJobStateTxt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/human_resorce"
@@ -441,7 +441,7 @@
                         android:layout_marginStart="@dimen/space_8"
                         android:textColor="@color/dark_black"
                         android:fontFamily="@font/roboto"
-                        app:layout_constraintTop_toBottomOf="@id/jobTypeTxt"
+                        app:layout_constraintTop_toBottomOf="@id/empJobTypeTxt"
                         app:layout_constraintStart_toEndOf="@id/jobLineViewFourth"/>
 
 
@@ -457,7 +457,7 @@
                         android:textColor="#5E5F5F"
                         android:fontFamily="@font/roboto_regular_400"
                         app:layout_constraintTop_toBottomOf="@id/empJobCityTxt"
-                        app:layout_constraintStart_toStartOf="@id/jobTypeTxt"/>
+                        app:layout_constraintStart_toStartOf="@id/empJobTypeTxt"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -483,6 +483,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/empCompExpLayout"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         app:layout_constraintStart_toStartOf="parent"
@@ -494,76 +495,41 @@
                             android:id="@+id/empCurrField"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Current company"
+                            android:text="@string/current_company"
                             android:textSize="@dimen/text_16"
                             android:textColor="@color/text_heading"
                             android:fontFamily="@font/roboto"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"/>
 
-                        <View
-                            android:id="@+id/empCircViewSixth"
-                            android:layout_width="4dp"
-                            android:layout_height="4dp"
-                            android:background="@drawable/bg_view_full_circle_themed"
-                            android:layout_marginStart="8dp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="@id/empCurrCompNameTxt"
-                            app:layout_constraintBottom_toBottomOf="@id/empCurrCompNameTxt"/>
+                        <include layout="@layout/item_emp_company_list"
+                            android:id="@+id/currComItem"/>
+
 
                         <TextView
-                            android:id="@+id/empCurrCompNameTxt"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/space_8"
-                            android:layout_marginTop="@dimen/space_12"
-                            android:fontFamily="@font/roboto_regular_400"
-                            android:text="@string/bits_panindia"
-                            android:textColor="@color/text_heading"
-                            android:textSize="@dimen/text_16"
-                            app:layout_constraintEnd_toStartOf="@id/empCurrJobDateTxt"
-                            app:layout_constraintStart_toEndOf="@id/empCircViewSixth"
-                            app:layout_constraintTop_toBottomOf="@id/empCurrField" />
-
-                        <TextView
-                            android:id="@+id/empCurrJobDateTxt"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/jan_2_present"
-                            android:textSize="@dimen/text_16"
-                            android:textColor="@color/sub_views"
-                            android:fontFamily="@font/roboto"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="@id/empCurrCompNameTxt"
-                            />
-
-                        <TextView
-                            android:id="@+id/empCurrDesignTxt"
+                            android:id="@+id/empCurrPrevTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/backend_developer"
+                            android:text="@string/previous_companies"
                             android:textColor="@color/text_heading"
-                            android:textSize="@dimen/text_14"
-                            android:layout_marginTop="@dimen/space_4"
+                            android:textSize="@dimen/text_16"
+                            android:layout_marginTop="@dimen/space_16"
                             android:fontFamily="@font/roboto"
-                            app:layout_constraintStart_toStartOf="@+id/empCurrCompNameTxt"
-                            app:layout_constraintTop_toBottomOf="@+id/empCurrCompNameTxt" />
-
-                        <TextView
-                            android:id="@+id/textView3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/notice_period"
-                            android:textColor="@color/text_heading"
-                            android:textSize="@dimen/text_14"
-                            android:layout_marginTop="@dimen/space_4"
-                            android:fontFamily="@font/roboto"
-                            app:layout_constraintStart_toStartOf="@+id/empCurrDesignTxt"
-                            app:layout_constraintTop_toBottomOf="@id/empCurrDesignTxt" />
-
+                            app:layout_constraintStart_toStartOf="@+id/empCurrField"
+                            app:layout_constraintTop_toBottomOf="@id/currComItem" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/empPrevComRecView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintTop_toBottomOf="@id/empCompExpLayout"
+                        tools:listitem="@layout/item_emp_company_list"
+                        />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
