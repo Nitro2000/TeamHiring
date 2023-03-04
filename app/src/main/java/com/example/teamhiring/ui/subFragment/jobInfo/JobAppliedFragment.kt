@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.teamhiring.data.models.AllJobData
 import com.example.teamhiring.databinding.FragmentJobAppliedBinding
 import com.example.teamhiring.presentation.adapters.AllJobAdapter
-import com.example.teamhiring.presentation.viewmodels.EmployeeAppliedJobViewModel
+import com.example.teamhiring.presentation.viewmodels.AllJobViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -27,7 +27,7 @@ class JobAppliedFragment : Fragment() {
     private lateinit var mContext: Context
     private lateinit var mActivity: FragmentActivity
 
-    private val appliedJobViewModel: EmployeeAppliedJobViewModel by viewModels()
+    private val appliedJobViewModel: AllJobViewModel by viewModels()
     private lateinit var appliedJobList: List<AllJobData>
     private lateinit var adapter: AllJobAdapter
 

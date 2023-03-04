@@ -48,13 +48,16 @@ class SearchFragment : Fragment() {
         binding.searchFilter.setOnClickListener{
 
             if (isFilterShow){
+                isFilterShow = false
                 binding.searchRecyclerView.visibility = View.VISIBLE
                 binding.searchFilLayout.visibility = View.GONE
             }else{
+                isFilterShow = true
                 binding.searchRecyclerView.visibility = View.GONE
                 binding.searchFilLayout.visibility = View.VISIBLE
             }
 
         }
+
     }
 }

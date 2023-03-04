@@ -13,16 +13,10 @@ import androidx.lifecycle.lifecycleScope
 import com.example.teamhiring.databinding.FragmentHomeSeekerBinding
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.teamhiring.data.constants.enums.JobFragInfoEnum
-import com.example.teamhiring.data.dataList.ChatCompanyDataList
 import com.example.teamhiring.data.models.AllJobData
 import com.example.teamhiring.helpers.ProgressDialog
 import com.example.teamhiring.presentation.adapters.AllJobAdapter
-import com.example.teamhiring.presentation.adapters.ChatCompanyDataAdapter
-import com.example.teamhiring.presentation.adapters.RecJobListAdapter
 import com.example.teamhiring.presentation.viewmodels.AllJobViewModel
-import com.example.teamhiring.presentation.viewmodels.ReferenceViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -54,11 +48,6 @@ class HomeFragmentSeeker : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        binding.recyclerViewJobs.apply {
-//            adapter = RecJobListAdapter(JobFragInfoEnum.JobApplied)
-//            layoutManager = LinearLayoutManager(mContext, RecyclerView.VERTICAL, false)
-//        }
-
         // TODO Delete after merge
         binding.secondaryText.setOnClickListener {
             val direction = HomeFragmentSeekerDirections.actionHomeFragmentSeekerToRecruiterHomeFragment()
@@ -75,35 +64,13 @@ class HomeFragmentSeeker : Fragment() {
             binding.swipeRefresh.isRefreshing = false
         }
 
-//        viewLifecycleOwner.lifecycleScope.launch{
-//            Log.d("Devashish","Hello Devashish")
-//            val response = allJobViewModel.getAllJobs()
-//            if (response.isSuccessful){
-//                Log.d("Devashish","${response.body()}")
-//                binding.recyclerViewJobs.layoutManager = LinearLayoutManager(mContext)
-//                jobList = response.body() ?: listOf()
-//
-//                adpater = AllJobAdapter(jobList)
-//                binding.recyclerViewJobs.layoutManager = LinearLayoutManager(mContext)
-//
-//                binding.recyclerViewJobs.adapter = adpater
-//
-//
-//            }else{
-//                Log.d("Devashish","No data found")
-//
-//            }
-//        }
-
-
-        getAllJobs()
-
         binding.homeSearchEdTxt.setOnClickListener{
+
             val direction = HomeFragmentSeekerDirections.actionHomeFragmentSeekerToSearchFragment()
             findNavController().navigate(direction)
         }
 
-
+        getAllJobs()
     }
 
     private fun getAllJobs() {

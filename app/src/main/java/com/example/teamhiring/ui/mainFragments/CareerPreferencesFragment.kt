@@ -37,12 +37,31 @@ class CareerPreferencesFragment : Fragment() {
         // Inflate the layout for this fragment
         binding =  FragmentCareerPreferencesBinding.inflate(inflater, container, false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getCareerData()
+        binding.editCarPref.setOnClickListener{
+            binding.carPrefJob.isEnabled
+            binding.carPreExpLabel.isEnabled
+            binding.carPrefEmpType.isEnabled
+            binding.carPrefEngTitle.isEnabled
+            binding.carPrefCity.isEnabled
+            binding.carPrefExpSalary.isEnabled
+            binding.carPrefSkills.isEnabled
+            binding.carPrefState.isEnabled
+            binding.carPrefShift.isEnabled
+            binding.carPrefJobType.isEnabled
+            binding.carPreExpLabel.isEnabled
+            binding.carTotalExp.isEnabled
+
+        }
+
     }
+
+
 
     private fun getCareerData() {
         viewLifecycleOwner.lifecycleScope.launch{
