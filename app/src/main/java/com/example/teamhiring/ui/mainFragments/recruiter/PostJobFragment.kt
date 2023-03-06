@@ -17,14 +17,8 @@ import com.example.teamhiring.CommonUiFunctions
 import com.example.teamhiring.R
 import com.example.teamhiring.data.constants.enums.PostJobProgressEnum
 import com.example.teamhiring.databinding.FragmentPostJobBinding
-import com.example.teamhiring.databinding.FragmentRecruiterSavedBinding
-import com.example.teamhiring.databinding.SideSheetRecSavedBinding
-import com.example.teamhiring.presentation.adapters.EmpListAdapter
-import com.example.teamhiring.presentation.adapters.RecSavedPostJobListAdapter
-import com.example.teamhiring.presentation.viewmodels.recruiter.RecruiterManageViewModel
 import com.example.teamhiring.ui.subFragment.postJob.PostJobFirstFragmentDirections
 import com.example.teamhiring.ui.subFragment.postJob.PostJobSecFragmentDirections
-import com.google.android.material.sidesheet.SideSheetDialog
 
 class PostJobFragment : Fragment() {
 

@@ -5,7 +5,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="terms_login">By Creating Passcode You Agree With Our Terms And Conditions And Privacy Policy</string>
     <string name="cd_signin">cd signin illustration</string>
-    <string name="already_have_an_account">Already have an account</string>
+    <string name="already_have_an_account">Already have an account?</string>
     <string name="email_id">Email Id</string>
     <string name="password">Password</string>
     <string name="forgot_password">Forgot Password?</string>

@@ -1,6 +1,7 @@
 package com.example.teamhiring.data.repositories.recruiter
 
 import com.example.teamhiring.data.models.GeneralDataModel
+import com.example.teamhiring.data.models.GeneralMessModel
 import com.example.teamhiring.data.models.recruiter.RecViewedData
 import com.example.teamhiring.data.models.recruiter.RecruiterEmpData
 import com.example.teamhiring.data.services.RecruitManageApiService
@@ -17,5 +18,9 @@ class RecruiterManageJobRepo @Inject constructor(private val recruitManageApiSer
 
     suspend fun getViewedData(recId: Int): Response<RecViewedData> {
         return recruitManageApiService.getViewedData(recId)
+    }
+
+    suspend fun callShortListApi(empId: Int, recId: Int) : Response<GeneralMessModel> {
+        return recruitManageApiService.callShortListApi(empId, recId)
     }
 }

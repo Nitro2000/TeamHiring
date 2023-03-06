@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -124,12 +125,22 @@ class RecruiterHomeFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             recruiterViewModel.getEmpList(jobId).let {
                 if (it.isSuccessful) {
-                    val list = it.body() ?: listOf()
-                    empListAdapter = EmpListAdapter(list, RecFragInfoEnum.RecHome, mContext)
+                    val list = it.body()?.data ?: listOf()
+                    empListAdapter = EmpListAdapter(list, RecFragInfoEnum.RecHome, mContext) {empId ->
+                        callShortListApi(empId)
+                    }
                     setEmpListAdapter()
                 } else {
                     Log.d(LOG_TAG, "${it.errorBody()}")
                 }
+            }
+        }
+    }
+
+    private fun callShortListApi(empId: Int) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            recPostViewModel.callShortListApi(empId).let {
+                Log.d(LOG_TAG, "Shortlist: ${it.body()}")
             }
         }
     }

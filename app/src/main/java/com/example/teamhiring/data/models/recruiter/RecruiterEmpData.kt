@@ -19,7 +19,7 @@ data class RecruiterEmpData(
     @SerializedName("experience") val experience: String? = "",
     @SerializedName("gender") val gender: String? = "",
     @SerializedName("highestQual") val highestQual: String? = "",
-    @SerializedName("id") val id: String? = "",
+    @SerializedName("id") val empId: String? = "",
     @SerializedName("log_in_time") val logInTime: String? = "",
     @SerializedName("p_e_type") val pEType: String? = "",
     @SerializedName("p_job_roles") val pJobRoles: String? = "",
@@ -27,5 +27,10 @@ data class RecruiterEmpData(
     @SerializedName("skills_old") val skillsOld: String? = "",
     @SerializedName("status") val status: String? = "",
     @SerializedName("t_exp_month") val tExpMonth: String? = "",
-    @SerializedName("t_exp_yr") val tExpYr: String? = ""
+    @SerializedName("t_exp_yr") val tExpYr: String? = "",
+    @SerializedName("skills") val skills: String? = "",
+    @SerializedName("p_sal_L") val pSalLow: String? = "",
+    @SerializedName("p_sal_T") val pSalTop: String? = "",
+    @SerializedName("Objective") val empDescription: String? = "",
+
 )

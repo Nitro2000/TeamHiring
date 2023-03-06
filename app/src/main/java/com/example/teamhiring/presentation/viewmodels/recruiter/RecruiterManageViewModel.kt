@@ -2,6 +2,7 @@ package com.example.teamhiring.presentation.viewmodels.recruiter
 
 import androidx.lifecycle.ViewModel
 import com.example.teamhiring.data.models.GeneralDataModel
+import com.example.teamhiring.data.models.GeneralMessModel
 import com.example.teamhiring.data.models.recruiter.PostedJobData
 import com.example.teamhiring.data.models.recruiter.RecViewedData
 import com.example.teamhiring.data.models.recruiter.RecruiterEmpData
@@ -30,6 +31,12 @@ class RecruiterManageViewModel @Inject constructor(private val recruiterManageJo
     suspend fun getViewedData(): Response<RecViewedData> {
         return withContext(Dispatchers.IO) {
             recruiterManageJobRepo.getViewedData(1)
+        }
+    }
+
+    suspend fun callShortListApi(empId: Int): Response<GeneralMessModel> {
+        return withContext(Dispatchers.IO) {
+            recruiterManageJobRepo.callShortListApi(empId, 12)
         }
     }
 }

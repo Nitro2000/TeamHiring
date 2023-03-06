@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.getUserType().observe(this) {
             binding.mainBottomNav.menu.clear()
             if (it) {
+                isEmployee = true
                 binding.mainBottomNav.inflateMenu(R.menu.bottom_nav_menu)
             } else {
                 isEmployee = false

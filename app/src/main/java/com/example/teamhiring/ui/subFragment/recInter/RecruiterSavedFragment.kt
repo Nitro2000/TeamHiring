@@ -13,6 +13,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.teamhiring.CommonUiFunctions
 import com.example.teamhiring.R
+import com.example.teamhiring.data.constants.Constant
+import com.example.teamhiring.data.constants.Constant.LOG_TAG
 import com.example.teamhiring.data.constants.enums.RecFragInfoEnum
 import com.example.teamhiring.data.dataList.PreDefinedList
 import com.example.teamhiring.databinding.FragmentRecruiterSavedBinding
@@ -106,14 +108,24 @@ class RecruiterSavedFragment : Fragment() {
                     val status = responseBody?.status
                     if (status == 200) {
                         val list = responseBody.data
-                        empListAdapter = EmpListAdapter(list, RecFragInfoEnum.RecSaved,  mContext)
+                        empListAdapter = EmpListAdapter(list, RecFragInfoEnum.RecSaved,  mContext) {empId ->
+                            callShortListApi(empId)
+                        }
                         setEmpListAdapter()
                     } else {
                         Toast.makeText(mContext, "No data present", Toast.LENGTH_SHORT).show()
                     }
                 } else {
-                    Log.d("Hiring", "${it.errorBody()}")
+                    Log.d(LOG_TAG, "${it.errorBody()}")
                 }
+            }
+        }
+    }
+
+    private fun callShortListApi(empId: Int) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            recManageViewModel.callShortListApi(empId).let {
+                Log.d(LOG_TAG, "Shortlist: ${it.body()}")
             }
         }
     }

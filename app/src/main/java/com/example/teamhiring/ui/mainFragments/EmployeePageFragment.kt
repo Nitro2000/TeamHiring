@@ -9,18 +9,15 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.NavArgs
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.teamhiring.CommonDataFunctions
 import com.example.teamhiring.CommonUiFunctions
 import com.example.teamhiring.R
-import com.example.teamhiring.data.dataList.PreDefinedList
 import com.example.teamhiring.data.models.AllPreviousCom
-import com.example.teamhiring.data.models.EmpBasicDetail
 import com.example.teamhiring.data.models.NewPDetail
+import com.example.teamhiring.data.models.recruiter.RecruiterEmpData
 import com.example.teamhiring.databinding.FragmentEmployeePageBinding
-import com.example.teamhiring.databinding.FragmentRecruiterPageBinding
 import com.example.teamhiring.presentation.adapters.EmpCompDetailAdapter
 import com.example.teamhiring.presentation.viewmodels.recruiter.RecruiterViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -63,14 +60,14 @@ class EmployeePageFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             recruiterViewModel.getEmpBasicData(empId).let {
                 if (it.isSuccessful) {
-                    val details = it.body()?.get(0)
+                    val details = it.body()?.data?.get(0)
                     setEmpBasicData(details)
                 }
             }
         }
     }
 
-    private fun setEmpBasicData(details: EmpBasicDetail?) {
+    private fun setEmpBasicData(details: RecruiterEmpData?) {
         binding.apply {
             empNameTxt.text = details?.cName
             empHighQualTxt.text = details?.highestQual

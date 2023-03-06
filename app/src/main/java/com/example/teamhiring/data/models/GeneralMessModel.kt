@@ -2,7 +2,7 @@ package com.example.teamhiring.data.models
 
 import com.google.gson.annotations.SerializedName
 
-data class GeneralDataModel<T>(
+data class GeneralMessModel(
     @SerializedName("status") val status: Int,
-    @SerializedName("data") val data: T
+    @SerializedName("message") val message: String
 )

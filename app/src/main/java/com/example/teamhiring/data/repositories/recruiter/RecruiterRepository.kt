@@ -1,8 +1,6 @@
 package com.example.teamhiring.data.repositories.recruiter
 
-import com.example.teamhiring.data.models.EmpBasicDetail
-import com.example.teamhiring.data.models.EmpCareerPrefeData
-import com.example.teamhiring.data.models.EmpExpData
+import com.example.teamhiring.data.models.*
 import com.example.teamhiring.data.models.recruiter.RecProfileData
 import com.example.teamhiring.data.models.recruiter.RecruiterEmpData
 import com.example.teamhiring.data.services.RecruiterApiService
@@ -11,7 +9,7 @@ import javax.inject.Inject
 
 class RecruiterRepository @Inject constructor(private val recruiterApiService: RecruiterApiService) {
 
-    suspend fun getEmpList(jobId: Int?) : Response<List<RecruiterEmpData>> {
+    suspend fun getEmpList(jobId: Int?) : Response<GeneralDataModel<List<RecruiterEmpData>>> {
         return recruiterApiService.getEmpList(jobId)
     }
 
@@ -27,7 +25,9 @@ class RecruiterRepository @Inject constructor(private val recruiterApiService: R
         return recruiterApiService.getEmpCareerPref(1)
     }
 
-    suspend fun getEmpBasicData(empId: Int) : Response<List<EmpBasicDetail>> {
+    suspend fun getEmpBasicData(empId: Int) : Response<GeneralDataModel<List<RecruiterEmpData>>> {
         return recruiterApiService.getEmpBasicData(empId)
     }
+
+
 }

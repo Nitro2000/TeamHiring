@@ -1,6 +1,7 @@
 package com.example.teamhiring.data.services
 
 import com.example.teamhiring.data.models.GeneralDataModel
+import com.example.teamhiring.data.models.GeneralMessModel
 import com.example.teamhiring.data.models.recruiter.PostedJobData
 import com.example.teamhiring.data.models.recruiter.RecViewedData
 import com.example.teamhiring.data.models.recruiter.RecruiterEmpData
@@ -23,4 +24,10 @@ interface RecruitManageApiService {
     suspend fun getViewedData(
         @Query("rec_id") recId: Int
     ): Response<RecViewedData>
+
+    @GET("rec_shortList_emp")
+    suspend fun callShortListApi(
+        @Query("emp_id") empId: Int,
+        @Query("rec_id") recId: Int
+    ): Response<GeneralMessModel>
 }

@@ -1,13 +1,10 @@
 package com.example.teamhiring.presentation.viewmodels.recruiter
 
 import androidx.lifecycle.ViewModel
-import com.example.teamhiring.data.models.EmpBasicDetail
-import com.example.teamhiring.data.models.EmpCareerPrefeData
-import com.example.teamhiring.data.models.EmpExpData
+import com.example.teamhiring.data.models.*
 import com.example.teamhiring.data.models.recruiter.RecProfileData
 import com.example.teamhiring.data.models.recruiter.RecruiterEmpData
 import com.example.teamhiring.data.repositories.recruiter.RecruiterRepository
-import com.example.teamhiring.ui.mainFragments.recruiter.RecruiterProfileFragment
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -18,7 +15,7 @@ import javax.inject.Inject
 class RecruiterViewModel @Inject constructor(private val recruiterRepository: RecruiterRepository) :
     ViewModel() {
 
-        suspend fun getEmpList(jobId: Int?) : Response<List<RecruiterEmpData>> {
+        suspend fun getEmpList(jobId: Int?) : Response<GeneralDataModel<List<RecruiterEmpData>>> {
             return withContext(Dispatchers.IO) {
                 recruiterRepository.getEmpList(jobId)
             }
@@ -42,10 +39,12 @@ class RecruiterViewModel @Inject constructor(private val recruiterRepository: Re
         }
     }
 
-    suspend fun getEmpBasicData(empId: Int) : Response<List<EmpBasicDetail>> {
+    suspend fun getEmpBasicData(empId: Int) : Response<GeneralDataModel<List<RecruiterEmpData>>> {
         return withContext(Dispatchers.IO) {
             recruiterRepository.getEmpBasicData(empId)
         }
     }
+
+
 
 }

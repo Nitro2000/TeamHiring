@@ -10,17 +10,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.example.teamhiring.R
+import com.example.teamhiring.data.constants.Constant.LOG_TAG
 import com.example.teamhiring.data.models.recruiter.RecNotification
-import com.example.teamhiring.databinding.FragmentJobViewedByBinding
-import com.example.teamhiring.databinding.FragmentRecruiterSavedBinding
 import com.example.teamhiring.databinding.FragmentRecruiterViewedByBinding
 import com.example.teamhiring.databinding.SideSheetRecSavedBinding
-import com.example.teamhiring.presentation.adapters.EmpListAdapter
-import com.example.teamhiring.presentation.adapters.RecSavedPostJobListAdapter
 import com.example.teamhiring.presentation.adapters.RecViewedByAdapter
 import com.example.teamhiring.presentation.viewmodels.recruiter.RecruiterManageViewModel
-import com.google.android.material.sidesheet.SideSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -31,9 +26,6 @@ class RecruiterViewedByFragment : Fragment() {
     private lateinit var sideSheetBinding: SideSheetRecSavedBinding
     private lateinit var mContext: Context
     private lateinit var mActivity: FragmentActivity
-    private lateinit var empListAdapter: EmpListAdapter
-    private lateinit var postJobListAdapter: RecSavedPostJobListAdapter
-    private lateinit var sideSheet: SideSheetDialog
     private val recManageViewModel: RecruiterManageViewModel by viewModels()
 
     override fun onCreateView(
@@ -43,10 +35,7 @@ class RecruiterViewedByFragment : Fragment() {
         // Inflate the layout for this fragment
         mContext = requireContext()
         mActivity = requireActivity()
-        sideSheet = SideSheetDialog(mContext)
         binding = FragmentRecruiterViewedByBinding.inflate(inflater, container, false)
-        sideSheetBinding = SideSheetRecSavedBinding.inflate(LayoutInflater.from(mContext))
-        sideSheet.setContentView(sideSheetBinding.root)
         return binding.root
     }
 
@@ -64,7 +53,7 @@ class RecruiterViewedByFragment : Fragment() {
                     val viewedList = it.body()?.jobViewed ?: listOf()
                     setViewedAdapter(viewedList)
                 } else {
-                    Log.d("Hiring", "${it.errorBody()}")
+                    Log.d(LOG_TAG, "${it.errorBody()}")
                 }
             }
         }
@@ -77,7 +66,7 @@ class RecruiterViewedByFragment : Fragment() {
                     val appliedList = it.body()?.jobApplied ?: listOf()
                     setAppliedAdapter(appliedList)
                 } else {
-                    Log.d("Hiring", "${it.errorBody()}")
+                    Log.d(LOG_TAG, "${it.errorBody()}")
                 }
             }
         }
