@@ -215,7 +215,11 @@
         android:id="@+id/employeePageFragment"
         android:name="com.example.teamhiring.ui.mainFragments.EmployeePageFragment"
         android:label="EmployeePageFragment"
-        tools:layout="@layout/fragment_employee_page"/>
+        tools:layout="@layout/fragment_employee_page">
+        <argument
+            android:name="empId"
+            app:argType="integer" />
+    </fragment>
     <fragment
         android:id="@+id/postJobFragment"
         android:name="com.example.teamhiring.ui.mainFragments.recruiter.PostJobFragment"

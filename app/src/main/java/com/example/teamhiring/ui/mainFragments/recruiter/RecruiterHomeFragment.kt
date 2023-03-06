@@ -16,6 +16,7 @@ import com.example.teamhiring.CommonUiFunctions.createChip
 import com.example.teamhiring.CommonUiFunctions.startShimmer
 import com.example.teamhiring.CommonUiFunctions.stopShimmer
 import com.example.teamhiring.R
+import com.example.teamhiring.data.constants.Constant.LOG_TAG
 import com.example.teamhiring.data.constants.enums.RecFragInfoEnum
 import com.example.teamhiring.data.dataList.PreDefinedList.jobPostTempList
 import com.example.teamhiring.data.models.recruiter.PostedJobData
@@ -61,7 +62,7 @@ class RecruiterHomeFragment : Fragment() {
         CommonUiFunctions.bottomNavBarVisibility(mActivity, View.VISIBLE)
         CommonUiFunctions.changeStatusBarColor(mActivity, R.color.text_heading)
         if (shimmerAndDataFlag) {
-            getEmpData()
+            getEmpData(null)
             getPostedJobs()
             startShimmer(binding.rHomePostShimmer, binding.rHomeJobPostedRecView)
             startShimmer(binding.rHomeEmpListShimmer, binding.rHomeCandidatesRecView)
@@ -85,7 +86,7 @@ class RecruiterHomeFragment : Fragment() {
         }
 
         binding.swipeRefresh.setOnRefreshListener {
-            Log.d("Hiring", "refreshed")
+            Log.d(LOG_TAG, "refreshed")
             binding.swipeRefresh.isRefreshing = false
         }
 
@@ -100,28 +101,6 @@ class RecruiterHomeFragment : Fragment() {
     }
 
 
-//    private fun stopShimmer(isPostShimmer: Boolean) {
-//        if (isPostShimmer) {
-//            binding.apply {
-//                rHomePostShimmer.apply {
-//                    stopShimmer()
-//                    visibility = View.GONE
-//                }
-//                rHomeJobPostedRecView.visibility = View.VISIBLE
-//            }
-//        } else {
-//            binding.apply {
-//                rHomeEmpListShimmer.apply {
-//                    stopShimmer()
-//                    visibility = View.GONE
-//                }
-//                rHomeCandidatesRecView.visibility = View.VISIBLE
-//            }
-//        }
-//        shimmerAndDataFlag = false
-//
-//    }
-
     private fun getPostedJobs() {
         viewLifecycleOwner.lifecycleScope.launch {
             recPostViewModel.getPostedJobList().let {
@@ -129,26 +108,27 @@ class RecruiterHomeFragment : Fragment() {
                     val list = it.body() ?: listOf()
                     postJobAdapter = PostedJobListAdapter(list) { jobId, chipList ->
                         setChipData(chipList)
+                        getEmpData(jobId)
                     }
                     setPostJobAdapter()
                 } else {
-                    Log.d("Hiring", "${it.errorBody()}")
+                    Log.d(LOG_TAG, "${it.errorBody()}")
                 }
             }
         }
     }
 
 
-    private fun getEmpData() {
+    private fun getEmpData(jobId: Int?) {
+        if (jobId != null) startShimmer(binding.rHomeEmpListShimmer, binding.rHomeCandidatesRecView)
         viewLifecycleOwner.lifecycleScope.launch {
-            recruiterViewModel.getEmpList().let {
+            recruiterViewModel.getEmpList(jobId).let {
                 if (it.isSuccessful) {
                     val list = it.body() ?: listOf()
                     empListAdapter = EmpListAdapter(list, RecFragInfoEnum.RecHome, mContext)
                     setEmpListAdapter()
-                    Log.d("rishabh", "${it.body()}")
                 } else {
-                    Log.d("hiring", "${it.errorBody()}")
+                    Log.d(LOG_TAG, "${it.errorBody()}")
                 }
             }
         }

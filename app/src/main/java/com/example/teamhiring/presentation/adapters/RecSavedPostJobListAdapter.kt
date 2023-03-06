@@ -58,7 +58,7 @@ class RecSavedPostJobListAdapter(
             holder.binding.rPostRadioBtn.isChecked = true
             lastCheckedRB = holder.binding.rPostRadioBtn
 
-            callback(jobItem.id.toInt(), listOf(
+            callback(jobItem.jobId.toInt(), listOf(
                 jobItem.jTitle,
                 CommonDataFunctions.getFormattedSalary(jobItem.sMin, jobItem.sMax),
                 CommonDataFunctions.checkJobType(jobItem.empType),

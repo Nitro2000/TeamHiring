@@ -32,7 +32,7 @@ object CommonDataFunctions {
         return "Rs $sMin - $sMax LPA"
     }
 
-    fun getFormattedExpYr(year: String?, month: String? = "00"): String {
+    fun getFormattedExpYr(year: String? = "0", month: String? = "00"): String {
         val mon = if (month?.length == 1) "0$month" else month
         return "${year}.$mon Yr"
     }

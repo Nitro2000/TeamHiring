@@ -14,7 +14,7 @@ data class PostedJobData(
     @SerializedName("District") val district: String? = "",
     @SerializedName("emp_type") val empType: String? = "",
     @SerializedName("experience") val experience: String? = "",
-    @SerializedName("id") val id: String = "",
+    @SerializedName("id") val jobId: String = "",
     @SerializedName("inJobTime") val inJobTime: String? = "",
     @SerializedName("inJobTimeType") val inJobTimeType: String? = "",
     @SerializedName("jTitle") val jTitle: String = "",

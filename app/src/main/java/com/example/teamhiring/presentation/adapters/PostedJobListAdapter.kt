@@ -50,7 +50,7 @@ class PostedJobListAdapter(
         holder.bind(jobItem)
 
         holder.binding.rootLayout.setOnClickListener {
-            callback(jobItem.id.toInt(), listOf(
+            callback(jobItem.jobId.toInt(), listOf(
                 jobItem.jTitle,
                 CommonDataFunctions.getFormattedSalary(jobItem.sMin, jobItem.sMax),
                 CommonDataFunctions.checkJobType(jobItem.empType),
@@ -60,5 +60,5 @@ class PostedJobListAdapter(
 
     }
 
-    override fun getItemCount(): Int = 4
+    override fun getItemCount(): Int = postedJobList.size
 }

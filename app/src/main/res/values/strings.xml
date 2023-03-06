@@ -135,6 +135,7 @@
     <string name="cd_icon_star">cd icon star</string>
     <string name="jan_2_present">Jan 2 - Present</string>
     <string name="notice_period">Notice period: %s Days</string>
+    <string name="format_age">%s yr old</string>
     <string name="previous_companies">Previous Companies</string>
     <string name="current_company">Current company</string>
 

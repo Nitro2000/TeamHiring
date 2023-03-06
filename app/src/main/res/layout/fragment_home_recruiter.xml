@@ -257,7 +257,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="@dimen/space_12"
-                            android:visibility="gone"
+                            android:visibility="visible"
                             tools:listitem="@layout/item_home_job_seekers"
                             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -286,22 +286,6 @@
                         </com.facebook.shimmer.ShimmerFrameLayout>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-                    <!--                    <androidx.recyclerview.widget.RecyclerView-->
-                    <!--                        android:id="@+id/recyclerViewJobs"-->
-                    <!--                        android:layout_width="match_parent"-->
-                    <!--                        android:layout_height="wrap_content"-->
-                    <!--                        app:layout_constraintStart_toStartOf="parent"-->
-                    <!--                        app:layout_constraintTop_toTopOf="parent"-->
-                    <!--                        android:layout_marginStart="@dimen/space_4"-->
-                    <!--                        android:layout_marginEnd="@dimen/space_4"-->
-                    <!--                        android:nestedScrollingEnabled="false"-->
-                    <!--                        android:layout_marginBottom="@dimen/space_10"-->
-                    <!--                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
-                    <!--                        app:layout_behavior="@string/appbar_scrolling_view_behavior" />-->
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

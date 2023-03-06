@@ -1,6 +1,7 @@
 package com.example.teamhiring.presentation.adapters
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,8 +35,10 @@ class EmpListAdapter(val empList: List<RecruiterEmpData>, val type: RecFragInfoE
             }
         }
 
-        fun navigateToRecPage() {
-            binding.root.findNavController().navigate(R.id.employeePageFragment)
+        fun navigateToRecPage(empId: Int) {
+            val bundle = Bundle()
+            bundle.putInt("empId", empId)
+            binding.root.findNavController().navigate(R.id.employeePageFragment, bundle)
         }
 
     }
@@ -62,7 +65,7 @@ class EmpListAdapter(val empList: List<RecruiterEmpData>, val type: RecFragInfoE
         holder.arrowClick()
 
         holder.binding.jobRootLayout.setOnClickListener {
-            holder.navigateToRecPage()
+            item.id?.let { it1 -> holder.navigateToRecPage(it1.toInt()) }
         }
 
     }

@@ -9,12 +9,15 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.NavArgs
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.teamhiring.CommonDataFunctions
 import com.example.teamhiring.CommonUiFunctions
 import com.example.teamhiring.R
 import com.example.teamhiring.data.dataList.PreDefinedList
 import com.example.teamhiring.data.models.AllPreviousCom
+import com.example.teamhiring.data.models.EmpBasicDetail
 import com.example.teamhiring.data.models.NewPDetail
 import com.example.teamhiring.databinding.FragmentEmployeePageBinding
 import com.example.teamhiring.databinding.FragmentRecruiterPageBinding
@@ -31,6 +34,7 @@ class EmployeePageFragment : Fragment() {
     private lateinit var mContext: Context
     private lateinit var mActivity: FragmentActivity
     private val recruiterViewModel: RecruiterViewModel by viewModels()
+    private val empArgs: EmployeePageFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,11 +50,33 @@ class EmployeePageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         CommonUiFunctions.bottomNavBarVisibility(mActivity, View.GONE)
+        getEmpBasicDetail(empArgs.empId)
         getEmpCareerPref()
         getEmpExpData()
 
         binding.empBackArrImg.setOnClickListener {
             findNavController().popBackStack()
+        }
+    }
+
+    private fun getEmpBasicDetail(empId: Int) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            recruiterViewModel.getEmpBasicData(empId).let {
+                if (it.isSuccessful) {
+                    val details = it.body()?.get(0)
+                    setEmpBasicData(details)
+                }
+            }
+        }
+    }
+
+    private fun setEmpBasicData(details: EmpBasicDetail?) {
+        binding.apply {
+            empNameTxt.text = details?.cName
+            empHighQualTxt.text = details?.highestQual
+            empExpSubTxt.text = CommonDataFunctions.getFormattedExpYr(details?.tExpYr, details?.tExpMonth)
+            empAgeTxt.text = getString(R.string.format_age, details?.dateDiff)
+            empEngTxt.text = details?.eng
         }
     }
 
