@@ -202,7 +202,7 @@
             android:id="@+id/jobOpenClosedTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Closed"
+            android:text="@string/opened"
             android:textAlignment="center"
             android:textSize="@dimen/text_16"
             app:layout_constraintBottom_toBottomOf="@id/jobSeeAllTxt"

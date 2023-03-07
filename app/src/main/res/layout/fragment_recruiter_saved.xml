@@ -18,6 +18,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:paddingBottom="@dimen/space_70"
             android:background="@drawable/bg_layout_white_border_grey_corner_10"
             android:padding="@dimen/space_12"
             >
@@ -67,6 +68,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:gravity="center"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintStart_toStartOf="parent"
@@ -74,6 +76,29 @@
                 app:layout_constraintTop_toBottomOf="@id/rSavedChipGroup"
                 android:layout_marginTop="@dimen/space_12"
                 tools:listitem="@layout/item_home_job_seekers" />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/rSavedShimmer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:layout_marginTop="@dimen/space_12"
+                app:layout_constraintTop_toBottomOf="@+id/rSavedChipGroup">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <include layout="@layout/shimmer_home_emp_list"/>
+                    <include layout="@layout/shimmer_home_emp_list"/>
+                    <include layout="@layout/shimmer_home_emp_list"/>
+                    <include layout="@layout/shimmer_home_emp_list"/>
+
+                </LinearLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

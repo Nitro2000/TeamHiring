@@ -42,6 +42,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:visibility="gone"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -51,6 +52,28 @@
                 tools:itemCount="2"
                 tools:listitem="@layout/item_rec_applied_viewed" />
 
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/rEmpApplyShimmer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:layout_marginTop="@dimen/space_12"
+                app:layout_constraintTop_toBottomOf="@+id/rApplyEmpTxt">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <include layout="@layout/shimmer_manage_viewed_by"/>
+                    <include layout="@layout/shimmer_manage_viewed_by"/>
+                    <include layout="@layout/shimmer_manage_viewed_by"/>
+                    <include layout="@layout/shimmer_manage_viewed_by"/>
+
+                </LinearLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
             <TextView
                 android:id="@+id/rViewedEmpTxt"
                 android:layout_width="0dp"
@@ -59,6 +82,7 @@
                 android:textSize="@dimen/text_16"
                 android:ellipsize="end"
                 android:maxLines="1"
+                android:visibility="gone"
                 android:layout_marginTop="4dp"
                 android:text="@string/employee_viewed_you"
                 android:textColor="@color/dark_black"
@@ -73,6 +97,7 @@
                 app:layout_constraintStart_toStartOf="@id/rViewedEmpTxt"
                 app:layout_constraintTop_toBottomOf="@id/rViewedEmpTxt"
                 android:layout_marginTop="12dp"
+                android:visibility="gone"
                 android:nestedScrollingEnabled="false"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"

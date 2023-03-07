@@ -30,4 +30,9 @@ interface RecruitManageApiService {
         @Query("emp_id") empId: Int,
         @Query("rec_id") recId: Int
     ): Response<GeneralMessModel>
+
+    @GET("active_deactive_job")
+    suspend fun callPostJobStatusApi(
+        @Query("job_id") jobId: Int
+    ): Response<GeneralMessModel>
 }

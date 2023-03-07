@@ -39,4 +39,10 @@ class RecruiterManageViewModel @Inject constructor(private val recruiterManageJo
             recruiterManageJobRepo.callShortListApi(empId, 12)
         }
     }
+
+    suspend fun callPostJobStatusApi(jobId: Int): Response<GeneralMessModel> {
+        return withContext(Dispatchers.IO) {
+            recruiterManageJobRepo.callPostJobStatusApi(jobId)
+        }
+    }
 }

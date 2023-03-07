@@ -12,6 +12,9 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.teamhiring.CommonUiFunctions.startShimmer
+import com.example.teamhiring.CommonUiFunctions.stopShimmer
+import com.example.teamhiring.data.constants.Constant.LOG_TAG
 import com.example.teamhiring.databinding.FragmentRecruiterManageJobBinding
 import com.example.teamhiring.presentation.adapters.ManageJobListAdapter
 import com.example.teamhiring.presentation.viewmodels.recruiter.RecruiterManageViewModel
@@ -41,16 +44,18 @@ class RecruiterManageJobFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        startShimmer(binding.rPostShimmer, binding.jobManageRecyView)
 
         viewLifecycleOwner.lifecycleScope.launch{
             recruiterManageViewModel.getPostedJobList().let {
                 if (it.isSuccessful) {
                     val postedList = it.body() ?: listOf()
-                    manageJobListAdapter = ManageJobListAdapter(postedList, mContext)
+                    manageJobListAdapter = ManageJobListAdapter(postedList, mContext) {jobId ->
+                        callPostJobStatusApi(jobId)
+                    }
                     setManageListAdapter()
                 } else {
-                    Log.d("rishabh", "${it.errorBody()}")
+                    Log.d(LOG_TAG, "${it.errorBody()}")
                 }
             }
         }
@@ -60,6 +65,15 @@ class RecruiterManageJobFragment : Fragment() {
         binding.jobManageRecyView.apply {
             adapter = manageJobListAdapter
             layoutManager = LinearLayoutManager(mContext)
+            stopShimmer(binding.rPostShimmer, binding.jobManageRecyView)
+        }
+    }
+
+    private fun callPostJobStatusApi(jobId: Int) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            recruiterManageViewModel.callPostJobStatusApi(jobId).let {
+                Log.d(LOG_TAG, "Posted Job: $jobId: ${it.body()}")
+            }
         }
     }
 

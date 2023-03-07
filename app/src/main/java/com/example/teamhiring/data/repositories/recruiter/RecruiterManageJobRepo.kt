@@ -23,4 +23,8 @@ class RecruiterManageJobRepo @Inject constructor(private val recruitManageApiSer
     suspend fun callShortListApi(empId: Int, recId: Int) : Response<GeneralMessModel> {
         return recruitManageApiService.callShortListApi(empId, recId)
     }
+
+    suspend fun callPostJobStatusApi(jobId: Int) : Response<GeneralMessModel> {
+        return recruitManageApiService.callPostJobStatusApi(jobId)
+    }
 }

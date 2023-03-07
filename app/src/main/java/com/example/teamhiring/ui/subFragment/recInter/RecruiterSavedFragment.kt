@@ -12,6 +12,8 @@ import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.teamhiring.CommonUiFunctions
+import com.example.teamhiring.CommonUiFunctions.startShimmer
+import com.example.teamhiring.CommonUiFunctions.stopShimmer
 import com.example.teamhiring.R
 import com.example.teamhiring.data.constants.Constant
 import com.example.teamhiring.data.constants.Constant.LOG_TAG
@@ -37,12 +39,8 @@ class RecruiterSavedFragment : Fragment() {
     private lateinit var postJobListAdapter: RecSavedPostJobListAdapter
     private lateinit var sideSheet: SideSheetDialog
     private val recManageViewModel: RecruiterManageViewModel by viewModels()
-    private var stackFlag: Boolean = false
+//    private var stackFlag: Boolean = false
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        stackFlag = true
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -62,10 +60,9 @@ class RecruiterSavedFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if (stackFlag) {
-            getAllSavedCan()
-            getPostedJobs()
-        }
+        getAllSavedCan()
+        getPostedJobs()
+
 
         binding.rSavedFilterCandTxt.setOnClickListener {
             sideSheet.show()
@@ -78,7 +75,7 @@ class RecruiterSavedFragment : Fragment() {
             recManageViewModel.getPostedJobList().let {
                 if (it.isSuccessful) {
                     val list = it.body() ?: listOf()
-                    postJobListAdapter = RecSavedPostJobListAdapter(list) {jobId, chipList ->
+                    postJobListAdapter = RecSavedPostJobListAdapter(list) { jobId, chipList ->
                         getAllSavedCan(jobId)
                         setChipData(chipList)
                         sideSheet.hide()
@@ -95,22 +92,29 @@ class RecruiterSavedFragment : Fragment() {
         binding.rSavedChipGroup.visibility = View.VISIBLE
         binding.rSavedChipGroup.removeAllViews()
         for (text in chipList) {
-            binding.rSavedChipGroup.addView(CommonUiFunctions.createChip(text, R.color.white, mContext))
+            binding.rSavedChipGroup.addView(
+                CommonUiFunctions.createChip(
+                    text,
+                    R.color.white,
+                    mContext
+                )
+            )
         }
     }
 
     private fun getAllSavedCan(jobId: Int? = null) {
+        startShimmer(binding.rSavedShimmer, binding.jobSavedRecyView)
         viewLifecycleOwner.lifecycleScope.launch {
             recManageViewModel.getSavedCandidates(12, jobId).let {
-//                Log.d("Rishabh", "${it.code()}" + " header ${it.headers()}")
                 val responseBody = it.body()
                 if (it.isSuccessful) {
                     val status = responseBody?.status
                     if (status == 200) {
                         val list = responseBody.data
-                        empListAdapter = EmpListAdapter(list, RecFragInfoEnum.RecSaved,  mContext) {empId ->
-                            callShortListApi(empId)
-                        }
+                        empListAdapter =
+                            EmpListAdapter(list, RecFragInfoEnum.RecSaved, mContext) { empId ->
+                                callShortListApi(empId)
+                            }
                         setEmpListAdapter()
                     } else {
                         Toast.makeText(mContext, "No data present", Toast.LENGTH_SHORT).show()
@@ -133,6 +137,7 @@ class RecruiterSavedFragment : Fragment() {
     private fun setEmpListAdapter() {
         binding.jobSavedRecyView.apply {
             adapter = empListAdapter
+            stopShimmer(binding.rSavedShimmer, binding.jobSavedRecyView)
         }
     }
 
