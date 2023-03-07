@@ -205,6 +205,12 @@
         <action
             android:id="@+id/action_recruiterProfileFragment_to_recruiterManageJobFragment"
             app:destination="@id/recruiterManageJobFragment" />
+        <action
+            android:id="@+id/action_recruiterProfileFragment_to_editCompanyInfoFragment"
+            app:destination="@id/editCompanyInfoFragment" />
+        <action
+            android:id="@+id/action_recruiterProfileFragment_to_editCompLocationFragment"
+            app:destination="@id/editCompLocationFragment" />
     </fragment>
     <fragment
         android:id="@+id/recruiterSearchFragment"
@@ -235,6 +241,16 @@
             app:argType="integer"
             android:defaultValue="0" />
     </fragment>
+    <fragment
+        android:id="@+id/editCompanyInfoFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.recruiter.EditCompanyInfoFragment"
+        android:label="EditCompanyInfoFragment"
+        tools:layout="@layout/fragment_edit_company_info"/>
+    <fragment
+        android:id="@+id/editCompLocationFragment"
+        android:name="com.example.teamhiring.ui.mainFragments.recruiter.EditCompLocationFragment"
+        android:label="EditCompLocationFragment"
+        tools:layout="@layout/fragment_edit_comp_location"/>
 
 
 </navigation>

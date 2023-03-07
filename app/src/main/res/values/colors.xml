@@ -47,4 +47,7 @@
     <color name="shimmer_color">#BBB9B9</color>
 
     <color name="chip_bg_greyish">#E8E8E8</color>
+
+    // Status bar colors
+    <color name="edit_profile">#00182C</color>
 </resources>

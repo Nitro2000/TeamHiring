@@ -46,17 +46,25 @@ class RecruiterProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        CommonUiFunctions.bottomNavBarVisibility(mActivity, View.VISIBLE)
+        CommonUiFunctions.apply {
+            bottomNavBarVisibility(mActivity, View.VISIBLE)
+            changeStatusBarColor(mActivity, R.color.text_heading)
+        }
         getProfData()
         binding.rProfPostJobTxt.setOnClickListener {
             navigateToPostJob()
         }
+
+        binding.rProfEditImg.setOnClickListener {
+            navigateToEditCompInfo()
+        }
+
+        binding.profLocatEditImg.setOnClickListener {
+            navigateToEditCompLocation()
+        }
     }
 
-    private fun navigateToPostJob() {
-        val directions = RecruiterProfileFragmentDirections.actionRecruiterProfileFragmentToPostJobFragment()
-        findNavController().navigate(directions)
-    }
+
 
     private fun getProfData() {
         viewLifecycleOwner.lifecycleScope.launch {
@@ -72,7 +80,7 @@ class RecruiterProfileFragment : Fragment() {
     }
 
     private fun setProfileData() {
-        // Todo Formate the text from api
+
         binding.apply {
             rProfNameTxt.text = recProfileData.rName
             rProfComName.text = recProfileData.name
@@ -90,8 +98,19 @@ class RecruiterProfileFragment : Fragment() {
         }
     }
 
-    private fun changeTextColor() {
+    private fun navigateToEditCompLocation() {
+        val direction = RecruiterProfileFragmentDirections.actionRecruiterProfileFragmentToEditCompLocationFragment()
+        findNavController().navigate(direction)
+    }
 
+    private fun navigateToEditCompInfo() {
+        val direction = RecruiterProfileFragmentDirections.actionRecruiterProfileFragmentToEditCompanyInfoFragment()
+        findNavController().navigate(direction)
+    }
+
+    private fun navigateToPostJob() {
+        val directions = RecruiterProfileFragmentDirections.actionRecruiterProfileFragmentToEditCompLocationFragment()
+        findNavController().navigate(directions)
     }
 
 
